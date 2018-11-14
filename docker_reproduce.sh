@@ -2,10 +2,10 @@
 
 ## (c)2018 Nikolai Kostrigin <nickel@basealt.ru>
 ## ALT container with hasher based reproducible build for shim binaries
-docker build -t fotengauer/altlinux-sisyphus . -f Dockerfile
+docker build -t alt:sisyphus . -f Dockerfile
 
 #privileged is vital here due to isolation support by the kernel inside the container environment
-docker container run -it --privileged --user builder --workdir /home/builder/shim --name shim_rebuild fotengauer/altlinux-sisyphus /bin/bash -c "cd /home/builder/shim && gear-hsh -v --commit -- -v --lazy-cleanup --mountpoint=/proc --no-sisyphus-check=packager,gpg 2>&1 | tee log"
+docker container run -it --privileged --user builder --workdir /home/builder/shim --name shim_rebuild alt:sisyphus /bin/bash -c "cd /home/builder/shim && gear-hsh -v --commit -- -v --lazy-cleanup --mountpoint=/proc --no-sisyphus-check=packager,gpg 2>&1 | tee log"
 
 #build log
 docker container cp shim_rebuild:/home/builder/shim/log .
