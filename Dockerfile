@@ -1,7 +1,7 @@
 ## (c)2018 Nikolai Kostrigin <nickel@basealt.ru>
 ## Create an ALT docker image with hasher for reproducible build of shim binaries
 
-FROM fotengauer/altlinux-sisyphus AS altlinux-builder
+FROM fotengauer/altlinux-sisyphus
 RUN apt-get update && apt-get -y install \
 	su \
 	git \
