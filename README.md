@@ -18,60 +18,76 @@ Here's the template:
 -------------------------------------------------------------------------------
 What organization or people are asking to have this signed:
 -------------------------------------------------------------------------------
-[your text here]
+Nikolai Kostrigin for
+Basealt Ltd. (Bazalt Svobodnoe Programmnoe Obespechenie, OOO)
+https://www.basealt.ru
 
 -------------------------------------------------------------------------------
 What product or service is this for:
 -------------------------------------------------------------------------------
-[your text here]
+OS ALT
+https://www.basealt.ru/go/download/
 
 -------------------------------------------------------------------------------
 What's the justification that this really does need to be signed for the whole world to be able to boot it:
 -------------------------------------------------------------------------------
-[your text here]
+OS ALT is a linux distribution supporting Secure Boot
 
 -------------------------------------------------------------------------------
 Who is the primary contact for security updates, etc.
 -------------------------------------------------------------------------------
-- Name:
-- Position:
-- Email address:
-- PGP key, signed by the other security contacts, and preferably also with signatures that are reasonably well known in the linux community:
+- Name: Dmitry Levin
+- Position: Principal Software Engineer
+- Email address: ldv@basealt.ru
+- PGP key, signed by the other security contacts, and preferably also with signatures that are reasonably well known in the linux community: ldv.pub
 
 -------------------------------------------------------------------------------
 Who is the secondary contact for security updates, etc.
 -------------------------------------------------------------------------------
-- Name:
-- Position:
-- Email address:
-- PGP key, signed by the other security contacts, and preferably also with signatures that are reasonably well known in the linux community:
+- Name: Nikolai Kostrigin
+- Position: Software Engineer
+- Email address: nickel@basealt.ru
+- PGP key, signed by the other security contacts, and preferably also with signatures that are reasonably well known in the linux community: nickel.pub
 
 -------------------------------------------------------------------------------
 What upstream shim tag is this starting from:
 -------------------------------------------------------------------------------
-[our url here]
+https://github.com/rhboot/shim/releases/tag/15
 
 -------------------------------------------------------------------------------
 URL for a repo that contains the exact code which was built to get this binary:
 -------------------------------------------------------------------------------
-[your url here]
+http://git.altlinux.org/gears/s/shim.git
 
 -------------------------------------------------------------------------------
 What patches are being applied and why:
 -------------------------------------------------------------------------------
-[your text here]
+No
 
 -------------------------------------------------------------------------------
 What OS and toolchain must we use to reproduce this build?  Include where to find it, etc.  We're going to try to reproduce your build as close as possible to verify that it's really a build of the source tree you tell us it is, so these need to be fairly thorough. At the very least include the specific versions of gcc, binutils, and gnu-efi which were used, and where to find those binaries.
 -------------------------------------------------------------------------------
-[your text here]
+A Docker container creation scripts are attached.
+Please run /bin/bash ./docker_reproduce.sh
+
+Build container produces following artifacts:
+1. ./build/log - build log
+2. ./build/shim.spec - a copy of RPM style spec file which defines the build
+3. ./build/shimia32.efi - rebuilt ia32 binary
+4. ./build/shimx64.efi - rebuilt x64 binary
+5. ./build/sha256sum.shim - sha256 hashes calculated for mentioned binaries
+
+The following tools are used to build binaries in a clean chrooted environment:
+https://www.altlinux.org/Hasher
 
 -------------------------------------------------------------------------------
 Which files in this repo are the logs for your build?   This should include logs for creating the buildroots, applying patches, doing the build, creating the archives, etc.
 -------------------------------------------------------------------------------
-[your text here]
+Log file of the build is available as a "log" 
 
 -------------------------------------------------------------------------------
 Add any additional information you think we may need to validate this shim
 -------------------------------------------------------------------------------
-[your text here]
+Sysdev Submission ID:
+14351339051890343 for shimia32.efi
+13566173665208949 for shimx64.efi
