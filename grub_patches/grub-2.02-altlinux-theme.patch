@@ -1,0 +1,95 @@
+diff --git a/grub2/Makefile.util.def b/grub2/Makefile.util.def
+index ed9b4c6..93af7ae 100644
+--- a/grub2/Makefile.util.def
++++ b/grub2/Makefile.util.def
+@@ -431,6 +431,12 @@ script = {
+ };
+ 
+ script = {
++  name = '05_altlinux_theme';
++  common = util/grub.d/05_altlinux_theme.in;
++  installdir = grubconf;
++};
++
++script = {
+   name = '10_windows';
+   common = util/grub.d/10_windows.in;
+   installdir = grubconf;
+diff --git a/grub2/util/grub-mkconfig.in b/grub2/util/grub-mkconfig.in
+index 203b076..b3adfbb 100644
+--- a/grub2/util/grub-mkconfig.in
++++ b/grub2/util/grub-mkconfig.in
+@@ -225,6 +225,11 @@ export GRUB_DEFAULT \
+   GRUB_INIT_TUNE \
+   GRUB_SAVEDEFAULT \
+   GRUB_ENABLE_CRYPTODISK \
++  GRUB_WALLPAPER \
++  GRUB_COLOR_NORMAL \
++  GRUB_COLOR_HIGHLIGHT \
++  GRUB_VMLINUZ_SYMLINKS \
++  GRUB_VMLINUZ_FAILSAFE \
+   GRUB_BADRAM \
+   GRUB_OS_PROBER_SKIP_LIST \
+   GRUB_DISABLE_SUBMENU
+diff --git a/grub2/util/grub.d/05_altlinux_theme.in b/grub2/util/grub.d/05_altlinux_theme.in
+new file mode 100644
+index 0000000..8dd9835
+--- /dev/null
++++ b/grub2/util/grub.d/05_altlinux_theme.in
+@@ -0,0 +1,56 @@
++#! /bin/sh -e
++
++prefix=@prefix@
++exec_prefix=@exec_prefix@
++bindir=@bindir@
++libdir=@libdir@
++datadir=@datadir@
++. ${datadir}/grub/grub-mkconfig_lib
++
++set_mono_theme()
++{
++  cat << EOF
++set menu_color_normal=white/black
++set menu_color_highlight=black/light-gray
++EOF
++}
++
++# check for usable backgrounds
++use_bg=false
++if [ "$GRUB_TERMINAL_OUTPUT" = "gfxterm" ] && [ "x$GRUB_WALLPAPER" != "x" ]; then
++  for i in ${datadir}/grub/`basename $GRUB_WALLPAPER` $GRUB_WALLPAPER ; do
++    if is_path_readable_by_grub $i ; then 
++      bg=$i
++      case ${bg} in
++        *.png)		reader=png ;;
++        *.tga)		reader=tga ;;
++        *.jpg|*.jpeg)	reader=jpeg ;;
++      esac
++      if test -e ${libdir}/grub/i386-pc/${reader}.mod ; then
++        echo "Found background image: `basename ${bg}`" >&2
++        use_bg=true
++        break
++      fi
++    fi
++  done
++fi
++
++# set the background if possible
++if ${use_bg} ; then
++  prepare_grub_to_access_device `${grub_probe} --target=device ${bg}`
++  cat << EOF
++insmod ${reader}
++if background_image `make_system_path_relative_to_its_root ${bg}` ; then
++  set color_normal=$GRUB_COLOR_NORMAL
++  set color_highlight=$GRUB_COLOR_HIGHLIGHT
++else
++EOF
++fi
++
++# otherwise, set a monochromatic theme for Ubuntu
++if ${use_bg} ; then
++  set_mono_theme | sed -e "s/^/  /g"
++  echo "fi"
++else
++  set_mono_theme
++fi

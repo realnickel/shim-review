@@ -1,0 +1,34 @@
+author	H.J. Lu <hjl.tools@gmail.com>	2018-02-17 06:47:28 -0800
+committer	Daniel Kiper <daniel.kiper@oracle.com>	2018-02-23 22:25:30 +0100
+commit	842c390469e2c2e10b5aa36700324cd3bde25875
+tree	5f26978a4bee687d0271b374b2771bf80701a579
+parent	6400613ad0b463abc93362086a491cd2a5e99b0d
+
+x86-64: Treat R_X86_64_PLT32 as R_X86_64_PC32
+Starting from binutils commit bd7ab16b4537788ad53521c45469a1bdae84ad4a:
+
+https://sourceware.org/git/?p=binutils-gdb.git;a=commit;h=bd7ab16b4537788ad53521c45469a1bdae84ad4a
+
+x86-64 assembler generates R_X86_64_PLT32, instead of R_X86_64_PC32, for
+32-bit PC-relative branches.  Grub2 should treat R_X86_64_PLT32 as
+R_X86_64_PC32.
+
+Signed-off-by: H.J. Lu <hjl.tools@gmail.com>
+Reviewed-by: Daniel Kiper <daniel.kiper@oracle.com>
+
+diff --git a/util/grub-mkimagexx.c b/util/grub-mkimagexx.c
+index a2bb054..39d7efb 100644
+--- a/util/grub-mkimagexx.c
++++ b/util/grub-mkimagexx.c
+@@ -843,2 +843,3 @@ SUFFIX (relocate_addresses) (Elf_Ehdr *e, Elf_Shdr *sections,
+ 		case R_X86_64_PC32:
++		case R_X86_64_PLT32:
+ 		  {
+diff --git a/util/grub-module-verifier.c b/util/grub-module-verifier.c
+index 9179285..a79271f 100644
+--- a/util/grub-module-verifier.c
++++ b/util/grub-module-verifier.c
+@@ -21,2 +21,3 @@ struct grub_module_verifier_arch archs[] = {
+       R_X86_64_PC32,
++      R_X86_64_PLT32,
+       -1

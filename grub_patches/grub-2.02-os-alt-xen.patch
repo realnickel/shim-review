@@ -1,0 +1,94 @@
+diff --git a/grub2/util/grub.d/20_linux_xen.in b/grub2/util/grub.d/20_linux_xen.in
+index 46045db..8ada506 100644
+--- a/grub2/util/grub.d/20_linux_xen.in
++++ b/grub2/util/grub.d/20_linux_xen.in
+@@ -28,11 +28,10 @@ export TEXTDOMAINDIR="@localedir@"
+ 
+ CLASS="--class gnu-linux --class gnu --class os --class xen"
+ 
+-if [ "x${GRUB_DISTRIBUTOR}" = "x" ] ; then
+-  OS=GNU/Linux
++if [ -r /etc/altlinux-release ]; then
++  OS=`cat /etc/altlinux-release | sed 's/ (.*$//g' | sed "s, $,,"`
+ else
+-  OS="${GRUB_DISTRIBUTOR} GNU/Linux"
+-  CLASS="--class $(echo ${GRUB_DISTRIBUTOR} | tr 'A-Z' 'a-z' | cut -d' ' -f1|LC_ALL=C sed 's,[^[:alnum:]_],_,g') ${CLASS}"
++  OS="ALTLinux"
+ fi
+ 
+ # loop-AES arranges things so that /dev/loop/X can be our root device, but
+@@ -46,7 +45,7 @@ esac
+ # btrfs may reside on multiple devices. We cannot pass them as value of root= parameter
+ # and mounting btrfs requires user space scanning, so force UUID in this case.
+ if [ "x${GRUB_DEVICE_UUID}" = "x" ] || [ "x${GRUB_DISABLE_LINUX_UUID}" = "xtrue" ] \
+-    || ! test -e "/dev/disk/by-uuid/${GRUB_DEVICE_UUID}" \
++    || ! blkid -U "${GRUB_DEVICE_UUID}" > /dev/null \
+     || ( test -e "${GRUB_DEVICE}" && uses_abstraction "${GRUB_DEVICE}" lvm ); then
+   LINUX_ROOT_DEVICE=${GRUB_DEVICE}
+ else
+@@ -139,8 +138,11 @@ EOF
+ EOF
+ }
+ 
++[ ! -z $GRUB_VMLINUZ_SYMLINKS ] || GRUB_VMLINUZ_SYMLINKS="default"
++[ ! -z $GRUB_VMLINUZ_FAILSAFE ] || GRUB_VMLINUZ_FAILSAFE="default"
++
+ linux_list=
+-for i in /boot/vmlinu[xz]-* /vmlinu[xz]-* /boot/kernel-*; do
++for i in `ls -c1 /boot/vmlinu[z]-*`; do
+     if grub_file_is_not_garbage "$i"; then
+     	basename=$(basename $i)
+ 	version=$(echo $basename | sed -e "s,^[^0-9]*-,,g")
+@@ -152,7 +154,9 @@ for i in /boot/vmlinu[xz]-* /vmlinu[xz]-* /boot/kernel-*; do
+ 		break
+ 	    fi
+ 	done
+-        if (grep -qx "CONFIG_XEN_DOM0=y" "${config}" 2> /dev/null || grep -qx "CONFIG_XEN_PRIVILEGED_GUEST=y" "${config}" 2> /dev/null); then linux_list="$linux_list $i" ; fi
++	if [ $i = "/boot/vmlinuz-xen" ]; then
++		linux_list="$linux_list $i"
++        elif (grep -qx "CONFIG_XEN_DOM0=y" "${config}" 2> /dev/null || grep -qx "CONFIG_XEN_PRIVILEGED_GUEST=y" "${config}" 2> /dev/null); then linux_list="$linux_list $i" ; fi
+     fi
+ done
+ if [ "x${linux_list}" = "x" ] ; then
+@@ -169,7 +173,7 @@ file_is_not_sym () {
+ }
+ 
+ xen_list=
+-for i in /boot/xen*; do
++for i in /boot/xen-*.*.*.gz; do
+     if grub_file_is_not_garbage "$i" && file_is_not_sym "$i" ; then xen_list="$xen_list $i" ; fi
+ done
+ prepare_boot_cache=
+@@ -203,11 +207,8 @@ while [ "x${xen_list}" != "x" ] ; do
+     if [ -z "$boot_device_id" ]; then
+ 	boot_device_id="$(grub_get_device_id "${GRUB_DEVICE}")"
+     fi
+-    if [ "x$is_top_level" != xtrue ]; then
+-	echo "	submenu '$(gettext_printf "Xen hypervisor, version %s" "${xen_version}" | grub_quote)' \$menuentry_id_option 'xen-hypervisor-$xen_version-$boot_device_id' {"
+-    fi
+     while [ "x$list" != "x" ] ; do
+-	linux=`version_find_latest $list`
++	linux=`echo $list | sed 's, .*,,g'`
+ 	gettext_printf "Found linux image: %s\n" "$linux" >&2
+ 	basename=`basename $linux`
+ 	dirname=`dirname $linux`
+@@ -215,6 +216,18 @@ while [ "x${xen_list}" != "x" ] ; do
+ 	version=`echo $basename | sed -e "s,^[^0-9]*-,,g"`
+ 	alt_version=`echo $version | sed -e "s,\.old$,,g"`
+ 	linux_root_device_thisversion="${LINUX_ROOT_DEVICE}"
++        if [ -L "$linux" ]; then
++            if [ "x$GRUB_VMLINUZ_SYMLINKS" = "xno" ] || [ "x$GRUB_VMLINUZ_SYMLINKS" = "xfalse" ]; then
++                echo "skipping symlink: $linux" >&2
++                list=`echo $list | tr ' ' '\n' | grep -vx $linux | tr '\n' ' '`
++                continue
++            fi
++            if [ "$linux" != "/boot/vmlinuz-xen" ] && [ "x$GRUB_VMLINUZ_SYMLINKS" = "xdefault" ]; then
++                echo "skipping symlink: $linux" >&2
++                list=`echo $list | tr ' ' '\n' | grep -vx $linux | tr '\n' ' '`
++                continue
++            fi
++        fi
+ 
+ 	initrd=
+ 	for i in "initrd.img-${version}" "initrd-${version}.img" "initrd-${version}.gz" \
+ 

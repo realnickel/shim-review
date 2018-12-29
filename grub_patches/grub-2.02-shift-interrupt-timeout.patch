@@ -1,0 +1,14 @@
+diff -ur grub-2.02.orig/util/grub.d/00_header.in grub-2.02/util/grub.d/00_header.in
+--- grub-2.02.orig/util/grub.d/00_header.in	2017-12-02 12:21:57.000000000 +0300
++++ grub-2.02/util/grub.d/00_header.in	2017-12-02 12:27:09.380748033 +0300
+@@ -325,6 +325,10 @@
+     fi
+     cat << EOF
+ fi
++# interrupt grub booting process if shift key pressed
++if keystatus --shift;then
++  set timeout=-1
++fi
+ EOF
+ }
+ 
