@@ -11,8 +11,12 @@ RUN apt-get update && apt-get -y install \
 RUN useradd builder 
 RUN hasher-useradd builder
 
+RUN mkdir -p /tmp/.private/builder
+RUN chown builder:builder /tmp/.private/builder
+
 USER builder
 WORKDIR /home/builder
+ADD ./hsh-sandbox.tar /home/builder
 
 RUN git clone http://git.altlinux.org/gears/s/shim.git
 RUN mkdir hasher 

@@ -10,8 +10,7 @@ docker build -t alt:sisyphus . -f Dockerfile
 
 docker container run -it --privileged --user builder \
   --workdir /home/builder/shim --name shim_rebuild alt:sisyphus /bin/bash \
-  -c "cd /home/builder/shim && gear-hsh -v --commit -- -v --lazy-cleanup \
-  --mountpoint=/proc --no-sisyphus-check=packager,gpg 2>&1 | tee log"
+ -c "cd /home/builder/shim && /home/builder/hsh-sandbox/sisyphus-x86_64/compile build 2>&1 | tee log"
 
 [ ! -d "./$BUILDDIR" ] && mkdir ./$BUILDDIR
 
@@ -23,12 +22,12 @@ docker container cp shim_rebuild:/home/builder/shim/.gear/shim.spec ./$BUILDDIR
 
 #ia32 binary
 docker container cp \
-  shim_rebuild:/home/builder/hasher/chroot/usr/src/RPM/BUILD/shim-15/build-ia32/shimia32.efi \
+  shim_rebuild:/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/chroot/usr/src/RPM/BUILD/shim-15/build-ia32/shimia32.efi \
   ./$BUILDDIR
 
 #x64 binary
 docker container cp \
-	shim_rebuild:/home/builder/hasher/chroot/usr/src/RPM/BUILD/shim-15/build-x64/shimx64.efi \
+	shim_rebuild:/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/chroot/usr/src/RPM/BUILD/shim-15/build-x64/shimx64.efi \
 	./$BUILDDIR
 
 #sha256 hashes
