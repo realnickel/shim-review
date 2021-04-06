@@ -2,6 +2,10 @@
 BUILDDIR="build"
 
 ## (c)2018 Nikolai Kostrigin <nickel@basealt.ru>
+
+# prepare an archive with sandboxes for Sisyphus
+tar -cvf ./hsh-sandboxes.tar ./hsh-sandboxes
+
 ## ALT container with hasher based reproducible build for shim binaries
 docker build -t alt:sisyphus . -f Dockerfile
 
