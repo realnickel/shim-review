@@ -26,12 +26,12 @@ docker container cp shim_rebuild:/home/builder/shim/.gear/shim.spec ./$BUILDDIR
 
 #ia32 binary
 docker container cp \
-  shim_rebuild:/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/chroot/usr/src/RPM/BUILD/shim-15/build-ia32/shimia32.efi \
+  shim_rebuild:/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/chroot/usr/src/RPM/BUILD/shim-15.4/build-ia32/shimia32.efi \
   ./$BUILDDIR
 
 #x64 binary
 docker container cp \
-	shim_rebuild:/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/chroot/usr/src/RPM/BUILD/shim-15/build-x64/shimx64.efi \
+	shim_rebuild:/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/chroot/usr/src/RPM/BUILD/shim-15.4/build-x64/shimx64.efi \
 	./$BUILDDIR
 
 #sha256 hashes
