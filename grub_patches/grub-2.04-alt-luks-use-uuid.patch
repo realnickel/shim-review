@@ -1,0 +1,13 @@
+diff --git a/grub/util/grub.d/10_linux.in b/grub/util/grub.d/10_linux.in
+index cd87856f5..65e749741 100644
+--- a/grub/util/grub.d/10_linux.in
++++ b/grub/util/grub.d/10_linux.in
+@@ -53,7 +53,7 @@ if ( [ "x${GRUB_DEVICE_UUID}" = "x" ] && [ "x${GRUB_DEVICE_PARTUUID}" = "x" ] )
+ 	&& [ "x${GRUB_DISABLE_LINUX_PARTUUID}" = "xtrue" ] ) \
+     || ( ! findfs UUID="${GRUB_DEVICE_UUID}" > /dev/null 2>&1 \
+ 	&& ! findfs PARTUUID="${GRUB_DEVICE_PARTUUID}" > /dev/null 2>&1 ) \
+-    || ( test -e "${GRUB_DEVICE}" && uses_abstraction "${GRUB_DEVICE}" lvm ); then
++    || ( test -e "${GRUB_DEVICE}" && uses_abstraction "${GRUB_DEVICE}" lvm && ! uses_abstraction "${GRUB_DEVICE}" luks ); then
+   LINUX_ROOT_DEVICE=${GRUB_DEVICE}
+ elif [ "x${GRUB_DEVICE_UUID}" = "x" ] \
+     || [ "x${GRUB_DISABLE_LINUX_UUID}" = "xtrue" ]; then

@@ -1,24 +1,41 @@
-diff --git a/grub2/Makefile.util.def b/grub2/Makefile.util.def
-index ed9b4c6..93af7ae 100644
---- a/grub2/Makefile.util.def
-+++ b/grub2/Makefile.util.def
-@@ -431,6 +431,12 @@ script = {
+From 75a84cc7a5f168cc64eebe683d42d4e2554e58bf Mon Sep 17 00:00:00 2001
+From: Nikolai Kostrigin <nickel@altlinux.org>
+Date: Fri, 29 Nov 2019 17:54:16 +0300
+Subject: [PATCH] rework altlinux-theme patch:     - sync with latest Debian
+ 05_debian_theme     - change behaviour of default color scheme application
+ code to run       only if colors set by user are non-contrast
+ (background==foreground)     - remove duplicate code for setting up
+ GRUB_BACKGROUND from 00_header
+
+---
+ grub/Makefile.util.def                |   6 +
+ grub/util/grub-mkconfig.in            |   5 +
+ grub/util/grub.d/00_header.in         |  15 +--
+ grub/util/grub.d/05_altlinux_theme.in | 165 ++++++++++++++++++++++++++
+ 4 files changed, 177 insertions(+), 14 deletions(-)
+ create mode 100755 grub/util/grub.d/05_altlinux_theme.in
+
+diff --git a/grub/Makefile.util.def b/grub/Makefile.util.def
+index f9caccb97..269f91352 100644
+--- a/grub/Makefile.util.def
++++ b/grub/Makefile.util.def
+@@ -430,6 +430,12 @@ script = {
+   installdir = grubconf;
  };
  
- script = {
++script = {
 +  name = '05_altlinux_theme';
 +  common = util/grub.d/05_altlinux_theme.in;
 +  installdir = grubconf;
 +};
 +
-+script = {
+ script = {
    name = '10_windows';
    common = util/grub.d/10_windows.in;
-   installdir = grubconf;
-diff --git a/grub2/util/grub-mkconfig.in b/grub2/util/grub-mkconfig.in
-index 203b076..b3adfbb 100644
---- a/grub2/util/grub-mkconfig.in
-+++ b/grub2/util/grub-mkconfig.in
+diff --git a/grub/util/grub-mkconfig.in b/grub/util/grub-mkconfig.in
+index f8496d28b..44cbd00f3 100644
+--- a/grub/util/grub-mkconfig.in
++++ b/grub/util/grub-mkconfig.in
 @@ -225,6 +225,11 @@ export GRUB_DEFAULT \
    GRUB_INIT_TUNE \
    GRUB_SAVEDEFAULT \
@@ -31,65 +48,203 @@ index 203b076..b3adfbb 100644
    GRUB_BADRAM \
    GRUB_OS_PROBER_SKIP_LIST \
    GRUB_DISABLE_SUBMENU
-diff --git a/grub2/util/grub.d/05_altlinux_theme.in b/grub2/util/grub.d/05_altlinux_theme.in
-new file mode 100644
-index 0000000..8dd9835
+diff --git a/grub/util/grub.d/00_header.in b/grub/util/grub.d/00_header.in
+index 93a90233e..5e073a0c6 100644
+--- a/grub/util/grub.d/00_header.in
++++ b/grub/util/grub.d/00_header.in
+@@ -263,20 +263,7 @@ EOF
+ set theme=(\$root)`make_system_path_relative_to_its_root $GRUB_THEME`
+ export theme
+ EOF
+-    elif [ "x$GRUB_BACKGROUND" != x ] && [ -f "$GRUB_BACKGROUND" ] \
+-	    && is_path_readable_by_grub "$GRUB_BACKGROUND"; then
+-	gettext_printf "Found background: %s\n" "$GRUB_BACKGROUND" >&2
+-	case "$GRUB_BACKGROUND" in 
+-	    *.png)         reader=png ;;
+-	    *.tga)         reader=tga ;;
+-	    *.jpg|*.jpeg)  reader=jpeg ;;
+-	    *)             gettext "Unsupported image format" >&2; echo >&2; exit 1 ;;
+-	esac
+-	prepare_grub_to_access_device `${grub_probe} --target=device "$GRUB_BACKGROUND"`
+-	cat << EOF
+-insmod $reader
+-background_image -m stretch `make_system_path_relative_to_its_root "$GRUB_BACKGROUND"`
+-EOF
++# GRUB_BACKGROUND setup code duplication is removed in favour of following 05_altlinux_theme
+     fi
+ fi
+ 
+diff --git a/grub/util/grub.d/05_altlinux_theme.in b/grub/util/grub.d/05_altlinux_theme.in
+new file mode 100755
+index 000000000..28f66d652
 --- /dev/null
-+++ b/grub2/util/grub.d/05_altlinux_theme.in
-@@ -0,0 +1,56 @@
-+#! /bin/sh -e
++++ b/grub/util/grub.d/05_altlinux_theme.in
+@@ -0,0 +1,165 @@
++#!/bin/sh
++set -e
++
++# grub-mkconfig helper script.
++# Copyright (C) 2010  Alexander Kurtz <kurtz.alex@googlemail.com>
++# Copyright (C) 2019  Nikolai Kostrigin <nickel@altlinux.org>
++#
++# GRUB is free software: you can redistribute it and/or modify
++# it under the terms of the GNU General Public License as published by
++# the Free Software Foundation, either version 3 of the License, or
++# (at your option) any later version.
++#
++# GRUB is distributed in the hope that it will be useful,
++# but WITHOUT ANY WARRANTY; without even the implied warranty of
++# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++# GNU General Public License for more details.
++#
++# You should have received a copy of the GNU General Public License
++# along with GRUB.  If not, see <http://www.gnu.org/licenses/>.
 +
 +prefix=@prefix@
 +exec_prefix=@exec_prefix@
 +bindir=@bindir@
 +libdir=@libdir@
 +datadir=@datadir@
++
++# Include the GRUB helper library for grub-mkconfig.
 +. ${datadir}/grub/grub-mkconfig_lib
 +
-+set_mono_theme()
-+{
-+  cat << EOF
-+set menu_color_normal=white/black
-+set menu_color_highlight=black/light-gray
-+EOF
++# Set the location of a possibly necessary cache file for the background image.
++# NOTE: This MUST BE A DOTFILE to avoid confusing it with user-defined images.
++BACKGROUND_CACHE=".background_cache"
++
++set_default_theme(){
++	# Set a monochromatic theme as a last resort for unsuitable user choice.
++	echo "${1}set menu_color_normal=white/black"
++	echo "${1}set menu_color_highlight=black/light-gray"
 +}
 +
-+# check for usable backgrounds
-+use_bg=false
-+if [ "$GRUB_TERMINAL_OUTPUT" = "gfxterm" ] && [ "x$GRUB_WALLPAPER" != "x" ]; then
-+  for i in ${datadir}/grub/`basename $GRUB_WALLPAPER` $GRUB_WALLPAPER ; do
-+    if is_path_readable_by_grub $i ; then 
-+      bg=$i
-+      case ${bg} in
-+        *.png)		reader=png ;;
-+        *.tga)		reader=tga ;;
-+        *.jpg|*.jpeg)	reader=jpeg ;;
-+      esac
-+      if test -e ${libdir}/grub/i386-pc/${reader}.mod ; then
-+        echo "Found background image: `basename ${bg}`" >&2
-+        use_bg=true
-+        break
-+      fi
-+    fi
-+  done
++set_user_colors (){
++	# Don't set defaults if contrast color theme is already defined.
++	# Even if no background is set.
++	# This enables third-party customizers to pass their settings.
++	local fgcolor=
++	local bgcolor=
++	if [ -n "${GRUB_COLOR_NORMAL}" ] && [ -n "${GRUB_COLOR_HIGHLIGHT}" ]; then
++		fgcolor="$(echo ${GRUB_COLOR_NORMAL} |cut -d / -f 1)"
++		bgcolor="$(echo ${GRUB_COLOR_NORMAL} |cut -d / -f 2)"
++
++		# if foreground is in contrast to background then apply color scheme
++		if [ "${fgcolor}" != "${bgcolor}" ]; then
++			echo "${1}set menu_color_normal=${GRUB_COLOR_NORMAL}"
++			echo "${1}set menu_color_highlight=${GRUB_COLOR_HIGHLIGHT}"
++			echo "${1}set color_normal=${GRUB_COLOR_NORMAL}"
++			echo "${1}set color_highlight=${GRUB_COLOR_HIGHLIGHT}"
++		else
++			set_default_theme "${1}"
++		fi
++	else
++		set_default_theme "${1}"
++	fi
++}
++
++module_available(){
++	local module
++	for module in "${1}.mod" */"${1}.mod"; do
++		if [ -f "${module}" ]; then
++			return 0
++		fi
++	done
++	return 1
++}
++
++set_background_image(){
++	# Step #1: Search all available output modes ...
++	local output
++	for output in ${GRUB_TERMINAL_OUTPUT}; do
++		if [ "x$output" = "xgfxterm" ]; then
++			break
++		fi
++	done
++
++	# ... and check if we are able to display a background image at all.
++	if ! [ "x${output}" = "xgfxterm" ]; then
++		return 1
++	fi
++
++	# Step #2: Check if the specified background image exists.
++	if ! [ -f "${1}" ]; then
++		return 2
++	fi
++
++	# Step #3: Search the correct GRUB module for our background image.
++	local reader
++	case "${1}" in
++		*.jpg|*.JPG|*.jpeg|*.JPEG) reader="jpeg";;
++		*.png|*.PNG) reader="png";;
++		*.tga|*.TGA) reader="tga";;
++		*) return 3;; # Unknown image type.
++	esac
++
++	# Step #4: Check if the necessary GRUB module is available.
++	if ! module_available "${reader}"; then
++		return 4
++	fi
++
++	# Step #5: Check if GRUB can read the background image directly.
++	# If so, we can remove the cache file (if any). Otherwise the backgound
++	# image needs to be cached under /@bootdirname@/@grubdirname@.
++	if is_path_readable_by_grub "${1}"; then
++		rm --force "${BACKGROUND_CACHE}.jpeg" \
++			"${BACKGROUND_CACHE}.png" "${BACKGROUND_CACHE}.tga"
++	elif cp "${1}" "${BACKGROUND_CACHE}.${reader}"; then
++		set -- "${BACKGROUND_CACHE}.${reader}" "${2}" "${3}"
++	else
++		return 5
++	fi
++
++	# Step #6: Prepare GRUB to read the background image.
++	if ! prepare_grub_to_access_device "`${grub_probe} --target=device "${1}"`"; then
++		return 6
++	fi
++
++	# Step #7: Everything went fine, print out a message to stderr ...
++	gettext_printf "Found background image: %s\n" "${1}" >&2
++
++	# ... and write our configuration snippet to stdout. Use the colors
++	# desktop-base specified. If we're using a user-defined background, use
++	# the default colors since we've got no idea how the image looks like.
++	# If loading the background image fails, use the default theme.
++	echo "insmod ${reader}"
++	echo "if background_image -m stretch `make_system_path_relative_to_its_root "${1}"`; then"
++	if [ -n "${2}" ]; then
++		echo "  set color_normal=${2}"
++	fi
++	if [ -n "${3}" ]; then
++		echo "  set color_highlight=${3}"
++	fi
++	if [ -z "${2}" ] && [ -z "${3}" ]; then
++		echo "  true"
++	fi
++	echo "else"
++	set_user_colors "  "
++	echo "fi"
++}
++
++# We want to work in /@bootdirname@/@grubdirname@ only to be able to check
++# modules presence and store cached images if needed
++test -d /@bootdirname@/@grubdirname@; cd /@bootdirname@/@grubdirname@
++
++# Consider GRUB_WALLPAPER a deprecated parameter, but support it to avoid
++# backward compatibility issues. Honor the priority of GRUB_BACKGROUND though
++if [ -n "${GRUB_BACKGROUND}" ]; then
++	set_background_image "${GRUB_BACKGROUND}" "${GRUB_COLOR_NORMAL}" "${GRUB_COLOR_HIGHLIGHT}" \
++		&& exit 0
 +fi
 +
-+# set the background if possible
-+if ${use_bg} ; then
-+  prepare_grub_to_access_device `${grub_probe} --target=device ${bg}`
-+  cat << EOF
-+insmod ${reader}
-+if background_image `make_system_path_relative_to_its_root ${bg}` ; then
-+  set color_normal=$GRUB_COLOR_NORMAL
-+  set color_highlight=$GRUB_COLOR_HIGHLIGHT
-+else
-+EOF
++# Next try to use the background image from GRUB_WALLPAPER.
++if [ -n "${GRUB_WALLPAPER}" ]; then
++	set_background_image "${GRUB_WALLPAPER}" "${GRUB_COLOR_NORMAL}" "${GRUB_COLOR_HIGHLIGHT}" \
++		&& exit 0
 +fi
 +
-+# otherwise, set a monochromatic theme for Ubuntu
-+if ${use_bg} ; then
-+  set_mono_theme | sed -e "s/^/  /g"
-+  echo "fi"
-+else
-+  set_mono_theme
-+fi
++# Finally, if all of the above fails, use the pictureless color menu theme.
++set_user_colors
+-- 
+2.24.0
+

@@ -1,0 +1,30 @@
+From 816e447b4852aef90d1b60402b76e0058ecb5bf4 Mon Sep 17 00:00:00 2001
+From: Nikolai Kostrigin <nickel@altlinux.org>
+Date: Mon, 11 Jan 2021 00:41:00 +0300
+Subject: [PATCH] grub-install: do not put fb<efiarch>.efi for removable
+
+---
+ grub/util/grub-install.c | 7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
+
+diff --git a/grub/util/grub-install.c b/grub/util/grub-install.c
+index 5bbf00790..e35d717c0 100644
+--- a/grub/util/grub-install.c
++++ b/grub/util/grub-install.c
+@@ -2100,8 +2100,11 @@ main (int argc, char *argv[])
+ 						    fb_signed);
+ 		fb_dst = grub_util_path_concat (2, efidir,
+ 						    fb_file);
+-		grub_install_copy_file (fb_src,
+-					fb_dst, 0);
++		if (!removable)
++		  {
++		    grub_install_copy_file (fb_src,
++					    fb_dst, 0);
++		  }
+ 
+ 		csv_src = grub_util_path_concat (2, "/usr/lib/shim/",
+ 						    csv_file);
+-- 
+2.29.2
+
