@@ -1,13 +1,13 @@
 Make sure you have provided the following information:
 
- - [V] link to your code branch cloned from rhboot/shim-review in the form user/repo@tag
- - [V] completed README.md file with the necessary information
- - [V] shim.efi to be signed
- - [V] public portion of your certificate(s) embedded in shim (the file passed to VENDOR_CERT_FILE)
- - [V] binaries, for which hashes are added do vendor_db ( if you use vendor_db and have hashes allow-listed )
- - [V] any extra patches to shim via your own git tree or as files
- - [V] any extra patches to grub via your own git tree or as files
- - [V] build logs
+ - [x] link to your code branch cloned from rhboot/shim-review in the form user/repo@tag
+ - [x] completed README.md file with the necessary information
+ - [x] shim.efi to be signed
+ - [x] public portion of your certificate(s) embedded in shim (the file passed to VENDOR_CERT_FILE)
+ - [x] binaries, for which hashes are added do vendor_db ( if you use vendor_db and have hashes allow-listed )
+ - [x] any extra patches to shim via your own git tree or as files
+ - [x] any extra patches to grub via your own git tree or as files
+ - [x] build logs
 
 
 ###### What organization or people are asking to have this signed:
@@ -91,7 +91,7 @@ upstream grub-2.06-rc1 including patches for all currently discussed security is
 also there are some SB patches from Fedora and other patches listed in repository's grub_patches subdir
 
 ###### If your SHIM launches any other components, please provide further details on what is launched
-It also launches fwupd-1.5.8-alt1
+It also launches fwupd-1.5.9-alt1
 
 ###### If your GRUB2 launches any other binaries that are not Linux kernel in SecureBoot mode,
 ###### please provide further details on what is launched and how it enforces Secureboot lockdown
