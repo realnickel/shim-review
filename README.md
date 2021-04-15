@@ -121,7 +121,9 @@ What OS and toolchain must we use to reproduce this build?  Include where to fin
 If possible, provide a Dockerfile that rebuilds the shim.
 -------------------------------------------------------------------------------
 A Docker container creation scripts are attached.
-Please run /bin/bash ./docker_reproduce.sh
+Please run:
+
+sudo /bin/bash ./docker_reproduce.sh
 
 Build container produces following artifacts:
 1. ./build/log - build log
@@ -142,5 +144,7 @@ Log file of the build is available as a "log"
 Add any additional information you think we may need to validate this shim
 -------------------------------------------------------------------------------
 MS Submission ID:
+
 14184268981523541 shimia32.efi
+
 13542388038283073 shimx64.efi
