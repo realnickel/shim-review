@@ -1,6 +1,7 @@
 Make sure you have provided the following information:
 
  - [x] link to your code branch cloned from rhboot/shim-review in the form user/repo@tag
+https://github.com/realnickel/shim-review/tree/BaseALT-shim15.4-ia32-x64-20210415
  - [x] completed README.md file with the necessary information
  - [x] shim.efi to be signed
  - [x] public portion of your certificate(s) embedded in shim (the file passed to VENDOR_CERT_FILE)
@@ -8,6 +9,9 @@ Make sure you have provided the following information:
  - [x] any extra patches to shim via your own git tree or as files
  - [x] any extra patches to grub via your own git tree or as files
  - [x] build logs
+ - [x] a Dockerfile to reproduce the build of the provided shim EFI binaries
+https://github.com/realnickel/shim-review/blob/BaseALT-shim15.4-ia32-x64-20210415/docker_reproduce.sh
+https://github.com/realnickel/shim-review/blob/BaseALT-shim15.4-ia32-x64-20210415/Dockerfile
 
 
 ###### What organization or people are asking to have this signed:
