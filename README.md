@@ -54,6 +54,8 @@ What patches are being applied and why:
 1bea91ba Fix a broken file header on ia32 (PR #357) - to get an operational ia32
 binary
 
+All patches from https://github.com/rhboot/shim-review/issues/165 to address critical issues 
+
 -------------------------------------------------------------------------------
 If bootloader, shim loading is, GRUB2: is CVE-2020-14372, CVE-2020-25632,
  CVE-2020-25647, CVE-2020-27749, CVE-2020-27779, CVE-2021-20225, CVE-2021-20233,
@@ -145,6 +147,6 @@ Add any additional information you think we may need to validate this shim
 -------------------------------------------------------------------------------
 MS Submission ID:
 
-14184268981523541 shimia32.efi
+13700203703484467 shimia32.efi
 
-13542388038283073 shimx64.efi
+14174012731198057 shimx64.efi
