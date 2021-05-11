@@ -1,7 +1,7 @@
 Make sure you have provided the following information:
 
  - [x] link to your code branch cloned from rhboot/shim-review in the form user/repo@tag
-https://github.com/realnickel/shim-review/tree/BaseALT-shim15.4-ia32-x64-20210415
+https://github.com/realnickel/shim-review/tree/BaseALT-shim15.4-ia32-x64-20210511
  - [x] completed README.md file with the necessary information
  - [x] shim.efi to be signed
  - [x] public portion of your certificate(s) embedded in shim (the file passed to VENDOR_CERT_FILE)
@@ -10,8 +10,8 @@ https://github.com/realnickel/shim-review/tree/BaseALT-shim15.4-ia32-x64-2021041
  - [x] any extra patches to grub via your own git tree or as files
  - [x] build logs
  - [x] a Dockerfile to reproduce the build of the provided shim EFI binaries
-https://github.com/realnickel/shim-review/blob/BaseALT-shim15.4-ia32-x64-20210415/docker_reproduce.sh
-https://github.com/realnickel/shim-review/blob/BaseALT-shim15.4-ia32-x64-20210415/Dockerfile
+https://github.com/realnickel/shim-review/blob/BaseALT-shim15.4-ia32-x64-20210511/docker_reproduce.sh
+https://github.com/realnickel/shim-review/blob/BaseALT-shim15.4-ia32-x64-20210511/Dockerfile
 
 
 ###### What organization or people are asking to have this signed:
@@ -30,6 +30,9 @@ https://www.basealt.ru/go/downloads/
 ###### Please confirm this as the origin your shim.
 We use 15.4 shim (https://github.com/rhboot/shim/releases/tag/15.4) +
 1bea91ba Fix a broken file header on ia32 (PR #357)
+
+all patches from https://github.com/rhboot/shim-review/issues/165 to address
+critical issues
 
 ###### What's the justification that this really does need to be signed for the whole world to be able to boot it:
 OS ALT is a linux distribution supporting Secure Boot
@@ -63,7 +66,7 @@ SBAT for shim:
 
 sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
 shim,1,UEFI shim,shim,1,https://github.com/rhboot/shim
-shim.altlinux,1,ALT Linux,shim,15.4-alt1,http://git.altlinux.org/gears/s/shim.git
+shim.altlinux,1,ALT Linux,shim,15.4-alt2,http://git.altlinux.org/gears/s/shim.git
 
 SBAT for grub:
 
@@ -74,8 +77,8 @@ grub.altlinux,1,ALT Linux,grub,2.06-alt1.rc1,http://git.altlinux.org/gears/g/gru
 SBAT for fwupd has the same style
 
 sbat,1,UEFI shim,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
-fwupd,1,Firmware update daemon,fwupd,1.5.8,https://github.com/fwupd/fwupd
-fwupd-altlinux,1,ALT Linux,fwupd,1.5.8-alt2,http://git.altlinux.org/gears/f/fwupd.git
+fwupd,1,Firmware update daemon,fwupd,1.5.9,https://github.com/fwupd/fwupd
+fwupd.altlinux,1,ALT Linux,fwupd,1.5.9-alt1,http://git.altlinux.org/gears/f/fwupd.git
 
 ##### Were your old SHIM hashes provided to Microsoft ?
 Yes
@@ -124,8 +127,8 @@ Linux Kernel:
         http://git.altlinux.org/gears/k/kernel-image-un-def.git?p=kernel-image-un-def.git;a=summary
 
 ###### What changes were made since your SHIM was last signed?
-Upstream version update (15 -> 15.4)
+Upstream version update (15 -> 15.4 + fixes)
 
 ###### What is the SHA256 hash of your final SHIM binary?
-8472ae9ba2bb9f686b9adaa2cbd9c0b49ef799a94b4f7f1184bcace9188a51e1  ./shimia32.efi
-74602cab1f56e346993ca86b1f58a6705ce00e74fe6af5d78432d556083091ae  ./shimx64.efi
+00f59c23d70369ebe4c6f1f74928e094f5b15e155da4f484c4e6d2946ded8c90  shimia32.efi
+4ed7d10389810632198d9c227296e46b222c16daf0122d0f17b5cbe52c18cd72  shimx64.efi
