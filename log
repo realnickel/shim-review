@@ -1,13 +1,17 @@
-mkdir: created directory '/tmp/gear.DUUDSOz0/out'
+mkdir: created directory '/tmp/gear.HFWJT0iU/out'
 gear: Nothing to commit
 gear: Extracted file by pattern ".gear/*.cer": altlinux-ca.cer
+gear: Extracted file by pattern ".gear/*.patch": shim-15.4-upstream-don-t-call-queryvariableinfo-on-efi-1.10.patch
 gear: Extracted file by pattern ".gear/*.patch": shim-15.4-upstream-fix-a-broken-file-header-on-ia32.patch
+gear: Extracted file by pattern ".gear/*.patch": shim-15.4-upstream-fix-build-with-old-binutils-on-aarch64.patch
+gear: Extracted file by pattern ".gear/*.patch": shim-15.4-upstream-fix-mokutil--disable-validation-does-not-work.patch
+gear: Extracted file by pattern ".gear/*.patch": shim-15.4-upstream-mok-config-table-as-bootservicesdata.patch
 gear: Extracted archive: shim-15.4.tar
 gear: Extracted archive: shim-15.4-gnu-efi.tar
 gear: Extracted specfile: shim.spec
 gear: Executing: gear-command-hasher x86_64 hsh --verbose --nprocs=16 --packager=builder <builder@altlinux.org> --no-sisyphus-check=packager,gpg --target=x86_64 --lazy-cleanup --mountpoints=/proc,/dev/pts,/sys --apt-config=/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/apt.conf /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher
-gear-command-tar: Created output tarball: /tmp/gear.DUUDSOz0/work/pkg.tar
-gear-command-hasher: Executing: x86_64 hsh --verbose --nprocs=16 --packager=builder <builder@altlinux.org> --no-sisyphus-check=packager,gpg --target=x86_64 --lazy-cleanup --mountpoints=/proc,/dev/pts,/sys --apt-config=/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/apt.conf /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher /tmp/gear.DUUDSOz0/work/pkg.tar
+gear-command-tar: Created output tarball: /tmp/gear.HFWJT0iU/work/pkg.tar
+gear-command-hasher: Executing: x86_64 hsh --verbose --nprocs=16 --packager=builder <builder@altlinux.org> --no-sisyphus-check=packager,gpg --target=x86_64 --lazy-cleanup --mountpoints=/proc,/dev/pts,/sys --apt-config=/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/apt.conf /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher /tmp/gear.HFWJT0iU/work/pkg.tar
 hsh: changed working directory to `/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher'
 hsh: Locked working directory `/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher'
 hsh: Acquiring lock for config file `/etc/hasher-priv/user.d/builder'...
@@ -50,12 +54,12 @@ mkaptbox: Created APT source list file `./etc/apt/sources.list'.
 mkaptbox: Created RPM database in `./var/lib/rpm/'.
 Get:1 http://ftp.altlinux.org x86_64 release [1334B]
 Get:2 http://ftp.altlinux.org noarch release [925B]
-Fetched 2259B in 0s (6683B/s)
-Get:1 http://ftp.altlinux.org x86_64/classic pkglist [20.1MB]
+Fetched 2259B in 0s (11.8kB/s)
+Get:1 http://ftp.altlinux.org x86_64/classic pkglist [20.2MB]
 Get:2 http://ftp.altlinux.org x86_64/classic release [147B]
-Get:3 http://ftp.altlinux.org noarch/classic pkglist [5252kB]
+Get:3 http://ftp.altlinux.org noarch/classic pkglist [5261kB]
 Get:4 http://ftp.altlinux.org noarch/classic release [147B]
-Fetched 25.4MB in 8s (3014kB/s)
+Fetched 25.5MB in 6s (3819kB/s)
 Reading Package Lists...
 Building Dependency Tree...
 hsh-mkchroot: changed working directory to `/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher'
@@ -83,7 +87,7 @@ mkdir: created directory '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hash
 mkdir: created directory '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/cache/contents'
 Reading Package Lists...
 Building Dependency Tree...
-Selected version fakeroot#1.20.2-alt2:sisyphus+229033.100.2.1@1557324306 for fakeroot>=0:0.7.3
+Selected version fakeroot#1.25.3-alt1:sisyphus+269945.100.1.1@1618443416 for fakeroot>=0:0.7.3
 The following extra packages will be installed:
   bash bash4 bashrc bzlib coreutils fakeroot getopt glibc-core glibc-preinstall
   glibc-pthread grep libacl libattr libbeecrypt7 libcap libdb4.7 libelf libgcc1
@@ -96,8 +100,8 @@ The following NEW packages will be installed:
   libreadline7 librpm7 libselinux libtinfo libzstd rpm setup sh sh4 terminfo
   zlib
 0 upgraded, 35 newly installed, 0 removed and 0 not upgraded.
-Need to get 9385kB of archives.
-After unpacking 40.1MB of additional disk space will be used.
+Need to get 9541kB of archives.
+After unpacking 41.1MB of additional disk space will be used.
 Get:1 http://ftp.altlinux.org noarch/classic setup 2.2.16-alt1:sisyphus+240258.100.5.1@1577333714 [30.2kB]
 Get:2 http://ftp.altlinux.org x86_64/classic filesystem 2.3.18-alt1:sisyphus+257426.100.1.1@1599226664 [20.0kB]
 Get:3 http://ftp.altlinux.org x86_64/classic glibc-preinstall 6:2.32-alt2:sisyphus+263623.100.1.1@1608292020 [280kB]
@@ -119,21 +123,21 @@ Get:18 http://ftp.altlinux.org x86_64/classic libgcc1 10.2.1-alt3:sisyphus+26782
 Get:19 http://ftp.altlinux.org x86_64/classic glibc-pthread 6:2.32-alt2:sisyphus+263623.100.1.1@1608292020 [116kB]
 Get:20 http://ftp.altlinux.org x86_64/classic libpcre3 8.44-alt1:sisyphus+246874.100.1.1@1582587772 [190kB]
 Get:21 http://ftp.altlinux.org x86_64/classic libselinux 1:3.2-alt1:sisyphus+267832.200.4.1@1616421604 [79.1kB]
-Get:22 http://ftp.altlinux.org x86_64/classic coreutils 8.31.0.3.6bd78-alt2:sisyphus+229785.100.1.1@1558461863 [2504kB]
+Get:22 http://ftp.altlinux.org x86_64/classic coreutils 8.32.0.138.34a48-alt1:sisyphus+269178.1700.12.1@1618322117 [2666kB]
 Get:23 http://ftp.altlinux.org x86_64/classic getopt 2.36.1-alt2:sisyphus+264757.100.1.1@1610726582 [63.2kB]
-Get:24 http://ftp.altlinux.org x86_64/classic fakeroot 1.20.2-alt2:sisyphus+229033.100.2.1@1557324306 [54.4kB]
-Get:25 http://ftp.altlinux.org x86_64/classic grep 3.3.0.16.268ca-alt1:sisyphus+239726.100.1.1@1571958685 [247kB]
+Get:24 http://ftp.altlinux.org x86_64/classic fakeroot 1.25.3-alt1:sisyphus+269945.100.1.1@1618443416 [38.3kB]
+Get:25 http://ftp.altlinux.org x86_64/classic grep 3.6.0.18.70517-alt1:sisyphus+269178.1000.5.1@1618250135 [261kB]
 Get:26 http://ftp.altlinux.org x86_64/classic libbeecrypt7 4.2.1-alt7@1302194536 [85.1kB]
 Get:27 http://ftp.altlinux.org x86_64/classic libdb4.7 4.7.25-alt10:sisyphus+263675.100.1.1@1608461930 [499kB]
 Get:28 http://ftp.altlinux.org x86_64/classic zlib 1.2.11-alt1:sisyphus+221902.6000.4.1@1550600768 [59.2kB]
 Get:29 http://ftp.altlinux.org x86_64/classic libelf 0.183-alt1:sisyphus+265868.100.1.1@1612568591 [176kB]
 Get:30 http://ftp.altlinux.org x86_64/classic liblua5.3 5.3.5-alt3:sisyphus+237725.540.7.3@1569407850 [97.0kB]
-Get:31 http://ftp.altlinux.org x86_64/classic liblzma 5.2.5-alt1:sisyphus+249564.100.1.1@1586298197 [113kB]
+Get:31 http://ftp.altlinux.org x86_64/classic liblzma 5.2.5-alt2:sisyphus+270022.200.3.1@1618664083 [108kB]
 Get:32 http://ftp.altlinux.org x86_64/classic libpopt 1:1.16-alt1@1500322984 [44.3kB]
 Get:33 http://ftp.altlinux.org x86_64/classic libzstd 1.4.5-alt2:sisyphus+253888.100.1.1@1592916811 [258kB]
 Get:34 http://ftp.altlinux.org x86_64/classic librpm7 4.13.0.1-alt24:sisyphus+265234.20600.49.1@1613753302 [348kB]
 Get:35 http://ftp.altlinux.org x86_64/classic rpm 4.13.0.1-alt24:sisyphus+265234.20600.49.1@1613753302 [432kB]
-Fetched 9385kB in 1s (7401kB/s)
+Fetched 9541kB in 2s (4175kB/s)
 Executing RPM (hsh-rpmi-print-files -U -v -h -r /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox --oldpackage)...
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/setup_2.2.16-alt1%3asisyphus+240258.100.5.1@1577333714_noarch.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/filesystem_2.3.18-alt1%3asisyphus+257426.100.1.1@1599226664_x86%5f64.rpm
@@ -156,16 +160,16 @@ Executing RPM (hsh-rpmi-print-files -U -v -h -r /tmp/.private/builder/hsh-sandbo
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/glibc-pthread_6%3a2.32-alt2%3asisyphus+263623.100.1.1@1608292020_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libpcre3_8.44-alt1%3asisyphus+246874.100.1.1@1582587772_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libselinux_1%3a3.2-alt1%3asisyphus+267832.200.4.1@1616421604_x86%5f64.rpm
-/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/coreutils_8.31.0.3.6bd78-alt2%3asisyphus+229785.100.1.1@1558461863_x86%5f64.rpm
+/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/coreutils_8.32.0.138.34a48-alt1%3asisyphus+269178.1700.12.1@1618322117_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/getopt_2.36.1-alt2%3asisyphus+264757.100.1.1@1610726582_x86%5f64.rpm
-/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/fakeroot_1.20.2-alt2%3asisyphus+229033.100.2.1@1557324306_x86%5f64.rpm
-/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/grep_3.3.0.16.268ca-alt1%3asisyphus+239726.100.1.1@1571958685_x86%5f64.rpm
+/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/fakeroot_1.25.3-alt1%3asisyphus+269945.100.1.1@1618443416_x86%5f64.rpm
+/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/grep_3.6.0.18.70517-alt1%3asisyphus+269178.1000.5.1@1618250135_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libbeecrypt7_4.2.1-alt7@1302194536_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libdb4.7_4.7.25-alt10%3asisyphus+263675.100.1.1@1608461930_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/zlib_1.2.11-alt1%3asisyphus+221902.6000.4.1@1550600768_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libelf_0.183-alt1%3asisyphus+265868.100.1.1@1612568591_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/liblua5.3_5.3.5-alt3%3asisyphus+237725.540.7.3@1569407850_x86%5f64.rpm
-/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/liblzma_5.2.5-alt1%3asisyphus+249564.100.1.1@1586298197_x86%5f64.rpm
+/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/liblzma_5.2.5-alt2%3asisyphus+270022.200.3.1@1618664083_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libpopt_1%3a1.16-alt1@1500322984_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libzstd_1.4.5-alt2%3asisyphus+253888.100.1.1@1592916811_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/librpm7_4.13.0.1-alt24%3asisyphus+265234.20600.49.1@1613753302_x86%5f64.rpm
@@ -229,24 +233,24 @@ The following NEW packages will be installed:
   sysvinit-utils tar tcb-utils terminfo termutils time tzdata util-linux
   util-linux-control vim-minimal vitmp which xml-common xz zlib zstd
 0 upgraded, 173 newly installed, 0 removed and 0 not upgraded.
-Need to get 69.5MB/78.8MB of archives.
-After unpacking 485MB of additional disk space will be used.
+Need to get 69.7MB/79.2MB of archives.
+After unpacking 487MB of additional disk space will be used.
 Get:1 http://ftp.altlinux.org noarch/classic altlinux-release-sisyphus 20201124-alt1:sisyphus+262500.100.1.1@1606300692 [6997B]
 Get:2 http://ftp.altlinux.org noarch/classic common-licenses 1.12-alt1:sisyphus+265909.100.1.1@1612701587 [381kB]
 Get:3 http://ftp.altlinux.org x86_64/classic libaudit1 3.0.1-alt1:sisyphus+265234.65100.52.1@1613962809 [43.8kB]
 Get:4 http://ftp.altlinux.org x86_64/classic libtcb 1.2-alt1:sisyphus+267619.100.1.1@1615405863 [22.2kB]
 Get:5 http://ftp.altlinux.org x86_64/classic shadow-convert 1:4.5-alt8:sisyphus+255818.100.3.1@1596552950 [53.7kB]
-Get:6 http://ftp.altlinux.org x86_64/classic sed 1:4.7-alt1:sisyphus+221902.4700.4.1@1550600115 [294kB]
-Get:7 http://ftp.altlinux.org x86_64/classic findutils 4.6.0.0.204.b23a2-alt1:sisyphus+221902.2200.4.1@1550596147 [312kB]
+Get:6 http://ftp.altlinux.org x86_64/classic sed 1:4.8.0.7.b352-alt1:sisyphus+269178.1100.6.1@1618251305 [300kB]
+Get:7 http://ftp.altlinux.org x86_64/classic findutils 4.8.0.0.5.caa0-alt1:sisyphus+269178.1600.11.1@1618273269 [313kB]
 Get:8 http://ftp.altlinux.org x86_64/classic libcap-utils 1:2.27.0.2.ac1e-alt3:sisyphus+256221.100.2.1@1597365815 [20.9kB]
 Get:9 http://ftp.altlinux.org noarch/classic control 0.8.0-alt1@1526917521 [13.7kB]
-Get:10 http://ftp.altlinux.org noarch/classic passwdqc-control 2.0.1-alt1:sisyphus+267618.100.5.1@1615989149 [9692B]
-Get:11 http://ftp.altlinux.org x86_64/classic libpasswdqc 2.0.1-alt1:sisyphus+267618.100.5.1@1615989149 [48.6kB]
+Get:10 http://ftp.altlinux.org noarch/classic passwdqc-control 2.0.2-alt1:sisyphus+268942.200.2.1@1617562610 [9971B]
+Get:11 http://ftp.altlinux.org x86_64/classic libpasswdqc 2.0.2-alt1:sisyphus+268942.200.2.1@1617562610 [48.9kB]
 Get:12 http://ftp.altlinux.org x86_64/classic libcrypt 4.4.17-alt1:sisyphus+260371.100.1.1@1603619899 [86.9kB]
 Get:13 http://ftp.altlinux.org x86_64/classic pam 1.5.1-alt1:sisyphus+260508.100.1.1@1606328316 [346kB]
 Get:14 http://ftp.altlinux.org x86_64/classic pam0_mktemp 1.1.1-alt4:sisyphus+255842.300.6.1@1596555829 [9795B]
-Get:15 http://ftp.altlinux.org x86_64/classic pam0_passwdqc 2.0.1-alt1:sisyphus+267618.100.5.1@1615989149 [16.9kB]
-Get:16 http://ftp.altlinux.org x86_64/classic diffutils 3.7-alt1:sisyphus+221902.1700.4.1@1550595424 [337kB]
+Get:15 http://ftp.altlinux.org x86_64/classic pam0_passwdqc 2.0.2-alt1:sisyphus+268942.200.2.1@1617562610 [17.2kB]
+Get:16 http://ftp.altlinux.org x86_64/classic diffutils 3.7.0.38.cc14-alt1:sisyphus+269178.1300.8.1@1618254370 [346kB]
 Get:17 http://ftp.altlinux.org noarch/classic pam-config-control 1.9.0-alt4:sisyphus+254612.300.3.1@1594194586 [9306B]
 Get:18 http://ftp.altlinux.org noarch/classic pam-config 1.9.0-alt4:sisyphus+254612.300.3.1@1594194586 [17.8kB]
 Get:19 http://ftp.altlinux.org x86_64/classic libpam0 1.5.1-alt1:sisyphus+260508.100.1.1@1606328316 [64.0kB]
@@ -257,13 +261,13 @@ Get:23 http://ftp.altlinux.org x86_64/classic pam0_userpass 1.0.2-alt6@135900915
 Get:24 http://ftp.altlinux.org x86_64/classic shadow-utils 1:4.5-alt8:sisyphus+255818.100.3.1@1596552950 [478kB]
 Get:25 http://ftp.altlinux.org noarch/classic etcskel 2.0.16-alt1@1528424738 [42.4kB]
 Get:26 http://ftp.altlinux.org x86_64/classic gawk 5.1.0.0.213.d04f-alt1:sisyphus+262609.200.1.1@1606438187 [1006kB]
-Get:27 http://ftp.altlinux.org x86_64/classic gzip 1.10-alt1:sisyphus+221902.3300.4.1@1550597997 [92.9kB]
+Get:27 http://ftp.altlinux.org x86_64/classic gzip 1.10.0.31.34db-alt1:sisyphus+269178.700.4.1@1618186664 [93.2kB]
 Get:28 http://ftp.altlinux.org noarch/classic perl-parent 0.238-alt1:sisyphus+245993.100.1.1@1581532230 [6515B]
 Get:29 http://ftp.altlinux.org x86_64/classic perl-base 1:5.30.3-alt1:sisyphus+259030.200.1.1@1601554015 [1820kB]
 Get:30 http://ftp.altlinux.org noarch/classic rootfiles alt-alt12@1529400230 [10.5kB]
-Get:31 http://ftp.altlinux.org x86_64/classic tar 1.32-alt1:sisyphus+222772.100.1.1@1551032094 [749kB]
+Get:31 http://ftp.altlinux.org x86_64/classic tar 1.34.0.13.66b59fcc-alt1:sisyphus+269884.200.2.1@1618353168 [757kB]
 Get:32 http://ftp.altlinux.org x86_64/classic libcap-ng 0.8.2-alt1:sisyphus+265234.26100.49.1@1613758255 [22.8kB]
-Get:33 http://ftp.altlinux.org x86_64/classic libgpm 1.20.1-alt18.1@1521564348 [19.7kB]
+Get:33 http://ftp.altlinux.org x86_64/classic libgpm 1.20.1-alt18.2:sisyphus+269158.200.2.1@1618493905 [20.1kB]
 Get:34 http://ftp.altlinux.org x86_64/classic libncursesw 6.2.20210123-alt1:sisyphus+265425.100.1.1@1611851422 [132kB]
 Get:35 http://ftp.altlinux.org x86_64/classic libudev1 1:247.3-alt2:sisyphus+266129.100.1.3@1613012524 [98.6kB]
 Get:36 http://ftp.altlinux.org noarch/classic util-linux-control 2.36.1-alt2:sisyphus+264757.100.1.1@1610726582 [52.0kB]
@@ -275,12 +279,12 @@ Get:41 http://ftp.altlinux.org x86_64/classic setarch 2.36.1-alt2:sisyphus+26475
 Get:42 http://ftp.altlinux.org x86_64/classic util-linux 2.36.1-alt2:sisyphus+264757.100.1.1@1610726582 [1937kB]
 Get:43 http://ftp.altlinux.org x86_64/classic vim-minimal 4:8.2.0011-alt2:sisyphus+265234.21600.49.1@1613755220 [631kB]
 Get:44 http://ftp.altlinux.org x86_64/classic vitmp 1.0-alt4.qa1@1366322518 [5002B]
-Get:45 http://ftp.altlinux.org x86_64/classic xz 5.2.5-alt1:sisyphus+249564.100.1.1@1586298197 [109kB]
+Get:45 http://ftp.altlinux.org x86_64/classic xz 5.2.5-alt2:sisyphus+270022.200.3.1@1618664083 [112kB]
 Get:46 http://ftp.altlinux.org x86_64/classic zstd 1.4.5-alt2:sisyphus+253888.100.1.1@1592916811 [269kB]
 Get:47 http://ftp.altlinux.org noarch/classic basesystem 1:sisyphus-alt23:sisyphus+268583.100.1.1@1617015648 [6818B]
 Get:48 http://ftp.altlinux.org noarch/classic autoconf-common 0.3.2-alt1:sisyphus+264199.100.1.1@1609281515 [3426B]
-Get:49 http://ftp.altlinux.org x86_64/classic m4 1.4.18-alt2:sisyphus+221902.4300.4.1@1550599593 [202kB]
-Get:50 http://ftp.altlinux.org noarch/classic gnu-config 1.0.971.ff53-alt1:sisyphus+263686.200.1.1@1608487194 [27.5kB]
+Get:49 http://ftp.altlinux.org x86_64/classic m4 1.4.18.0.15.4e5c-alt1:sisyphus+269178.300.3.1@1617924051 [222kB]
+Get:50 http://ftp.altlinux.org noarch/classic gnu-config 2021.03.10-alt1:sisyphus+269014.100.1.1@1617670552 [27.8kB]
 Get:51 http://ftp.altlinux.org noarch/classic autoconf_2.60 2:2.69-alt8:sisyphus+263698.100.1.1@1608519435 [575kB]
 Get:52 http://ftp.altlinux.org noarch/classic autoconf 2:2.69-alt5:sisyphus+263686.100.1.1@1608487165 [4148B]
 Get:53 http://ftp.altlinux.org noarch/classic automake-common 0.4.2-alt1:sisyphus+264199.200.1.1@1609281542 [3482B]
@@ -290,8 +294,8 @@ Get:56 http://ftp.altlinux.org noarch/classic automake 1:1.16-alt1:sisyphus+2268
 Get:57 http://ftp.altlinux.org x86_64/classic libstdc++6 10.2.1-alt3:sisyphus+267829.100.1.1@1615807924 [573kB]
 Get:58 http://ftp.altlinux.org x86_64/classic libctf-nobfd0 1:2.35.1-alt3:sisyphus+263649.200.2.1@1610384935 [69.8kB]
 Get:59 http://ftp.altlinux.org x86_64/classic binutils 1:2.35.1-alt3:sisyphus+263649.200.2.1@1610384935 [4499kB]
-Get:60 http://ftp.altlinux.org noarch/classic bison-runtime 3.0.5-alt1:sisyphus+221902.1100.4.1@1550589333 [6174B]
-Get:61 http://ftp.altlinux.org x86_64/classic bison 3.0.5-alt1:sisyphus+221902.1100.4.1@1550589333 [545kB]
+Get:60 http://ftp.altlinux.org noarch/classic bison-runtime 3.7.6-alt1:sisyphus+269178.440.3.1@1617924307 [20.7kB]
+Get:61 http://ftp.altlinux.org x86_64/classic bison 3.7.6-alt1:sisyphus+269178.440.3.1@1617924307 [703kB]
 Get:62 http://ftp.altlinux.org x86_64/classic bzip2 1:1.0.8-alt1:sisyphus+247226.100.1.1@1583187375 [43.9kB]
 Get:63 http://ftp.altlinux.org x86_64/classic chkconfig 1.3.59-alt4@1410275160 [118kB]
 Get:64 http://ftp.altlinux.org x86_64/classic cpio 2.12-alt2:sisyphus+268042.100.2.1@1617194386 [205kB]
@@ -317,9 +321,9 @@ Get:83 http://ftp.altlinux.org x86_64/classic psmisc 23.3-alt2:sisyphus+254651.1
 Get:84 http://ftp.altlinux.org noarch/classic libshell 0.4.9-alt1:sisyphus+267973.100.1.1@1616023572 [50.7kB]
 Get:85 http://ftp.altlinux.org x86_64/classic service 0.5.32-alt1:sisyphus+265313.100.3.1@1612018475 [51.5kB]
 Get:86 http://ftp.altlinux.org x86_64/classic kernel-headers-common 1.2.7-alt1:sisyphus.217241.100@1543842774 [13.5kB]
-Get:87 http://ftp.altlinux.org noarch/classic glib2-locales 2.68.0-alt1:sisyphus+268501.100.4.2@1617041548 [1138kB]
+Get:87 http://ftp.altlinux.org noarch/classic glib2-locales 2.68.1-alt1:sisyphus+269248.100.1.1@1617921007 [1138kB]
 Get:88 http://ftp.altlinux.org x86_64/classic libffi7 1:3.3-alt1:sisyphus+251953.40.2.1@1589890886 [19.6kB]
-Get:89 http://ftp.altlinux.org x86_64/classic glib2 2.68.0-alt1:sisyphus+268501.100.4.2@1617041548 [693kB]
+Get:89 http://ftp.altlinux.org x86_64/classic glib2 2.68.1-alt1:sisyphus+269248.100.1.1@1617921007 [693kB]
 Get:90 http://ftp.altlinux.org x86_64/classic pkg-config 0.29.2-alt3:sisyphus+225250.100.1.1@1553032548 [47.1kB]
 Get:91 http://ftp.altlinux.org x86_64/classic libcrypt-devel 4.4.17-alt1:sisyphus+260371.100.1.1@1603619899 [17.3kB]
 Get:92 http://ftp.altlinux.org x86_64/classic glibc-nss 6:2.32-alt2:sisyphus+263623.100.1.1@1608292020 [75.1kB]
@@ -355,10 +359,10 @@ Get:121 http://ftp.altlinux.org x86_64/classic librpm 4.0.4-alt164:sisyphus+2641
 Get:122 http://ftp.altlinux.org x86_64/classic librpmbuild 4.0.4-alt164:sisyphus+264154.1000.8.1@1610756534 [160kB]
 Get:123 http://ftp.altlinux.org x86_64/classic librpmbuild7 4.13.0.1-alt24:sisyphus+265234.20600.49.1@1613753302 [142kB]
 Get:124 http://ftp.altlinux.org x86_64/classic libtool-common 0.2.3-alt1:sisyphus+264199.300.1.1@1609281573 [6215B]
-Get:125 http://ftp.altlinux.org x86_64/classic libtool_2.4 2.4.6-alt2:sisyphus+263722.100.1.1@1608561796 [390kB]
+Get:125 http://ftp.altlinux.org x86_64/classic libtool_2.4 2.4.6-alt3:sisyphus+269178.2000.13.1@1618328447 [390kB]
 Get:126 http://ftp.altlinux.org noarch/classic libtool 3:2.4.2-alt7@1533461531 [2738B]
 Get:127 http://ftp.altlinux.org x86_64/classic make 2:4.3.0-alt1:sisyphus+249113.200.3.1@1585752398 [450kB]
-Get:128 http://ftp.altlinux.org x86_64/classic patch 2.7.6.0.24.76e7-alt1:sisyphus+240145.200.2.1@1572707911 [106kB]
+Get:128 http://ftp.altlinux.org x86_64/classic patch 2.7.6.0.27.7623-alt1:sisyphus+269178.1500.10.1@1618271450 [105kB]
 Get:129 http://ftp.altlinux.org noarch/classic perl-CPAN-Meta-Requirements 2.140-alt1@1450184784 [13.0kB]
 Get:130 http://ftp.altlinux.org x86_64/classic libncurses 6.2.20210123-alt1:sisyphus+265425.100.1.1@1611851422 [373kB]
 Get:131 http://ftp.altlinux.org x86_64/classic procps 3.3.17-alt2:sisyphus+266373.100.1.1@1613417581 [245kB]
@@ -370,7 +374,7 @@ Get:136 http://ftp.altlinux.org noarch/classic sisyphus_check 0.8.63-alt1:sisyph
 Get:137 http://ftp.altlinux.org x86_64/classic time 1:1.7-alt4@1449722760 [15.5kB]
 Get:138 http://ftp.altlinux.org x86_64/classic which 2.20-alt2.qa1@1366269223 [20.8kB]
 Get:139 http://ftp.altlinux.org x86_64/classic rpm-build 4.0.4-alt164:sisyphus+264154.1000.8.1@1610756534 [179kB]
-Fetched 69.5MB in 9s (7569kB/s)
+Fetched 69.7MB in 10s (6835kB/s)
 Executing RPM (hsh-rpmi-print-files -U -v -h -r /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox --oldpackage)...
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/setup_2.2.16-alt1%3asisyphus+240258.100.5.1@1577333714_noarch.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/filesystem_2.3.18-alt1%3asisyphus+257426.100.1.1@1599226664_x86%5f64.rpm
@@ -386,7 +390,7 @@ Executing RPM (hsh-rpmi-print-files -U -v -h -r /tmp/.private/builder/hsh-sandbo
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libselinux_1%3a3.2-alt1%3asisyphus+267832.200.4.1@1616421604_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/terminfo_6.2.20210123-alt1%3asisyphus+265425.100.1.1@1611851422_noarch.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libtinfo_6.2.20210123-alt1%3asisyphus+265425.100.1.1@1611851422_x86%5f64.rpm
-/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/coreutils_8.31.0.3.6bd78-alt2%3asisyphus+229785.100.1.1@1558461863_x86%5f64.rpm
+/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/coreutils_8.32.0.138.34a48-alt1%3asisyphus+269178.1700.12.1@1618322117_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libpopt_1%3a1.16-alt1@1500322984_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/bashrc_1.0-alt1@1533298978_noarch.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/sh4_4.4.23-alt1%3asisyphus+221902.600.4.1@1550587751_x86%5f64.rpm
@@ -394,14 +398,14 @@ Executing RPM (hsh-rpmi-print-files -U -v -h -r /tmp/.private/builder/hsh-sandbo
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libreadline7_7.0.3-alt3%3asisyphus+222164.300.1.1@1550686325_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/bash4_4.4.23-alt1%3asisyphus+221902.600.4.1@1550587751_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/bash_4.4.23-alt1%3asisyphus+221902.500.4.1@1550587242_noarch.rpm
-/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/grep_3.3.0.16.268ca-alt1%3asisyphus+239726.100.1.1@1571958685_x86%5f64.rpm
+/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/grep_3.6.0.18.70517-alt1%3asisyphus+269178.1000.5.1@1618250135_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libbeecrypt7_4.2.1-alt7@1302194536_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/bzlib_1%3a1.0.8-alt1%3asisyphus+247226.100.1.1@1583187375_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libdb4.7_4.7.25-alt10%3asisyphus+263675.100.1.1@1608461930_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/zlib_1.2.11-alt1%3asisyphus+221902.6000.4.1@1550600768_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libelf_0.183-alt1%3asisyphus+265868.100.1.1@1612568591_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/liblua5.3_5.3.5-alt3%3asisyphus+237725.540.7.3@1569407850_x86%5f64.rpm
-/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/liblzma_5.2.5-alt1%3asisyphus+249564.100.1.1@1586298197_x86%5f64.rpm
+/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/liblzma_5.2.5-alt2%3asisyphus+270022.200.3.1@1618664083_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libzstd_1.4.5-alt2%3asisyphus+253888.100.1.1@1592916811_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/librpm7_4.13.0.1-alt24%3asisyphus+265234.20600.49.1@1613753302_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/rpm_4.13.0.1-alt24%3asisyphus+265234.20600.49.1@1613753302_x86%5f64.rpm
@@ -410,17 +414,17 @@ Executing RPM (hsh-rpmi-print-files -U -v -h -r /tmp/.private/builder/hsh-sandbo
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libaudit1_3.0.1-alt1%3asisyphus+265234.65100.52.1@1613962809_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libtcb_1.2-alt1%3asisyphus+267619.100.1.1@1615405863_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/shadow-convert_1%3a4.5-alt8%3asisyphus+255818.100.3.1@1596552950_x86%5f64.rpm
-/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/sed_1%3a4.7-alt1%3asisyphus+221902.4700.4.1@1550600115_x86%5f64.rpm
-/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/findutils_4.6.0.0.204.b23a2-alt1%3asisyphus+221902.2200.4.1@1550596147_x86%5f64.rpm
+/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/sed_1%3a4.8.0.7.b352-alt1%3asisyphus+269178.1100.6.1@1618251305_x86%5f64.rpm
+/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/findutils_4.8.0.0.5.caa0-alt1%3asisyphus+269178.1600.11.1@1618273269_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libcap-utils_1%3a2.27.0.2.ac1e-alt3%3asisyphus+256221.100.2.1@1597365815_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/control_0.8.0-alt1@1526917521_noarch.rpm
-/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/passwdqc-control_2.0.1-alt1%3asisyphus+267618.100.5.1@1615989149_noarch.rpm
-/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libpasswdqc_2.0.1-alt1%3asisyphus+267618.100.5.1@1615989149_x86%5f64.rpm
+/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/passwdqc-control_2.0.2-alt1%3asisyphus+268942.200.2.1@1617562610_noarch.rpm
+/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libpasswdqc_2.0.2-alt1%3asisyphus+268942.200.2.1@1617562610_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libcrypt_4.4.17-alt1%3asisyphus+260371.100.1.1@1603619899_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/pam_1.5.1-alt1%3asisyphus+260508.100.1.1@1606328316_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/pam0%5fmktemp_1.1.1-alt4%3asisyphus+255842.300.6.1@1596555829_x86%5f64.rpm
-/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/pam0%5fpasswdqc_2.0.1-alt1%3asisyphus+267618.100.5.1@1615989149_x86%5f64.rpm
-/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/diffutils_3.7-alt1%3asisyphus+221902.1700.4.1@1550595424_x86%5f64.rpm
+/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/pam0%5fpasswdqc_2.0.2-alt1%3asisyphus+268942.200.2.1@1617562610_x86%5f64.rpm
+/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/diffutils_3.7.0.38.cc14-alt1%3asisyphus+269178.1300.8.1@1618254370_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/pam-config-control_1.9.0-alt4%3asisyphus+254612.300.3.1@1594194586_noarch.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/pam-config_1.9.0-alt4%3asisyphus+254612.300.3.1@1594194586_noarch.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libpam0_1.5.1-alt1%3asisyphus+260508.100.1.1@1606328316_x86%5f64.rpm
@@ -432,13 +436,13 @@ Executing RPM (hsh-rpmi-print-files -U -v -h -r /tmp/.private/builder/hsh-sandbo
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/etcskel_2.0.16-alt1@1528424738_noarch.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/gawk_5.1.0.0.213.d04f-alt1%3asisyphus+262609.200.1.1@1606438187_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/getopt_2.36.1-alt2%3asisyphus+264757.100.1.1@1610726582_x86%5f64.rpm
-/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/gzip_1.10-alt1%3asisyphus+221902.3300.4.1@1550597997_x86%5f64.rpm
+/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/gzip_1.10.0.31.34db-alt1%3asisyphus+269178.700.4.1@1618186664_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/perl-parent_0.238-alt1%3asisyphus+245993.100.1.1@1581532230_noarch.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/perl-base_1%3a5.30.3-alt1%3asisyphus+259030.200.1.1@1601554015_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/rootfiles_alt-alt12@1529400230_noarch.rpm
-/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/tar_1.32-alt1%3asisyphus+222772.100.1.1@1551032094_x86%5f64.rpm
+/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/tar_1.34.0.13.66b59fcc-alt1%3asisyphus+269884.200.2.1@1618353168_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libcap-ng_0.8.2-alt1%3asisyphus+265234.26100.49.1@1613758255_x86%5f64.rpm
-/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libgpm_1.20.1-alt18.1@1521564348_x86%5f64.rpm
+/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libgpm_1.20.1-alt18.2%3asisyphus+269158.200.2.1@1618493905_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libncursesw_6.2.20210123-alt1%3asisyphus+265425.100.1.1@1611851422_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libudev1_1%3a247.3-alt2%3asisyphus+266129.100.1.3@1613012524_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/util-linux-control_2.36.1-alt2%3asisyphus+264757.100.1.1@1610726582_noarch.rpm
@@ -450,12 +454,12 @@ Executing RPM (hsh-rpmi-print-files -U -v -h -r /tmp/.private/builder/hsh-sandbo
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/util-linux_2.36.1-alt2%3asisyphus+264757.100.1.1@1610726582_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/vim-minimal_4%3a8.2.0011-alt2%3asisyphus+265234.21600.49.1@1613755220_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/vitmp_1.0-alt4.qa1@1366322518_x86%5f64.rpm
-/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/xz_5.2.5-alt1%3asisyphus+249564.100.1.1@1586298197_x86%5f64.rpm
+/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/xz_5.2.5-alt2%3asisyphus+270022.200.3.1@1618664083_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/zstd_1.4.5-alt2%3asisyphus+253888.100.1.1@1592916811_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/basesystem_1%3asisyphus-alt23%3asisyphus+268583.100.1.1@1617015648_noarch.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/autoconf-common_0.3.2-alt1%3asisyphus+264199.100.1.1@1609281515_noarch.rpm
-/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/m4_1.4.18-alt2%3asisyphus+221902.4300.4.1@1550599593_x86%5f64.rpm
-/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/gnu-config_1.0.971.ff53-alt1%3asisyphus+263686.200.1.1@1608487194_noarch.rpm
+/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/m4_1.4.18.0.15.4e5c-alt1%3asisyphus+269178.300.3.1@1617924051_x86%5f64.rpm
+/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/gnu-config_2021.03.10-alt1%3asisyphus+269014.100.1.1@1617670552_noarch.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/autoconf%5f2.60_2%3a2.69-alt8%3asisyphus+263698.100.1.1@1608519435_noarch.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/autoconf_2%3a2.69-alt5%3asisyphus+263686.100.1.1@1608487165_noarch.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/automake-common_0.4.2-alt1%3asisyphus+264199.200.1.1@1609281542_noarch.rpm
@@ -465,8 +469,8 @@ Executing RPM (hsh-rpmi-print-files -U -v -h -r /tmp/.private/builder/hsh-sandbo
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libstdc++6_10.2.1-alt3%3asisyphus+267829.100.1.1@1615807924_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libctf-nobfd0_1%3a2.35.1-alt3%3asisyphus+263649.200.2.1@1610384935_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/binutils_1%3a2.35.1-alt3%3asisyphus+263649.200.2.1@1610384935_x86%5f64.rpm
-/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/bison-runtime_3.0.5-alt1%3asisyphus+221902.1100.4.1@1550589333_noarch.rpm
-/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/bison_3.0.5-alt1%3asisyphus+221902.1100.4.1@1550589333_x86%5f64.rpm
+/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/bison-runtime_3.7.6-alt1%3asisyphus+269178.440.3.1@1617924307_noarch.rpm
+/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/bison_3.7.6-alt1%3asisyphus+269178.440.3.1@1617924307_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/bzip2_1%3a1.0.8-alt1%3asisyphus+247226.100.1.1@1583187375_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/chkconfig_1.3.59-alt4@1410275160_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/cpio_2.12-alt2%3asisyphus+268042.100.2.1@1617194386_x86%5f64.rpm
@@ -492,9 +496,9 @@ Executing RPM (hsh-rpmi-print-files -U -v -h -r /tmp/.private/builder/hsh-sandbo
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libshell_0.4.9-alt1%3asisyphus+267973.100.1.1@1616023572_noarch.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/service_0.5.32-alt1%3asisyphus+265313.100.3.1@1612018475_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/kernel-headers-common_1.2.7-alt1%3asisyphus.217241.100@1543842774_x86%5f64.rpm
-/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/glib2-locales_2.68.0-alt1%3asisyphus+268501.100.4.2@1617041548_noarch.rpm
+/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/glib2-locales_2.68.1-alt1%3asisyphus+269248.100.1.1@1617921007_noarch.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libffi7_1%3a3.3-alt1%3asisyphus+251953.40.2.1@1589890886_x86%5f64.rpm
-/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/glib2_2.68.0-alt1%3asisyphus+268501.100.4.2@1617041548_x86%5f64.rpm
+/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/glib2_2.68.1-alt1%3asisyphus+269248.100.1.1@1617921007_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/pkg-config_0.29.2-alt3%3asisyphus+225250.100.1.1@1553032548_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libcrypt-devel_4.4.17-alt1%3asisyphus+260371.100.1.1@1603619899_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/glibc-nss_6%3a2.32-alt2%3asisyphus+263623.100.1.1@1608292020_x86%5f64.rpm
@@ -530,10 +534,10 @@ Executing RPM (hsh-rpmi-print-files -U -v -h -r /tmp/.private/builder/hsh-sandbo
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/librpmbuild_4.0.4-alt164%3asisyphus+264154.1000.8.1@1610756534_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/librpmbuild7_4.13.0.1-alt24%3asisyphus+265234.20600.49.1@1613753302_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libtool-common_0.2.3-alt1%3asisyphus+264199.300.1.1@1609281573_x86%5f64.rpm
-/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libtool%5f2.4_2.4.6-alt2%3asisyphus+263722.100.1.1@1608561796_x86%5f64.rpm
+/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libtool%5f2.4_2.4.6-alt3%3asisyphus+269178.2000.13.1@1618328447_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libtool_3%3a2.4.2-alt7@1533461531_noarch.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/make_2%3a4.3.0-alt1%3asisyphus+249113.200.3.1@1585752398_x86%5f64.rpm
-/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/patch_2.7.6.0.24.76e7-alt1%3asisyphus+240145.200.2.1@1572707911_x86%5f64.rpm
+/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/patch_2.7.6.0.27.7623-alt1%3asisyphus+269178.1500.10.1@1618271450_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/perl-CPAN-Meta-Requirements_2.140-alt1@1450184784_noarch.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libncurses_6.2.20210123-alt1%3asisyphus+265425.100.1.1@1611851422_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/procps_3.3.17-alt2%3asisyphus+266373.100.1.1@1613417581_x86%5f64.rpm
@@ -570,16 +574,16 @@ hsh-initroot: Missing /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/c
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/glibc-pthread_6%3a2.32-alt2%3asisyphus+263623.100.1.1@1608292020_x86%5f64.rpm' -> 'chroot/.in/glibc-pthread_6%3a2.32-alt2%3asisyphus+263623.100.1.1@1608292020_x86%5f64.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libpcre3_8.44-alt1%3asisyphus+246874.100.1.1@1582587772_x86%5f64.rpm' -> 'chroot/.in/libpcre3_8.44-alt1%3asisyphus+246874.100.1.1@1582587772_x86%5f64.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libselinux_1%3a3.2-alt1%3asisyphus+267832.200.4.1@1616421604_x86%5f64.rpm' -> 'chroot/.in/libselinux_1%3a3.2-alt1%3asisyphus+267832.200.4.1@1616421604_x86%5f64.rpm'
-'/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/coreutils_8.31.0.3.6bd78-alt2%3asisyphus+229785.100.1.1@1558461863_x86%5f64.rpm' -> 'chroot/.in/coreutils_8.31.0.3.6bd78-alt2%3asisyphus+229785.100.1.1@1558461863_x86%5f64.rpm'
+'/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/coreutils_8.32.0.138.34a48-alt1%3asisyphus+269178.1700.12.1@1618322117_x86%5f64.rpm' -> 'chroot/.in/coreutils_8.32.0.138.34a48-alt1%3asisyphus+269178.1700.12.1@1618322117_x86%5f64.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/getopt_2.36.1-alt2%3asisyphus+264757.100.1.1@1610726582_x86%5f64.rpm' -> 'chroot/.in/getopt_2.36.1-alt2%3asisyphus+264757.100.1.1@1610726582_x86%5f64.rpm'
-'/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/fakeroot_1.20.2-alt2%3asisyphus+229033.100.2.1@1557324306_x86%5f64.rpm' -> 'chroot/.in/fakeroot_1.20.2-alt2%3asisyphus+229033.100.2.1@1557324306_x86%5f64.rpm'
-'/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/grep_3.3.0.16.268ca-alt1%3asisyphus+239726.100.1.1@1571958685_x86%5f64.rpm' -> 'chroot/.in/grep_3.3.0.16.268ca-alt1%3asisyphus+239726.100.1.1@1571958685_x86%5f64.rpm'
+'/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/fakeroot_1.25.3-alt1%3asisyphus+269945.100.1.1@1618443416_x86%5f64.rpm' -> 'chroot/.in/fakeroot_1.25.3-alt1%3asisyphus+269945.100.1.1@1618443416_x86%5f64.rpm'
+'/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/grep_3.6.0.18.70517-alt1%3asisyphus+269178.1000.5.1@1618250135_x86%5f64.rpm' -> 'chroot/.in/grep_3.6.0.18.70517-alt1%3asisyphus+269178.1000.5.1@1618250135_x86%5f64.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libbeecrypt7_4.2.1-alt7@1302194536_x86%5f64.rpm' -> 'chroot/.in/libbeecrypt7_4.2.1-alt7@1302194536_x86%5f64.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libdb4.7_4.7.25-alt10%3asisyphus+263675.100.1.1@1608461930_x86%5f64.rpm' -> 'chroot/.in/libdb4.7_4.7.25-alt10%3asisyphus+263675.100.1.1@1608461930_x86%5f64.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/zlib_1.2.11-alt1%3asisyphus+221902.6000.4.1@1550600768_x86%5f64.rpm' -> 'chroot/.in/zlib_1.2.11-alt1%3asisyphus+221902.6000.4.1@1550600768_x86%5f64.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libelf_0.183-alt1%3asisyphus+265868.100.1.1@1612568591_x86%5f64.rpm' -> 'chroot/.in/libelf_0.183-alt1%3asisyphus+265868.100.1.1@1612568591_x86%5f64.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/liblua5.3_5.3.5-alt3%3asisyphus+237725.540.7.3@1569407850_x86%5f64.rpm' -> 'chroot/.in/liblua5.3_5.3.5-alt3%3asisyphus+237725.540.7.3@1569407850_x86%5f64.rpm'
-'/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/liblzma_5.2.5-alt1%3asisyphus+249564.100.1.1@1586298197_x86%5f64.rpm' -> 'chroot/.in/liblzma_5.2.5-alt1%3asisyphus+249564.100.1.1@1586298197_x86%5f64.rpm'
+'/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/liblzma_5.2.5-alt2%3asisyphus+270022.200.3.1@1618664083_x86%5f64.rpm' -> 'chroot/.in/liblzma_5.2.5-alt2%3asisyphus+270022.200.3.1@1618664083_x86%5f64.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libpopt_1%3a1.16-alt1@1500322984_x86%5f64.rpm' -> 'chroot/.in/libpopt_1%3a1.16-alt1@1500322984_x86%5f64.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libzstd_1.4.5-alt2%3asisyphus+253888.100.1.1@1592916811_x86%5f64.rpm' -> 'chroot/.in/libzstd_1.4.5-alt2%3asisyphus+253888.100.1.1@1592916811_x86%5f64.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/librpm7_4.13.0.1-alt24%3asisyphus+265234.20600.49.1@1613753302_x86%5f64.rpm' -> 'chroot/.in/librpm7_4.13.0.1-alt24%3asisyphus+265234.20600.49.1@1613753302_x86%5f64.rpm'
@@ -605,16 +609,16 @@ hsh-initroot: Unpacked libgcc1_10.2.1-alt3%3asisyphus+267829.100.1.1@1615807924_
 hsh-initroot: Unpacked glibc-pthread_6%3a2.32-alt2%3asisyphus+263623.100.1.1@1608292020_x86%5f64.rpm.
 hsh-initroot: Unpacked libpcre3_8.44-alt1%3asisyphus+246874.100.1.1@1582587772_x86%5f64.rpm.
 hsh-initroot: Unpacked libselinux_1%3a3.2-alt1%3asisyphus+267832.200.4.1@1616421604_x86%5f64.rpm.
-hsh-initroot: Unpacked coreutils_8.31.0.3.6bd78-alt2%3asisyphus+229785.100.1.1@1558461863_x86%5f64.rpm.
+hsh-initroot: Unpacked coreutils_8.32.0.138.34a48-alt1%3asisyphus+269178.1700.12.1@1618322117_x86%5f64.rpm.
 hsh-initroot: Unpacked getopt_2.36.1-alt2%3asisyphus+264757.100.1.1@1610726582_x86%5f64.rpm.
-hsh-initroot: Unpacked fakeroot_1.20.2-alt2%3asisyphus+229033.100.2.1@1557324306_x86%5f64.rpm.
-hsh-initroot: Unpacked grep_3.3.0.16.268ca-alt1%3asisyphus+239726.100.1.1@1571958685_x86%5f64.rpm.
+hsh-initroot: Unpacked fakeroot_1.25.3-alt1%3asisyphus+269945.100.1.1@1618443416_x86%5f64.rpm.
+hsh-initroot: Unpacked grep_3.6.0.18.70517-alt1%3asisyphus+269178.1000.5.1@1618250135_x86%5f64.rpm.
 hsh-initroot: Unpacked libbeecrypt7_4.2.1-alt7@1302194536_x86%5f64.rpm.
 hsh-initroot: Unpacked libdb4.7_4.7.25-alt10%3asisyphus+263675.100.1.1@1608461930_x86%5f64.rpm.
 hsh-initroot: Unpacked zlib_1.2.11-alt1%3asisyphus+221902.6000.4.1@1550600768_x86%5f64.rpm.
 hsh-initroot: Unpacked libelf_0.183-alt1%3asisyphus+265868.100.1.1@1612568591_x86%5f64.rpm.
 hsh-initroot: Unpacked liblua5.3_5.3.5-alt3%3asisyphus+237725.540.7.3@1569407850_x86%5f64.rpm.
-hsh-initroot: Unpacked liblzma_5.2.5-alt1%3asisyphus+249564.100.1.1@1586298197_x86%5f64.rpm.
+hsh-initroot: Unpacked liblzma_5.2.5-alt2%3asisyphus+270022.200.3.1@1618664083_x86%5f64.rpm.
 hsh-initroot: Unpacked libpopt_1%3a1.16-alt1@1500322984_x86%5f64.rpm.
 hsh-initroot: Unpacked libzstd_1.4.5-alt2%3asisyphus+253888.100.1.1@1592916811_x86%5f64.rpm.
 hsh-initroot: Unpacked librpm7_4.13.0.1-alt24%3asisyphus+265234.20600.49.1@1613753302_x86%5f64.rpm.
@@ -624,75 +628,75 @@ hsh-initroot: Created entry point: /tmp/.private/builder/hsh-sandbox/sisyphus-x8
 hsh-initroot: Created RPM database.
 Preparing packages...
 setup-2.2.16-alt1.noarch
-<13>Apr 13 06:48:59 rpmi: setup-2.2.16-alt1 sisyphus+240258.100.5.1 1577333714 installed
+<13>May 11 05:48:57 rpmi: setup-2.2.16-alt1 sisyphus+240258.100.5.1 1577333714 installed
 filesystem-2.3.18-alt1.x86_64
-<13>Apr 13 06:48:59 rpmi: filesystem-2.3.18-alt1 sisyphus+257426.100.1.1 1599226664 installed
+<13>May 11 05:48:57 rpmi: filesystem-2.3.18-alt1 sisyphus+257426.100.1.1 1599226664 installed
 glibc-preinstall-6:2.32-alt2.x86_64
-<13>Apr 13 06:48:59 rpmi: glibc-preinstall-6:2.32-alt2 sisyphus+263623.100.1.1 1608292020 installed
+<13>May 11 05:48:57 rpmi: glibc-preinstall-6:2.32-alt2 sisyphus+263623.100.1.1 1608292020 installed
 glibc-core-6:2.32-alt2.x86_64
-<13>Apr 13 06:48:59 rpmi: glibc-core-6:2.32-alt2 sisyphus+263623.100.1.1 1608292020 installed
+<13>May 11 05:48:57 rpmi: glibc-core-6:2.32-alt2 sisyphus+263623.100.1.1 1608292020 installed
 libacl-2.3.1-alt1.x86_64
-<13>Apr 13 06:48:59 rpmi: libacl-2.3.1-alt1 sisyphus+268564.200.1.1 1616974452 installed
+<13>May 11 05:48:57 rpmi: libacl-2.3.1-alt1 sisyphus+268564.200.1.1 1616974452 installed
 libcap-1:2.27.0.2.ac1e-alt3.x86_64
-<13>Apr 13 06:48:59 rpmi: libcap-1:2.27.0.2.ac1e-alt3 sisyphus+256221.100.2.1 1597365815 installed
+<13>May 11 05:48:57 rpmi: libcap-1:2.27.0.2.ac1e-alt3 sisyphus+256221.100.2.1 1597365815 installed
 libpcre3-8.44-alt1.x86_64
-<13>Apr 13 06:48:59 rpmi: libpcre3-8.44-alt1 sisyphus+246874.100.1.1 1582587772 installed
+<13>May 11 05:48:57 rpmi: libpcre3-8.44-alt1 sisyphus+246874.100.1.1 1582587772 installed
 libselinux-1:3.2-alt1.x86_64
-<13>Apr 13 06:48:59 rpmi: libselinux-1:3.2-alt1 sisyphus+267832.200.4.1 1616421604 installed
+<13>May 11 05:48:57 rpmi: libselinux-1:3.2-alt1 sisyphus+267832.200.4.1 1616421604 installed
 zlib-1.2.11-alt1.x86_64
-<13>Apr 13 06:48:59 rpmi: zlib-1.2.11-alt1 sisyphus+221902.6000.4.1 1550600768 installed
+<13>May 11 05:48:57 rpmi: zlib-1.2.11-alt1 sisyphus+221902.6000.4.1 1550600768 installed
 libpopt-1:1.16-alt1.x86_64
-<13>Apr 13 06:48:59 rpmi: libpopt-1:1.16-alt1 1500322984 installed
+<13>May 11 05:48:58 rpmi: libpopt-1:1.16-alt1 1500322984 installed
 libelf-0.183-alt1.x86_64
-<13>Apr 13 06:48:59 rpmi: libelf-0.183-alt1 sisyphus+265868.100.1.1 1612568591 installed
+<13>May 11 05:48:58 rpmi: libelf-0.183-alt1 sisyphus+265868.100.1.1 1612568591 installed
 bzlib-1:1.0.8-alt1.x86_64
-<13>Apr 13 06:48:59 rpmi: bzlib-1:1.0.8-alt1 sisyphus+247226.100.1.1 1583187375 installed
+<13>May 11 05:48:58 rpmi: bzlib-1:1.0.8-alt1 sisyphus+247226.100.1.1 1583187375 installed
 libattr-2.5.1-alt1.x86_64
-<13>Apr 13 06:48:59 rpmi: libattr-2.5.1-alt1 sisyphus+268564.100.1.1 1616974391 installed
+<13>May 11 05:48:58 rpmi: libattr-2.5.1-alt1 sisyphus+268564.100.1.1 1616974391 installed
 libgmp10-6.2.1-alt1.x86_64
-<13>Apr 13 06:48:59 rpmi: libgmp10-6.2.1-alt1 sisyphus+262764.100.1.1 1606839246 installed
+<13>May 11 05:48:58 rpmi: libgmp10-6.2.1-alt1 sisyphus+262764.100.1.1 1606839246 installed
 libgcc1-10.2.1-alt3.x86_64
-<13>Apr 13 06:49:00 rpmi: libgcc1-10.2.1-alt3 sisyphus+267829.100.1.1 1615807924 installed
+<13>May 11 05:48:58 rpmi: libgcc1-10.2.1-alt3 sisyphus+267829.100.1.1 1615807924 installed
 glibc-pthread-6:2.32-alt2.x86_64
-<13>Apr 13 06:49:00 rpmi: glibc-pthread-6:2.32-alt2 sisyphus+263623.100.1.1 1608292020 installed
+<13>May 11 05:48:58 rpmi: glibc-pthread-6:2.32-alt2 sisyphus+263623.100.1.1 1608292020 installed
 libbeecrypt7-4.2.1-alt7.x86_64
-<13>Apr 13 06:49:00 rpmi: libbeecrypt7-4.2.1-alt7 1302194536 installed
+<13>May 11 05:48:58 rpmi: libbeecrypt7-4.2.1-alt7 1302194536 installed
 libdb4.7-4.7.25-alt10.x86_64
-<13>Apr 13 06:49:00 rpmi: libdb4.7-4.7.25-alt10 sisyphus+263675.100.1.1 1608461930 installed
-liblzma-5.2.5-alt1.x86_64
-<13>Apr 13 06:49:00 rpmi: liblzma-5.2.5-alt1 sisyphus+249564.100.1.1 1586298197 installed
+<13>May 11 05:48:58 rpmi: libdb4.7-4.7.25-alt10 sisyphus+263675.100.1.1 1608461930 installed
+liblzma-5.2.5-alt2.x86_64
+<13>May 11 05:48:58 rpmi: liblzma-5.2.5-alt2 sisyphus+270022.200.3.1 1618664083 installed
 getopt-2.36.1-alt2.x86_64
-<13>Apr 13 06:49:00 rpmi: getopt-2.36.1-alt2 sisyphus+264757.100.1.1 1610726582 installed
+<13>May 11 05:48:58 rpmi: getopt-2.36.1-alt2 sisyphus+264757.100.1.1 1610726582 installed
 liblua5.3-5.3.5-alt3.x86_64
-<13>Apr 13 06:49:00 rpmi: liblua5.3-5.3.5-alt3 sisyphus+237725.540.7.3 1569407850 installed
+<13>May 11 05:48:58 rpmi: liblua5.3-5.3.5-alt3 sisyphus+237725.540.7.3 1569407850 installed
 libzstd-1.4.5-alt2.x86_64
-<13>Apr 13 06:49:00 rpmi: libzstd-1.4.5-alt2 sisyphus+253888.100.1.1 1592916811 installed
+<13>May 11 05:48:58 rpmi: libzstd-1.4.5-alt2 sisyphus+253888.100.1.1 1592916811 installed
 librpm7-4.13.0.1-alt24.x86_64
-<13>Apr 13 06:49:00 rpmi: librpm7-4.13.0.1-alt24 sisyphus+265234.20600.49.1 1613753302 installed
+<13>May 11 05:48:58 rpmi: librpm7-4.13.0.1-alt24 sisyphus+265234.20600.49.1 1613753302 installed
 bashrc-1.0-alt1.noarch
-<13>Apr 13 06:49:00 rpmi: bashrc-1.0-alt1 1533298978 installed
+<13>May 11 05:48:58 rpmi: bashrc-1.0-alt1 1533298978 installed
 sh4-4.4.23-alt1.x86_64
-<13>Apr 13 06:49:00 rpmi: sh4-4.4.23-alt1 sisyphus+221902.600.4.1 1550587751 installed
+<13>May 11 05:48:58 rpmi: sh4-4.4.23-alt1 sisyphus+221902.600.4.1 1550587751 installed
 sh-4.4.23-alt1.noarch
-<13>Apr 13 06:49:00 rpmi: sh-4.4.23-alt1 sisyphus+221902.500.4.1 1550587242 installed
-grep-3.3.0.16.268ca-alt1.x86_64
-<13>Apr 13 06:49:00 rpmi: grep-3.3.0.16.268ca-alt1 sisyphus+239726.100.1.1 1571958685 installed
+<13>May 11 05:48:58 rpmi: sh-4.4.23-alt1 sisyphus+221902.500.4.1 1550587242 installed
+grep-3.6.0.18.70517-alt1.x86_64
+<13>May 11 05:48:58 rpmi: grep-3.6.0.18.70517-alt1 sisyphus+269178.1000.5.1 1618250135 installed
 terminfo-6.2.20210123-alt1.noarch
-<13>Apr 13 06:49:00 rpmi: terminfo-6.2.20210123-alt1 sisyphus+265425.100.1.1 1611851422 installed
+<13>May 11 05:48:58 rpmi: terminfo-6.2.20210123-alt1 sisyphus+265425.100.1.1 1611851422 installed
 libtinfo-6.2.20210123-alt1.x86_64
-<13>Apr 13 06:49:00 rpmi: libtinfo-6.2.20210123-alt1 sisyphus+265425.100.1.1 1611851422 installed
-coreutils-8.31.0.3.6bd78-alt2.x86_64
-<13>Apr 13 06:49:00 rpmi: coreutils-8.31.0.3.6bd78-alt2 sisyphus+229785.100.1.1 1558461863 installed
+<13>May 11 05:48:58 rpmi: libtinfo-6.2.20210123-alt1 sisyphus+265425.100.1.1 1611851422 installed
+coreutils-8.32.0.138.34a48-alt1.x86_64
+<13>May 11 05:48:58 rpmi: coreutils-8.32.0.138.34a48-alt1 sisyphus+269178.1700.12.1 1618322117 installed
 libreadline7-7.0.3-alt3.x86_64
-<13>Apr 13 06:49:00 rpmi: libreadline7-7.0.3-alt3 sisyphus+222164.300.1.1 1550686325 installed
+<13>May 11 05:48:58 rpmi: libreadline7-7.0.3-alt3 sisyphus+222164.300.1.1 1550686325 installed
 bash4-4.4.23-alt1.x86_64
-<13>Apr 13 06:49:00 rpmi: bash4-4.4.23-alt1 sisyphus+221902.600.4.1 1550587751 installed
+<13>May 11 05:48:58 rpmi: bash4-4.4.23-alt1 sisyphus+221902.600.4.1 1550587751 installed
 bash-4.4.23-alt1.noarch
-<13>Apr 13 06:49:00 rpmi: bash-4.4.23-alt1 sisyphus+221902.500.4.1 1550587242 installed
+<13>May 11 05:48:58 rpmi: bash-4.4.23-alt1 sisyphus+221902.500.4.1 1550587242 installed
 rpm-4.13.0.1-alt24.x86_64
-<13>Apr 13 06:49:00 rpmi: rpm-4.13.0.1-alt24 sisyphus+265234.20600.49.1 1613753302 installed
-fakeroot-1.20.2-alt2.x86_64
-<13>Apr 13 06:49:00 rpmi: fakeroot-1.20.2-alt2 sisyphus+229033.100.2.1 1557324306 installed
+<13>May 11 05:48:59 rpmi: rpm-4.13.0.1-alt24 sisyphus+265234.20600.49.1 1613753302 installed
+fakeroot-1.25.3-alt1.x86_64
+<13>May 11 05:48:59 rpmi: fakeroot-1.25.3-alt1 sisyphus+269945.100.1.1 1618443416 installed
 Running /usr/lib/rpm/posttrans-filetriggers
 hsh-initroot: Installed initial package list.
 Preparing packages...
@@ -717,16 +721,16 @@ libgcc1-10.2.1-alt3.x86_64
 glibc-pthread-6:2.32-alt2.x86_64
 libpcre3-8.44-alt1.x86_64
 libselinux-1:3.2-alt1.x86_64
-coreutils-8.31.0.3.6bd78-alt2.x86_64
+coreutils-8.32.0.138.34a48-alt1.x86_64
 getopt-2.36.1-alt2.x86_64
-fakeroot-1.20.2-alt2.x86_64
-grep-3.3.0.16.268ca-alt1.x86_64
+fakeroot-1.25.3-alt1.x86_64
+grep-3.6.0.18.70517-alt1.x86_64
 libbeecrypt7-4.2.1-alt7.x86_64
 libdb4.7-4.7.25-alt10.x86_64
 zlib-1.2.11-alt1.x86_64
 libelf-0.183-alt1.x86_64
 liblua5.3-5.3.5-alt3.x86_64
-liblzma-5.2.5-alt1.x86_64
+liblzma-5.2.5-alt2.x86_64
 libpopt-1:1.16-alt1.x86_64
 libzstd-1.4.5-alt2.x86_64
 librpm7-4.13.0.1-alt24.x86_64
@@ -738,17 +742,17 @@ hsh-initroot: RPM database updated.
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libaudit1_3.0.1-alt1%3asisyphus+265234.65100.52.1@1613962809_x86%5f64.rpm' -> 'chroot/.in/libaudit1_3.0.1-alt1%3asisyphus+265234.65100.52.1@1613962809_x86%5f64.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libtcb_1.2-alt1%3asisyphus+267619.100.1.1@1615405863_x86%5f64.rpm' -> 'chroot/.in/libtcb_1.2-alt1%3asisyphus+267619.100.1.1@1615405863_x86%5f64.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/shadow-convert_1%3a4.5-alt8%3asisyphus+255818.100.3.1@1596552950_x86%5f64.rpm' -> 'chroot/.in/shadow-convert_1%3a4.5-alt8%3asisyphus+255818.100.3.1@1596552950_x86%5f64.rpm'
-'/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/sed_1%3a4.7-alt1%3asisyphus+221902.4700.4.1@1550600115_x86%5f64.rpm' -> 'chroot/.in/sed_1%3a4.7-alt1%3asisyphus+221902.4700.4.1@1550600115_x86%5f64.rpm'
-'/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/findutils_4.6.0.0.204.b23a2-alt1%3asisyphus+221902.2200.4.1@1550596147_x86%5f64.rpm' -> 'chroot/.in/findutils_4.6.0.0.204.b23a2-alt1%3asisyphus+221902.2200.4.1@1550596147_x86%5f64.rpm'
+'/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/sed_1%3a4.8.0.7.b352-alt1%3asisyphus+269178.1100.6.1@1618251305_x86%5f64.rpm' -> 'chroot/.in/sed_1%3a4.8.0.7.b352-alt1%3asisyphus+269178.1100.6.1@1618251305_x86%5f64.rpm'
+'/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/findutils_4.8.0.0.5.caa0-alt1%3asisyphus+269178.1600.11.1@1618273269_x86%5f64.rpm' -> 'chroot/.in/findutils_4.8.0.0.5.caa0-alt1%3asisyphus+269178.1600.11.1@1618273269_x86%5f64.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libcap-utils_1%3a2.27.0.2.ac1e-alt3%3asisyphus+256221.100.2.1@1597365815_x86%5f64.rpm' -> 'chroot/.in/libcap-utils_1%3a2.27.0.2.ac1e-alt3%3asisyphus+256221.100.2.1@1597365815_x86%5f64.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/control_0.8.0-alt1@1526917521_noarch.rpm' -> 'chroot/.in/control_0.8.0-alt1@1526917521_noarch.rpm'
-'/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/passwdqc-control_2.0.1-alt1%3asisyphus+267618.100.5.1@1615989149_noarch.rpm' -> 'chroot/.in/passwdqc-control_2.0.1-alt1%3asisyphus+267618.100.5.1@1615989149_noarch.rpm'
-'/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libpasswdqc_2.0.1-alt1%3asisyphus+267618.100.5.1@1615989149_x86%5f64.rpm' -> 'chroot/.in/libpasswdqc_2.0.1-alt1%3asisyphus+267618.100.5.1@1615989149_x86%5f64.rpm'
+'/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/passwdqc-control_2.0.2-alt1%3asisyphus+268942.200.2.1@1617562610_noarch.rpm' -> 'chroot/.in/passwdqc-control_2.0.2-alt1%3asisyphus+268942.200.2.1@1617562610_noarch.rpm'
+'/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libpasswdqc_2.0.2-alt1%3asisyphus+268942.200.2.1@1617562610_x86%5f64.rpm' -> 'chroot/.in/libpasswdqc_2.0.2-alt1%3asisyphus+268942.200.2.1@1617562610_x86%5f64.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libcrypt_4.4.17-alt1%3asisyphus+260371.100.1.1@1603619899_x86%5f64.rpm' -> 'chroot/.in/libcrypt_4.4.17-alt1%3asisyphus+260371.100.1.1@1603619899_x86%5f64.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/pam_1.5.1-alt1%3asisyphus+260508.100.1.1@1606328316_x86%5f64.rpm' -> 'chroot/.in/pam_1.5.1-alt1%3asisyphus+260508.100.1.1@1606328316_x86%5f64.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/pam0%5fmktemp_1.1.1-alt4%3asisyphus+255842.300.6.1@1596555829_x86%5f64.rpm' -> 'chroot/.in/pam0%5fmktemp_1.1.1-alt4%3asisyphus+255842.300.6.1@1596555829_x86%5f64.rpm'
-'/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/pam0%5fpasswdqc_2.0.1-alt1%3asisyphus+267618.100.5.1@1615989149_x86%5f64.rpm' -> 'chroot/.in/pam0%5fpasswdqc_2.0.1-alt1%3asisyphus+267618.100.5.1@1615989149_x86%5f64.rpm'
-'/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/diffutils_3.7-alt1%3asisyphus+221902.1700.4.1@1550595424_x86%5f64.rpm' -> 'chroot/.in/diffutils_3.7-alt1%3asisyphus+221902.1700.4.1@1550595424_x86%5f64.rpm'
+'/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/pam0%5fpasswdqc_2.0.2-alt1%3asisyphus+268942.200.2.1@1617562610_x86%5f64.rpm' -> 'chroot/.in/pam0%5fpasswdqc_2.0.2-alt1%3asisyphus+268942.200.2.1@1617562610_x86%5f64.rpm'
+'/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/diffutils_3.7.0.38.cc14-alt1%3asisyphus+269178.1300.8.1@1618254370_x86%5f64.rpm' -> 'chroot/.in/diffutils_3.7.0.38.cc14-alt1%3asisyphus+269178.1300.8.1@1618254370_x86%5f64.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/pam-config-control_1.9.0-alt4%3asisyphus+254612.300.3.1@1594194586_noarch.rpm' -> 'chroot/.in/pam-config-control_1.9.0-alt4%3asisyphus+254612.300.3.1@1594194586_noarch.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/pam-config_1.9.0-alt4%3asisyphus+254612.300.3.1@1594194586_noarch.rpm' -> 'chroot/.in/pam-config_1.9.0-alt4%3asisyphus+254612.300.3.1@1594194586_noarch.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libpam0_1.5.1-alt1%3asisyphus+260508.100.1.1@1606328316_x86%5f64.rpm' -> 'chroot/.in/libpam0_1.5.1-alt1%3asisyphus+260508.100.1.1@1606328316_x86%5f64.rpm'
@@ -759,13 +763,13 @@ hsh-initroot: RPM database updated.
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/shadow-utils_1%3a4.5-alt8%3asisyphus+255818.100.3.1@1596552950_x86%5f64.rpm' -> 'chroot/.in/shadow-utils_1%3a4.5-alt8%3asisyphus+255818.100.3.1@1596552950_x86%5f64.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/etcskel_2.0.16-alt1@1528424738_noarch.rpm' -> 'chroot/.in/etcskel_2.0.16-alt1@1528424738_noarch.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/gawk_5.1.0.0.213.d04f-alt1%3asisyphus+262609.200.1.1@1606438187_x86%5f64.rpm' -> 'chroot/.in/gawk_5.1.0.0.213.d04f-alt1%3asisyphus+262609.200.1.1@1606438187_x86%5f64.rpm'
-'/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/gzip_1.10-alt1%3asisyphus+221902.3300.4.1@1550597997_x86%5f64.rpm' -> 'chroot/.in/gzip_1.10-alt1%3asisyphus+221902.3300.4.1@1550597997_x86%5f64.rpm'
+'/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/gzip_1.10.0.31.34db-alt1%3asisyphus+269178.700.4.1@1618186664_x86%5f64.rpm' -> 'chroot/.in/gzip_1.10.0.31.34db-alt1%3asisyphus+269178.700.4.1@1618186664_x86%5f64.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/perl-parent_0.238-alt1%3asisyphus+245993.100.1.1@1581532230_noarch.rpm' -> 'chroot/.in/perl-parent_0.238-alt1%3asisyphus+245993.100.1.1@1581532230_noarch.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/perl-base_1%3a5.30.3-alt1%3asisyphus+259030.200.1.1@1601554015_x86%5f64.rpm' -> 'chroot/.in/perl-base_1%3a5.30.3-alt1%3asisyphus+259030.200.1.1@1601554015_x86%5f64.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/rootfiles_alt-alt12@1529400230_noarch.rpm' -> 'chroot/.in/rootfiles_alt-alt12@1529400230_noarch.rpm'
-'/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/tar_1.32-alt1%3asisyphus+222772.100.1.1@1551032094_x86%5f64.rpm' -> 'chroot/.in/tar_1.32-alt1%3asisyphus+222772.100.1.1@1551032094_x86%5f64.rpm'
+'/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/tar_1.34.0.13.66b59fcc-alt1%3asisyphus+269884.200.2.1@1618353168_x86%5f64.rpm' -> 'chroot/.in/tar_1.34.0.13.66b59fcc-alt1%3asisyphus+269884.200.2.1@1618353168_x86%5f64.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libcap-ng_0.8.2-alt1%3asisyphus+265234.26100.49.1@1613758255_x86%5f64.rpm' -> 'chroot/.in/libcap-ng_0.8.2-alt1%3asisyphus+265234.26100.49.1@1613758255_x86%5f64.rpm'
-'/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libgpm_1.20.1-alt18.1@1521564348_x86%5f64.rpm' -> 'chroot/.in/libgpm_1.20.1-alt18.1@1521564348_x86%5f64.rpm'
+'/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libgpm_1.20.1-alt18.2%3asisyphus+269158.200.2.1@1618493905_x86%5f64.rpm' -> 'chroot/.in/libgpm_1.20.1-alt18.2%3asisyphus+269158.200.2.1@1618493905_x86%5f64.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libncursesw_6.2.20210123-alt1%3asisyphus+265425.100.1.1@1611851422_x86%5f64.rpm' -> 'chroot/.in/libncursesw_6.2.20210123-alt1%3asisyphus+265425.100.1.1@1611851422_x86%5f64.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libudev1_1%3a247.3-alt2%3asisyphus+266129.100.1.3@1613012524_x86%5f64.rpm' -> 'chroot/.in/libudev1_1%3a247.3-alt2%3asisyphus+266129.100.1.3@1613012524_x86%5f64.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/util-linux-control_2.36.1-alt2%3asisyphus+264757.100.1.1@1610726582_noarch.rpm' -> 'chroot/.in/util-linux-control_2.36.1-alt2%3asisyphus+264757.100.1.1@1610726582_noarch.rpm'
@@ -777,12 +781,12 @@ hsh-initroot: RPM database updated.
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/util-linux_2.36.1-alt2%3asisyphus+264757.100.1.1@1610726582_x86%5f64.rpm' -> 'chroot/.in/util-linux_2.36.1-alt2%3asisyphus+264757.100.1.1@1610726582_x86%5f64.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/vim-minimal_4%3a8.2.0011-alt2%3asisyphus+265234.21600.49.1@1613755220_x86%5f64.rpm' -> 'chroot/.in/vim-minimal_4%3a8.2.0011-alt2%3asisyphus+265234.21600.49.1@1613755220_x86%5f64.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/vitmp_1.0-alt4.qa1@1366322518_x86%5f64.rpm' -> 'chroot/.in/vitmp_1.0-alt4.qa1@1366322518_x86%5f64.rpm'
-'/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/xz_5.2.5-alt1%3asisyphus+249564.100.1.1@1586298197_x86%5f64.rpm' -> 'chroot/.in/xz_5.2.5-alt1%3asisyphus+249564.100.1.1@1586298197_x86%5f64.rpm'
+'/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/xz_5.2.5-alt2%3asisyphus+270022.200.3.1@1618664083_x86%5f64.rpm' -> 'chroot/.in/xz_5.2.5-alt2%3asisyphus+270022.200.3.1@1618664083_x86%5f64.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/zstd_1.4.5-alt2%3asisyphus+253888.100.1.1@1592916811_x86%5f64.rpm' -> 'chroot/.in/zstd_1.4.5-alt2%3asisyphus+253888.100.1.1@1592916811_x86%5f64.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/basesystem_1%3asisyphus-alt23%3asisyphus+268583.100.1.1@1617015648_noarch.rpm' -> 'chroot/.in/basesystem_1%3asisyphus-alt23%3asisyphus+268583.100.1.1@1617015648_noarch.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/autoconf-common_0.3.2-alt1%3asisyphus+264199.100.1.1@1609281515_noarch.rpm' -> 'chroot/.in/autoconf-common_0.3.2-alt1%3asisyphus+264199.100.1.1@1609281515_noarch.rpm'
-'/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/m4_1.4.18-alt2%3asisyphus+221902.4300.4.1@1550599593_x86%5f64.rpm' -> 'chroot/.in/m4_1.4.18-alt2%3asisyphus+221902.4300.4.1@1550599593_x86%5f64.rpm'
-'/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/gnu-config_1.0.971.ff53-alt1%3asisyphus+263686.200.1.1@1608487194_noarch.rpm' -> 'chroot/.in/gnu-config_1.0.971.ff53-alt1%3asisyphus+263686.200.1.1@1608487194_noarch.rpm'
+'/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/m4_1.4.18.0.15.4e5c-alt1%3asisyphus+269178.300.3.1@1617924051_x86%5f64.rpm' -> 'chroot/.in/m4_1.4.18.0.15.4e5c-alt1%3asisyphus+269178.300.3.1@1617924051_x86%5f64.rpm'
+'/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/gnu-config_2021.03.10-alt1%3asisyphus+269014.100.1.1@1617670552_noarch.rpm' -> 'chroot/.in/gnu-config_2021.03.10-alt1%3asisyphus+269014.100.1.1@1617670552_noarch.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/autoconf%5f2.60_2%3a2.69-alt8%3asisyphus+263698.100.1.1@1608519435_noarch.rpm' -> 'chroot/.in/autoconf%5f2.60_2%3a2.69-alt8%3asisyphus+263698.100.1.1@1608519435_noarch.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/autoconf_2%3a2.69-alt5%3asisyphus+263686.100.1.1@1608487165_noarch.rpm' -> 'chroot/.in/autoconf_2%3a2.69-alt5%3asisyphus+263686.100.1.1@1608487165_noarch.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/automake-common_0.4.2-alt1%3asisyphus+264199.200.1.1@1609281542_noarch.rpm' -> 'chroot/.in/automake-common_0.4.2-alt1%3asisyphus+264199.200.1.1@1609281542_noarch.rpm'
@@ -792,8 +796,8 @@ hsh-initroot: RPM database updated.
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libstdc++6_10.2.1-alt3%3asisyphus+267829.100.1.1@1615807924_x86%5f64.rpm' -> 'chroot/.in/libstdc++6_10.2.1-alt3%3asisyphus+267829.100.1.1@1615807924_x86%5f64.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libctf-nobfd0_1%3a2.35.1-alt3%3asisyphus+263649.200.2.1@1610384935_x86%5f64.rpm' -> 'chroot/.in/libctf-nobfd0_1%3a2.35.1-alt3%3asisyphus+263649.200.2.1@1610384935_x86%5f64.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/binutils_1%3a2.35.1-alt3%3asisyphus+263649.200.2.1@1610384935_x86%5f64.rpm' -> 'chroot/.in/binutils_1%3a2.35.1-alt3%3asisyphus+263649.200.2.1@1610384935_x86%5f64.rpm'
-'/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/bison-runtime_3.0.5-alt1%3asisyphus+221902.1100.4.1@1550589333_noarch.rpm' -> 'chroot/.in/bison-runtime_3.0.5-alt1%3asisyphus+221902.1100.4.1@1550589333_noarch.rpm'
-'/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/bison_3.0.5-alt1%3asisyphus+221902.1100.4.1@1550589333_x86%5f64.rpm' -> 'chroot/.in/bison_3.0.5-alt1%3asisyphus+221902.1100.4.1@1550589333_x86%5f64.rpm'
+'/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/bison-runtime_3.7.6-alt1%3asisyphus+269178.440.3.1@1617924307_noarch.rpm' -> 'chroot/.in/bison-runtime_3.7.6-alt1%3asisyphus+269178.440.3.1@1617924307_noarch.rpm'
+'/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/bison_3.7.6-alt1%3asisyphus+269178.440.3.1@1617924307_x86%5f64.rpm' -> 'chroot/.in/bison_3.7.6-alt1%3asisyphus+269178.440.3.1@1617924307_x86%5f64.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/bzip2_1%3a1.0.8-alt1%3asisyphus+247226.100.1.1@1583187375_x86%5f64.rpm' -> 'chroot/.in/bzip2_1%3a1.0.8-alt1%3asisyphus+247226.100.1.1@1583187375_x86%5f64.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/chkconfig_1.3.59-alt4@1410275160_x86%5f64.rpm' -> 'chroot/.in/chkconfig_1.3.59-alt4@1410275160_x86%5f64.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/cpio_2.12-alt2%3asisyphus+268042.100.2.1@1617194386_x86%5f64.rpm' -> 'chroot/.in/cpio_2.12-alt2%3asisyphus+268042.100.2.1@1617194386_x86%5f64.rpm'
@@ -819,9 +823,9 @@ hsh-initroot: RPM database updated.
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libshell_0.4.9-alt1%3asisyphus+267973.100.1.1@1616023572_noarch.rpm' -> 'chroot/.in/libshell_0.4.9-alt1%3asisyphus+267973.100.1.1@1616023572_noarch.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/service_0.5.32-alt1%3asisyphus+265313.100.3.1@1612018475_x86%5f64.rpm' -> 'chroot/.in/service_0.5.32-alt1%3asisyphus+265313.100.3.1@1612018475_x86%5f64.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/kernel-headers-common_1.2.7-alt1%3asisyphus.217241.100@1543842774_x86%5f64.rpm' -> 'chroot/.in/kernel-headers-common_1.2.7-alt1%3asisyphus.217241.100@1543842774_x86%5f64.rpm'
-'/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/glib2-locales_2.68.0-alt1%3asisyphus+268501.100.4.2@1617041548_noarch.rpm' -> 'chroot/.in/glib2-locales_2.68.0-alt1%3asisyphus+268501.100.4.2@1617041548_noarch.rpm'
+'/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/glib2-locales_2.68.1-alt1%3asisyphus+269248.100.1.1@1617921007_noarch.rpm' -> 'chroot/.in/glib2-locales_2.68.1-alt1%3asisyphus+269248.100.1.1@1617921007_noarch.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libffi7_1%3a3.3-alt1%3asisyphus+251953.40.2.1@1589890886_x86%5f64.rpm' -> 'chroot/.in/libffi7_1%3a3.3-alt1%3asisyphus+251953.40.2.1@1589890886_x86%5f64.rpm'
-'/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/glib2_2.68.0-alt1%3asisyphus+268501.100.4.2@1617041548_x86%5f64.rpm' -> 'chroot/.in/glib2_2.68.0-alt1%3asisyphus+268501.100.4.2@1617041548_x86%5f64.rpm'
+'/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/glib2_2.68.1-alt1%3asisyphus+269248.100.1.1@1617921007_x86%5f64.rpm' -> 'chroot/.in/glib2_2.68.1-alt1%3asisyphus+269248.100.1.1@1617921007_x86%5f64.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/pkg-config_0.29.2-alt3%3asisyphus+225250.100.1.1@1553032548_x86%5f64.rpm' -> 'chroot/.in/pkg-config_0.29.2-alt3%3asisyphus+225250.100.1.1@1553032548_x86%5f64.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libcrypt-devel_4.4.17-alt1%3asisyphus+260371.100.1.1@1603619899_x86%5f64.rpm' -> 'chroot/.in/libcrypt-devel_4.4.17-alt1%3asisyphus+260371.100.1.1@1603619899_x86%5f64.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/glibc-nss_6%3a2.32-alt2%3asisyphus+263623.100.1.1@1608292020_x86%5f64.rpm' -> 'chroot/.in/glibc-nss_6%3a2.32-alt2%3asisyphus+263623.100.1.1@1608292020_x86%5f64.rpm'
@@ -857,10 +861,10 @@ hsh-initroot: RPM database updated.
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/librpmbuild_4.0.4-alt164%3asisyphus+264154.1000.8.1@1610756534_x86%5f64.rpm' -> 'chroot/.in/librpmbuild_4.0.4-alt164%3asisyphus+264154.1000.8.1@1610756534_x86%5f64.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/librpmbuild7_4.13.0.1-alt24%3asisyphus+265234.20600.49.1@1613753302_x86%5f64.rpm' -> 'chroot/.in/librpmbuild7_4.13.0.1-alt24%3asisyphus+265234.20600.49.1@1613753302_x86%5f64.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libtool-common_0.2.3-alt1%3asisyphus+264199.300.1.1@1609281573_x86%5f64.rpm' -> 'chroot/.in/libtool-common_0.2.3-alt1%3asisyphus+264199.300.1.1@1609281573_x86%5f64.rpm'
-'/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libtool%5f2.4_2.4.6-alt2%3asisyphus+263722.100.1.1@1608561796_x86%5f64.rpm' -> 'chroot/.in/libtool%5f2.4_2.4.6-alt2%3asisyphus+263722.100.1.1@1608561796_x86%5f64.rpm'
+'/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libtool%5f2.4_2.4.6-alt3%3asisyphus+269178.2000.13.1@1618328447_x86%5f64.rpm' -> 'chroot/.in/libtool%5f2.4_2.4.6-alt3%3asisyphus+269178.2000.13.1@1618328447_x86%5f64.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libtool_3%3a2.4.2-alt7@1533461531_noarch.rpm' -> 'chroot/.in/libtool_3%3a2.4.2-alt7@1533461531_noarch.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/make_2%3a4.3.0-alt1%3asisyphus+249113.200.3.1@1585752398_x86%5f64.rpm' -> 'chroot/.in/make_2%3a4.3.0-alt1%3asisyphus+249113.200.3.1@1585752398_x86%5f64.rpm'
-'/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/patch_2.7.6.0.24.76e7-alt1%3asisyphus+240145.200.2.1@1572707911_x86%5f64.rpm' -> 'chroot/.in/patch_2.7.6.0.24.76e7-alt1%3asisyphus+240145.200.2.1@1572707911_x86%5f64.rpm'
+'/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/patch_2.7.6.0.27.7623-alt1%3asisyphus+269178.1500.10.1@1618271450_x86%5f64.rpm' -> 'chroot/.in/patch_2.7.6.0.27.7623-alt1%3asisyphus+269178.1500.10.1@1618271450_x86%5f64.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/perl-CPAN-Meta-Requirements_2.140-alt1@1450184784_noarch.rpm' -> 'chroot/.in/perl-CPAN-Meta-Requirements_2.140-alt1@1450184784_noarch.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libncurses_6.2.20210123-alt1%3asisyphus+265425.100.1.1@1611851422_x86%5f64.rpm' -> 'chroot/.in/libncurses_6.2.20210123-alt1%3asisyphus+265425.100.1.1@1611851422_x86%5f64.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/procps_3.3.17-alt2%3asisyphus+266373.100.1.1@1613417581_x86%5f64.rpm' -> 'chroot/.in/procps_3.3.17-alt2%3asisyphus+266373.100.1.1@1613417581_x86%5f64.rpm'
@@ -872,145 +876,145 @@ hsh-initroot: RPM database updated.
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/time_1%3a1.7-alt4@1449722760_x86%5f64.rpm' -> 'chroot/.in/time_1%3a1.7-alt4@1449722760_x86%5f64.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/which_2.20-alt2.qa1@1366269223_x86%5f64.rpm' -> 'chroot/.in/which_2.20-alt2.qa1@1366269223_x86%5f64.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/rpm-build_4.0.4-alt164%3asisyphus+264154.1000.8.1@1610756534_x86%5f64.rpm' -> 'chroot/.in/rpm-build_4.0.4-alt164%3asisyphus+264154.1000.8.1@1610756534_x86%5f64.rpm'
-<13>Apr 13 06:49:03 rpmi: sed-1:4.7-alt1 sisyphus+221902.4700.4.1 1550600115 installed
-<13>Apr 13 06:49:03 rpmi: libcrypt-4.4.17-alt1 sisyphus+260371.100.1.1 1603619899 installed
-<13>Apr 13 06:49:03 rpmi: perl-parent-0.238-alt1 sisyphus+245993.100.1.1 1581532230 installed
-<13>Apr 13 06:49:03 rpmi: perl-base-1:5.30.3-alt1 sisyphus+259030.200.1.1 1601554015 installed
-<13>Apr 13 06:49:03 rpmi: diffutils-3.7-alt1 sisyphus+221902.1700.4.1 1550595424 installed
-<13>Apr 13 06:49:03 rpmi: findutils-4.6.0.0.204.b23a2-alt1 sisyphus+221902.2200.4.1 1550596147 installed
-<13>Apr 13 06:49:04 rpmi: gnu-config-1.0.971.ff53-alt1 sisyphus+263686.200.1.1 1608487194 installed
-<13>Apr 13 06:49:04 rpmi: gawk-5.1.0.0.213.d04f-alt1 sisyphus+262609.200.1.1 1606438187 installed
-<13>Apr 13 06:49:04 rpmi: libaudit1-3.0.1-alt1 sisyphus+265234.65100.52.1 1613962809 installed
-<13>Apr 13 06:49:04 rpmi: libstdc++6-10.2.1-alt3 sisyphus+267829.100.1.1 1615807924 installed
-<13>Apr 13 06:49:04 rpmi: automake-common-0.4.2-alt1 sisyphus+264199.200.1.1 1609281542 installed
-<13>Apr 13 06:49:04 rpmi: m4-1.4.18-alt2 sisyphus+221902.4300.4.1 1550599593 installed
-<13>Apr 13 06:49:04 rpmi: xz-5.2.5-alt1 sisyphus+249564.100.1.1 1586298197 installed
-<13>Apr 13 06:49:04 rpmi: tar-1.32-alt1 sisyphus+222772.100.1.1 1551032094 installed
-<13>Apr 13 06:49:04 rpmi: glibc-kernheaders-generic-5.11-alt1 sisyphus+266513.100.1.1 1613566905 installed
-<13>Apr 13 06:49:05 rpmi: glibc-kernheaders-x86-5.11-alt1 sisyphus+266513.100.1.1 1613566905 installed
-<13>Apr 13 06:49:05 rpmi: glibc-kernheaders-5.11-alt1 sisyphus+266513.100.1.1 1613566905 installed
-<13>Apr 13 06:49:05 rpmi: libmagic-4.26-alt17 sisyphus+266080.100.2.1 1614467551 installed
-<13>Apr 13 06:49:05 rpmi: file-4.26-alt17 sisyphus+266080.100.2.1 1614467551 installed
-<13>Apr 13 06:49:05 rpmi: libdw-0.183-alt1 sisyphus+265868.100.1.1 1612568591 installed
-<13>Apr 13 06:49:05 rpmi: libmpfr6-4.1.0-alt1 sisyphus+262764.300.2.1 1606840927 installed
-<13>Apr 13 06:49:05 rpmi: autoconf-common-0.3.2-alt1 sisyphus+264199.100.1.1 1609281515 installed
-<13>Apr 13 06:49:05 rpmi: libgpm-1.20.1-alt18.1 1521564348 installed
-<13>Apr 13 06:49:05 rpmi: libncursesw-6.2.20210123-alt1 sisyphus+265425.100.1.1 1611851422 installed
-<13>Apr 13 06:49:05 rpmi: gzip-1.10-alt1 sisyphus+221902.3300.4.1 1550597997 installed
-<13>Apr 13 06:49:05 rpmi: libtcb-1.2-alt1 sisyphus+267619.100.1.1 1615405863 installed
-<13>Apr 13 06:49:05 rpmi: shadow-convert-1:4.5-alt8 sisyphus+255818.100.3.1 1596552950 installed
-<13>Apr 13 06:49:05 rpmi: common-licenses-1.12-alt1 sisyphus+265909.100.1.1 1612701587 installed
-<13>Apr 13 06:49:06 rpmi: nss_tcb-1.2-alt1 sisyphus+267619.100.1.1 1615405863 installed
-<13>Apr 13 06:49:06 rpmi: libncurses-6.2.20210123-alt1 sisyphus+265425.100.1.1 1611851422 installed
-<13>Apr 13 06:49:06 rpmi: autoconf_2.60-2:2.69-alt8 sisyphus+263698.100.1.1 1608519435 installed
-<13>Apr 13 06:49:06 rpmi: autoconf-2:2.69-alt5 sisyphus+263686.100.1.1 1608487165 installed
-<13>Apr 13 06:49:06 rpmi: libmpc3-1.2.1-alt1 sisyphus+262764.400.2.1 1606840983 installed
-<13>Apr 13 06:49:06 rpmi: libasm-0.183-alt1 sisyphus+265868.100.1.1 1612568591 installed
-<13>Apr 13 06:49:06 rpmi: elfutils-0.183-alt1 sisyphus+265868.100.1.1 1612568591 installed
-<13>Apr 13 06:49:06 rpmi: librpmbuild7-4.13.0.1-alt24 sisyphus+265234.20600.49.1 1613753302 installed
-<13>Apr 13 06:49:06 rpmi: rpmspec-4.13.0.1-alt24 sisyphus+265234.20600.49.1 1613753302 installed
-<13>Apr 13 06:49:06 rpmi: libubsan1-10.2.1-alt3 sisyphus+267829.100.1.1 1615807924 installed
-<13>Apr 13 06:49:07 rpmi: tzdata-2021a-alt1 sisyphus+265526.100.1.1 1612068635 installed
-<13>Apr 13 06:49:07 rpmi: perl-threads-1:5.30.3-alt1 sisyphus+259030.200.1.1 1601554015 installed
-<13>Apr 13 06:49:07 rpmi: automake_1.16-1.16.3-alt1 sisyphus+262126.200.2.1 1605791460 installed
-<13>Apr 13 06:49:07 rpmi: automake-1:1.16-alt1 sisyphus+226889.100.2.1 1554763109 installed
-<13>Apr 13 06:49:07 rpmi: glibc-utils-6:2.32-alt2 sisyphus+263623.100.1.1 1608292020 installed
-<13>Apr 13 06:49:07 rpmi: perl-CPAN-Meta-Requirements-2.140-alt1 1450184784 installed
-<13>Apr 13 06:49:07 rpmi: rpm-build-perl-0.84-alt20 sisyphus+258375.40.14.2 1600902490 installed
-<13>Apr 13 06:49:07 rpmi: which-2.20-alt2.qa1 1366269223 installed
-<13>Apr 13 06:49:07 rpmi: patch-2.7.6.0.24.76e7-alt1 sisyphus+240145.200.2.1 1572707911 installed
-<13>Apr 13 06:49:07 rpmi: make-2:4.3.0-alt1 sisyphus+249113.200.3.1 1585752398 installed
-<13>Apr 13 06:49:07 rpmi: libtool-common-0.2.3-alt1 sisyphus+264199.300.1.1 1609281573 installed
-<13>Apr 13 06:49:07 rpmi: librpm-4.0.4-alt164 sisyphus+264154.1000.8.1 1610756534 installed
-<13>Apr 13 06:49:07 rpmi: librpmbuild-4.0.4-alt164 sisyphus+264154.1000.8.1 1610756534 installed
-<13>Apr 13 06:49:07 rpmi: libpython-2.7.18-alt4 sisyphus+266950.200.2.1 1614241385 installed
-<13>Apr 13 06:49:08 rpmi: python2-base-2.7.18-alt4 sisyphus+266950.200.2.1 1614241385 installed
-<13>Apr 13 06:49:08 rpmi: rpm-build-python-0.39.0-alt1 sisyphus+260900.100.1.1 1604410511 installed
-<13>Apr 13 06:49:08 rpmi: libprocps-3.3.17-alt2 sisyphus+266373.100.1.1 1613417581 installed
-<13>Apr 13 06:49:08 rpmi: procps-3.3.17-alt2 sisyphus+266373.100.1.1 1613417581 installed
-<13>Apr 13 06:49:08 rpmi: libzio-1.06-alt1 1533344560 installed
-<13>Apr 13 06:49:08 rpmi: info-install-6.7-alt1 sisyphus+262609.100.1.1 1606438100 installed
-<13>Apr 13 06:49:08 rpmi: xml-common-0.6.3-alt15 1423664786 installed
-<13>Apr 13 06:49:08 rpmi: libxml2-1:2.9.10-alt6 sisyphus+265234.30740.49.1 1613762093 installed
-<13>Apr 13 06:49:08 rpmi: libunistring2-0.9.10-alt1 sisyphus+221902.4100.4.1 1550598588 installed
-<13>Apr 13 06:49:08 rpmi: gettext-0.20.2-alt2 sisyphus+254942.100.1.1 1594761153 installed
-<13>Apr 13 06:49:08 rpmi: libvtv0-10.2.1-alt3 sisyphus+267829.100.1.1 1615807924 installed
-<13>Apr 13 06:49:08 rpmi: liblsan0-10.2.1-alt3 sisyphus+267829.100.1.1 1615807924 installed
-<13>Apr 13 06:49:08 rpmi: libitm1-10.2.1-alt3 sisyphus+267829.100.1.1 1615807924 installed
-<13>Apr 13 06:49:08 rpmi: libtsan0-10.2.1-alt3 sisyphus+267829.100.1.1 1615807924 installed
-<13>Apr 13 06:49:08 rpmi: libasan6-10.2.1-alt3 sisyphus+267829.100.1.1 1615807924 installed
-<13>Apr 13 06:49:08 rpmi: libatomic1-10.2.1-alt3 sisyphus+267829.100.1.1 1615807924 installed
-<13>Apr 13 06:49:09 rpmi: glibc-gconv-modules-6:2.32-alt2 sisyphus+263623.100.1.1 1608292020 installed
-<13>Apr 13 06:49:09 rpmi: iconv-6:2.32-alt2 sisyphus+263623.100.1.1 1608292020 installed
-<13>Apr 13 06:49:09 rpmi: glibc-timezones-6:2.32-alt2 sisyphus+263623.100.1.1 1608292020 installed
-<13>Apr 13 06:49:13 rpmi: glibc-locales-6:2.32-alt2 sisyphus+263623.100.1.1 1608292020 installed
-<13>Apr 13 06:49:13 rpmi: glibc-nss-6:2.32-alt2 sisyphus+263623.100.1.1 1608292020 installed
-<13>Apr 13 06:49:13 rpmi: glibc-6:2.32-alt2 sisyphus+263623.100.1.1 1608292020 installed
-<13>Apr 13 06:49:13 rpmi: libffi7-1:3.3-alt1 sisyphus+251953.40.2.1 1589890886 installed
-<13>Apr 13 06:49:13 rpmi: glib2-locales-2.68.0-alt1 sisyphus+268501.100.4.2 1617041548 installed
-<13>Apr 13 06:49:13 rpmi: glib2-2.68.0-alt1 sisyphus+268501.100.4.2 1617041548 installed
-<13>Apr 13 06:49:13 rpmi: pkg-config-0.29.2-alt3 sisyphus+225250.100.1.1 1553032548 installed
-<13>Apr 13 06:49:13 rpmi: libcrypt-devel-4.4.17-alt1 sisyphus+260371.100.1.1 1603619899 installed
-<13>Apr 13 06:49:13 rpmi: libcroco-0.6.13-alt2 sisyphus+243804.100.1.1 1578034001 installed
-<13>Apr 13 06:49:13 rpmi: libtextstyle-0.20.2-alt2 sisyphus+254942.100.1.1 1594761153 installed
-<13>Apr 13 06:49:13 rpmi: libseccomp-2.5.1-alt1 sisyphus+263078.100.1.2 1607430851 installed
-<13>Apr 13 06:49:13 rpmi: psmisc-23.3-alt2 sisyphus+254651.100.1.1 1594190534 installed
-<13>Apr 13 06:49:13 rpmi: sysvinit-utils-2.88-alt6 sisyphus+240403.100.2.1 1573520131 installed
-<13>Apr 13 06:49:13 rpmi: libtic-6.2.20210123-alt1 sisyphus+265425.100.1.1 1611851422 installed
-<13>Apr 13 06:49:13 rpmi: termutils-6.2.20210123-alt1 sisyphus+265425.100.1.1 1611851422 installed
-<13>Apr 13 06:49:13 rpmi: emacs-base-0.0.9-alt1 sisyphus.218512.100 1545670712 installed
-<13>Apr 13 06:49:14 rpmi: gcc-common-1.4.27-alt1 sisyphus+262033.600.7.2 1607340230 installed
-<13>Apr 13 06:49:14 rpmi: cpp10-10.2.1-alt3 sisyphus+267829.100.1.1 1615807924 installed
-<13>Apr 13 06:49:14 rpmi: cpp-10-alt1 sisyphus+263054.200.3.1 1607517515 installed
-<13>Apr 13 06:49:15 rpmi: cpio-2.12-alt2 sisyphus+268042.100.2.1 1617194386 installed
-<13>Apr 13 06:49:15 rpmi: chkconfig-1.3.59-alt4 1410275160 installed
-<13>Apr 13 06:49:15 rpmi: bzip2-1:1.0.8-alt1 sisyphus+247226.100.1.1 1583187375 installed
-<13>Apr 13 06:49:15 rpmi: bison-runtime-3.0.5-alt1 sisyphus+221902.1100.4.1 1550589333 installed
-<13>Apr 13 06:49:15 rpmi: bison-3.0.5-alt1 sisyphus+221902.1100.4.1 1550589333 installed
-<13>Apr 13 06:49:15 rpmi: libctf-nobfd0-1:2.35.1-alt3 sisyphus+263649.200.2.1 1610384935 installed
-<13>Apr 13 06:49:15 rpmi: binutils-1:2.35.1-alt3 sisyphus+263649.200.2.1 1610384935 installed
-<13>Apr 13 06:49:16 rpmi: gettext-tools-0.20.2-alt2 sisyphus+254942.100.1.1 1594761153 installed
-<13>Apr 13 06:49:16 rpmi: libtool_2.4-2.4.6-alt2 sisyphus+263722.100.1.1 1608561796 installed
-<13>Apr 13 06:49:16 rpmi: libtool-3:2.4.2-alt7 1533461531 installed
-<13>Apr 13 06:49:16 rpmi: zstd-1.4.5-alt2 sisyphus+253888.100.1.1 1592916811 installed
-<13>Apr 13 06:49:16 rpmi: vim-minimal-4:8.2.0011-alt2 sisyphus+265234.21600.49.1 1613755220 installed
-<13>Apr 13 06:49:17 rpmi: vitmp-1.0-alt4.qa1 1366322518 installed
-<13>Apr 13 06:49:17 rpmi: setarch-2.36.1-alt2 sisyphus+264757.100.1.1 1610726582 installed
-<13>Apr 13 06:49:18 rpmi: libsmartcols-2.36.1-alt2 sisyphus+264757.100.1.1 1610726582 installed
-<13>Apr 13 06:49:18 rpmi: libuuid-2.36.1-alt2 sisyphus+264757.100.1.1 1610726582 installed
-<13>Apr 13 06:49:18 rpmi: libblkid-2.36.1-alt2 sisyphus+264757.100.1.1 1610726582 installed
-<13>Apr 13 06:49:18 rpmi: libmount-2.36.1-alt2 sisyphus+264757.100.1.1 1610726582 installed
-<13>Apr 13 06:49:18 rpmi: libudev1-1:247.3-alt2 sisyphus+266129.100.1.3 1613012524 installed
-<13>Apr 13 06:49:18 rpmi: libcap-ng-0.8.2-alt1 sisyphus+265234.26100.49.1 1613758255 installed
-<13>Apr 13 06:49:18 rpmi: rootfiles-alt-alt12 1529400230 installed
-<13>Apr 13 06:49:18 rpmi: libcap-utils-1:2.27.0.2.ac1e-alt3 sisyphus+256221.100.2.1 1597365815 installed
-<13>Apr 13 06:49:18 rpmi: control-0.8.0-alt1 1526917521 installed
-<13>Apr 13 06:49:18 rpmi: passwdqc-control-2.0.1-alt1 sisyphus+267618.100.5.1 1615989149 installed
-<13>Apr 13 06:49:18 rpmi: libpasswdqc-2.0.1-alt1 sisyphus+267618.100.5.1 1615989149 installed
-<13>Apr 13 06:49:18 rpmi: pam-config-control-1.9.0-alt4 sisyphus+254612.300.3.1 1594194586 installed
-<13>Apr 13 06:49:18 rpmi: pam0_mktemp-1.1.1-alt4 sisyphus+255842.300.6.1 1596555829 installed
-<13>Apr 13 06:49:19 rpmi: pam0_passwdqc-2.0.1-alt1 sisyphus+267618.100.5.1 1615989149 installed
-<13>Apr 13 06:49:19 rpmi: pam-1.5.1-alt1 sisyphus+260508.100.1.1 1606328316 installed
-<13>Apr 13 06:49:19 rpmi: pam0_tcb-1.2-alt1 sisyphus+267619.100.1.1 1615405863 installed
-<13>Apr 13 06:49:19 rpmi: pam-config-1.9.0-alt4 sisyphus+254612.300.3.1 1594194586 installed
-<13>Apr 13 06:49:19 rpmi: libpam0-1.5.1-alt1 sisyphus+260508.100.1.1 1606328316 installed
-<13>Apr 13 06:49:19 rpmi: pam0_userpass-1.0.2-alt6 1359009157 installed
-<13>Apr 13 06:49:19 rpmi: tcb-utils-1.2-alt1 sisyphus+267619.100.1.1 1615405863 installed
-<13>Apr 13 06:49:19 rpmi: shadow-utils-1:4.5-alt8 sisyphus+255818.100.3.1 1596552950 installed
-<13>Apr 13 06:49:20 rpmi: etcskel-2.0.16-alt1 1528424738 installed
-<13>Apr 13 06:49:20 rpmi: util-linux-control-2.36.1-alt2 sisyphus+264757.100.1.1 1610726582 installed
-<13>Apr 13 06:49:20 rpmi: util-linux-2.36.1-alt2 sisyphus+264757.100.1.1 1610726582 installed
-<13>Apr 13 06:49:20 rpmi: libshell-0.4.9-alt1 sisyphus+267973.100.1.1 1616023572 installed
-<13>Apr 13 06:49:20 rpmi: service-0.5.32-alt1 sisyphus+265313.100.3.1 1612018475 installed
-<13>Apr 13 06:49:20 rpmi: kernel-headers-common-1.2.7-alt1 sisyphus.217241.100 1543842774 installed
-<13>Apr 13 06:49:21 rpmi: glibc-devel-6:2.32-alt2 sisyphus+263623.100.1.1 1608292020 installed
-<13>Apr 13 06:49:22 rpmi: gcc10-10.2.1-alt3 sisyphus+267829.100.1.1 1615807924 installed
-<13>Apr 13 06:49:22 rpmi: gcc-10-alt1 sisyphus+263054.200.3.1 1607517515 installed
-<13>Apr 13 06:49:22 rpmi: altlinux-release-sisyphus-20201124-alt1 sisyphus+262500.100.1.1 1606300692 installed
-<13>Apr 13 06:49:22 rpmi: basesystem-1:sisyphus-alt23 sisyphus+268583.100.1.1 1617015648 installed
-<13>Apr 13 06:49:22 rpmi: rpm-build-4.0.4-alt164 sisyphus+264154.1000.8.1 1610756534 installed
-<13>Apr 13 06:49:22 rpmi: sisyphus_check-0.8.63-alt1 sisyphus+267939.300.4.1 1615995826 installed
-<13>Apr 13 06:49:22 rpmi: time-1:1.7-alt4 1449722760 installed
+<13>May 11 05:49:01 rpmi: sed-1:4.8.0.7.b352-alt1 sisyphus+269178.1100.6.1 1618251305 installed
+<13>May 11 05:49:01 rpmi: libcrypt-4.4.17-alt1 sisyphus+260371.100.1.1 1603619899 installed
+<13>May 11 05:49:01 rpmi: perl-parent-0.238-alt1 sisyphus+245993.100.1.1 1581532230 installed
+<13>May 11 05:49:02 rpmi: perl-base-1:5.30.3-alt1 sisyphus+259030.200.1.1 1601554015 installed
+<13>May 11 05:49:02 rpmi: diffutils-3.7.0.38.cc14-alt1 sisyphus+269178.1300.8.1 1618254370 installed
+<13>May 11 05:49:02 rpmi: findutils-4.8.0.0.5.caa0-alt1 sisyphus+269178.1600.11.1 1618273269 installed
+<13>May 11 05:49:02 rpmi: gnu-config-2021.03.10-alt1 sisyphus+269014.100.1.1 1617670552 installed
+<13>May 11 05:49:02 rpmi: gawk-5.1.0.0.213.d04f-alt1 sisyphus+262609.200.1.1 1606438187 installed
+<13>May 11 05:49:02 rpmi: libaudit1-3.0.1-alt1 sisyphus+265234.65100.52.1 1613962809 installed
+<13>May 11 05:49:02 rpmi: libstdc++6-10.2.1-alt3 sisyphus+267829.100.1.1 1615807924 installed
+<13>May 11 05:49:02 rpmi: automake-common-0.4.2-alt1 sisyphus+264199.200.1.1 1609281542 installed
+<13>May 11 05:49:02 rpmi: m4-1.4.18.0.15.4e5c-alt1 sisyphus+269178.300.3.1 1617924051 installed
+<13>May 11 05:49:02 rpmi: xz-5.2.5-alt2 sisyphus+270022.200.3.1 1618664083 installed
+<13>May 11 05:49:02 rpmi: tar-1.34.0.13.66b59fcc-alt1 sisyphus+269884.200.2.1 1618353168 installed
+<13>May 11 05:49:03 rpmi: glibc-kernheaders-generic-5.11-alt1 sisyphus+266513.100.1.1 1613566905 installed
+<13>May 11 05:49:03 rpmi: glibc-kernheaders-x86-5.11-alt1 sisyphus+266513.100.1.1 1613566905 installed
+<13>May 11 05:49:03 rpmi: glibc-kernheaders-5.11-alt1 sisyphus+266513.100.1.1 1613566905 installed
+<13>May 11 05:49:03 rpmi: libmagic-4.26-alt17 sisyphus+266080.100.2.1 1614467551 installed
+<13>May 11 05:49:03 rpmi: file-4.26-alt17 sisyphus+266080.100.2.1 1614467551 installed
+<13>May 11 05:49:03 rpmi: libdw-0.183-alt1 sisyphus+265868.100.1.1 1612568591 installed
+<13>May 11 05:49:03 rpmi: libmpfr6-4.1.0-alt1 sisyphus+262764.300.2.1 1606840927 installed
+<13>May 11 05:49:03 rpmi: autoconf-common-0.3.2-alt1 sisyphus+264199.100.1.1 1609281515 installed
+<13>May 11 05:49:03 rpmi: libgpm-1.20.1-alt18.2 sisyphus+269158.200.2.1 1618493905 installed
+<13>May 11 05:49:03 rpmi: libncursesw-6.2.20210123-alt1 sisyphus+265425.100.1.1 1611851422 installed
+<13>May 11 05:49:03 rpmi: gzip-1.10.0.31.34db-alt1 sisyphus+269178.700.4.1 1618186664 installed
+<13>May 11 05:49:03 rpmi: libtcb-1.2-alt1 sisyphus+267619.100.1.1 1615405863 installed
+<13>May 11 05:49:03 rpmi: shadow-convert-1:4.5-alt8 sisyphus+255818.100.3.1 1596552950 installed
+<13>May 11 05:49:04 rpmi: common-licenses-1.12-alt1 sisyphus+265909.100.1.1 1612701587 installed
+<13>May 11 05:49:04 rpmi: nss_tcb-1.2-alt1 sisyphus+267619.100.1.1 1615405863 installed
+<13>May 11 05:49:04 rpmi: libncurses-6.2.20210123-alt1 sisyphus+265425.100.1.1 1611851422 installed
+<13>May 11 05:49:04 rpmi: autoconf_2.60-2:2.69-alt8 sisyphus+263698.100.1.1 1608519435 installed
+<13>May 11 05:49:04 rpmi: autoconf-2:2.69-alt5 sisyphus+263686.100.1.1 1608487165 installed
+<13>May 11 05:49:04 rpmi: libmpc3-1.2.1-alt1 sisyphus+262764.400.2.1 1606840983 installed
+<13>May 11 05:49:04 rpmi: libasm-0.183-alt1 sisyphus+265868.100.1.1 1612568591 installed
+<13>May 11 05:49:04 rpmi: elfutils-0.183-alt1 sisyphus+265868.100.1.1 1612568591 installed
+<13>May 11 05:49:04 rpmi: librpmbuild7-4.13.0.1-alt24 sisyphus+265234.20600.49.1 1613753302 installed
+<13>May 11 05:49:04 rpmi: rpmspec-4.13.0.1-alt24 sisyphus+265234.20600.49.1 1613753302 installed
+<13>May 11 05:49:04 rpmi: libubsan1-10.2.1-alt3 sisyphus+267829.100.1.1 1615807924 installed
+<13>May 11 05:49:05 rpmi: tzdata-2021a-alt1 sisyphus+265526.100.1.1 1612068635 installed
+<13>May 11 05:49:05 rpmi: perl-threads-1:5.30.3-alt1 sisyphus+259030.200.1.1 1601554015 installed
+<13>May 11 05:49:05 rpmi: automake_1.16-1.16.3-alt1 sisyphus+262126.200.2.1 1605791460 installed
+<13>May 11 05:49:05 rpmi: automake-1:1.16-alt1 sisyphus+226889.100.2.1 1554763109 installed
+<13>May 11 05:49:05 rpmi: glibc-utils-6:2.32-alt2 sisyphus+263623.100.1.1 1608292020 installed
+<13>May 11 05:49:05 rpmi: perl-CPAN-Meta-Requirements-2.140-alt1 1450184784 installed
+<13>May 11 05:49:05 rpmi: rpm-build-perl-0.84-alt20 sisyphus+258375.40.14.2 1600902490 installed
+<13>May 11 05:49:05 rpmi: which-2.20-alt2.qa1 1366269223 installed
+<13>May 11 05:49:05 rpmi: patch-2.7.6.0.27.7623-alt1 sisyphus+269178.1500.10.1 1618271450 installed
+<13>May 11 05:49:05 rpmi: make-2:4.3.0-alt1 sisyphus+249113.200.3.1 1585752398 installed
+<13>May 11 05:49:05 rpmi: libtool-common-0.2.3-alt1 sisyphus+264199.300.1.1 1609281573 installed
+<13>May 11 05:49:05 rpmi: librpm-4.0.4-alt164 sisyphus+264154.1000.8.1 1610756534 installed
+<13>May 11 05:49:05 rpmi: librpmbuild-4.0.4-alt164 sisyphus+264154.1000.8.1 1610756534 installed
+<13>May 11 05:49:06 rpmi: libpython-2.7.18-alt4 sisyphus+266950.200.2.1 1614241385 installed
+<13>May 11 05:49:06 rpmi: python2-base-2.7.18-alt4 sisyphus+266950.200.2.1 1614241385 installed
+<13>May 11 05:49:06 rpmi: rpm-build-python-0.39.0-alt1 sisyphus+260900.100.1.1 1604410511 installed
+<13>May 11 05:49:06 rpmi: libprocps-3.3.17-alt2 sisyphus+266373.100.1.1 1613417581 installed
+<13>May 11 05:49:06 rpmi: procps-3.3.17-alt2 sisyphus+266373.100.1.1 1613417581 installed
+<13>May 11 05:49:06 rpmi: libzio-1.06-alt1 1533344560 installed
+<13>May 11 05:49:06 rpmi: info-install-6.7-alt1 sisyphus+262609.100.1.1 1606438100 installed
+<13>May 11 05:49:06 rpmi: xml-common-0.6.3-alt15 1423664786 installed
+<13>May 11 05:49:06 rpmi: libxml2-1:2.9.10-alt6 sisyphus+265234.30740.49.1 1613762093 installed
+<13>May 11 05:49:06 rpmi: libunistring2-0.9.10-alt1 sisyphus+221902.4100.4.1 1550598588 installed
+<13>May 11 05:49:06 rpmi: gettext-0.20.2-alt2 sisyphus+254942.100.1.1 1594761153 installed
+<13>May 11 05:49:06 rpmi: libvtv0-10.2.1-alt3 sisyphus+267829.100.1.1 1615807924 installed
+<13>May 11 05:49:06 rpmi: liblsan0-10.2.1-alt3 sisyphus+267829.100.1.1 1615807924 installed
+<13>May 11 05:49:06 rpmi: libitm1-10.2.1-alt3 sisyphus+267829.100.1.1 1615807924 installed
+<13>May 11 05:49:07 rpmi: libtsan0-10.2.1-alt3 sisyphus+267829.100.1.1 1615807924 installed
+<13>May 11 05:49:07 rpmi: libasan6-10.2.1-alt3 sisyphus+267829.100.1.1 1615807924 installed
+<13>May 11 05:49:07 rpmi: libatomic1-10.2.1-alt3 sisyphus+267829.100.1.1 1615807924 installed
+<13>May 11 05:49:07 rpmi: glibc-gconv-modules-6:2.32-alt2 sisyphus+263623.100.1.1 1608292020 installed
+<13>May 11 05:49:07 rpmi: iconv-6:2.32-alt2 sisyphus+263623.100.1.1 1608292020 installed
+<13>May 11 05:49:07 rpmi: glibc-timezones-6:2.32-alt2 sisyphus+263623.100.1.1 1608292020 installed
+<13>May 11 05:49:11 rpmi: glibc-locales-6:2.32-alt2 sisyphus+263623.100.1.1 1608292020 installed
+<13>May 11 05:49:11 rpmi: glibc-nss-6:2.32-alt2 sisyphus+263623.100.1.1 1608292020 installed
+<13>May 11 05:49:11 rpmi: glibc-6:2.32-alt2 sisyphus+263623.100.1.1 1608292020 installed
+<13>May 11 05:49:11 rpmi: libffi7-1:3.3-alt1 sisyphus+251953.40.2.1 1589890886 installed
+<13>May 11 05:49:12 rpmi: glib2-locales-2.68.1-alt1 sisyphus+269248.100.1.1 1617921007 installed
+<13>May 11 05:49:12 rpmi: glib2-2.68.1-alt1 sisyphus+269248.100.1.1 1617921007 installed
+<13>May 11 05:49:12 rpmi: pkg-config-0.29.2-alt3 sisyphus+225250.100.1.1 1553032548 installed
+<13>May 11 05:49:12 rpmi: libcrypt-devel-4.4.17-alt1 sisyphus+260371.100.1.1 1603619899 installed
+<13>May 11 05:49:12 rpmi: libcroco-0.6.13-alt2 sisyphus+243804.100.1.1 1578034001 installed
+<13>May 11 05:49:12 rpmi: libtextstyle-0.20.2-alt2 sisyphus+254942.100.1.1 1594761153 installed
+<13>May 11 05:49:12 rpmi: libseccomp-2.5.1-alt1 sisyphus+263078.100.1.2 1607430851 installed
+<13>May 11 05:49:12 rpmi: psmisc-23.3-alt2 sisyphus+254651.100.1.1 1594190534 installed
+<13>May 11 05:49:12 rpmi: sysvinit-utils-2.88-alt6 sisyphus+240403.100.2.1 1573520131 installed
+<13>May 11 05:49:12 rpmi: libtic-6.2.20210123-alt1 sisyphus+265425.100.1.1 1611851422 installed
+<13>May 11 05:49:12 rpmi: termutils-6.2.20210123-alt1 sisyphus+265425.100.1.1 1611851422 installed
+<13>May 11 05:49:12 rpmi: emacs-base-0.0.9-alt1 sisyphus.218512.100 1545670712 installed
+<13>May 11 05:49:12 rpmi: gcc-common-1.4.27-alt1 sisyphus+262033.600.7.2 1607340230 installed
+<13>May 11 05:49:13 rpmi: cpp10-10.2.1-alt3 sisyphus+267829.100.1.1 1615807924 installed
+<13>May 11 05:49:13 rpmi: cpp-10-alt1 sisyphus+263054.200.3.1 1607517515 installed
+<13>May 11 05:49:13 rpmi: cpio-2.12-alt2 sisyphus+268042.100.2.1 1617194386 installed
+<13>May 11 05:49:13 rpmi: chkconfig-1.3.59-alt4 1410275160 installed
+<13>May 11 05:49:13 rpmi: bzip2-1:1.0.8-alt1 sisyphus+247226.100.1.1 1583187375 installed
+<13>May 11 05:49:14 rpmi: bison-runtime-3.7.6-alt1 sisyphus+269178.440.3.1 1617924307 installed
+<13>May 11 05:49:14 rpmi: bison-3.7.6-alt1 sisyphus+269178.440.3.1 1617924307 installed
+<13>May 11 05:49:14 rpmi: libctf-nobfd0-1:2.35.1-alt3 sisyphus+263649.200.2.1 1610384935 installed
+<13>May 11 05:49:15 rpmi: binutils-1:2.35.1-alt3 sisyphus+263649.200.2.1 1610384935 installed
+<13>May 11 05:49:15 rpmi: gettext-tools-0.20.2-alt2 sisyphus+254942.100.1.1 1594761153 installed
+<13>May 11 05:49:15 rpmi: libtool_2.4-2.4.6-alt3 sisyphus+269178.2000.13.1 1618328447 installed
+<13>May 11 05:49:15 rpmi: libtool-3:2.4.2-alt7 1533461531 installed
+<13>May 11 05:49:16 rpmi: zstd-1.4.5-alt2 sisyphus+253888.100.1.1 1592916811 installed
+<13>May 11 05:49:16 rpmi: vim-minimal-4:8.2.0011-alt2 sisyphus+265234.21600.49.1 1613755220 installed
+<13>May 11 05:49:16 rpmi: vitmp-1.0-alt4.qa1 1366322518 installed
+<13>May 11 05:49:16 rpmi: setarch-2.36.1-alt2 sisyphus+264757.100.1.1 1610726582 installed
+<13>May 11 05:49:16 rpmi: libsmartcols-2.36.1-alt2 sisyphus+264757.100.1.1 1610726582 installed
+<13>May 11 05:49:16 rpmi: libuuid-2.36.1-alt2 sisyphus+264757.100.1.1 1610726582 installed
+<13>May 11 05:49:16 rpmi: libblkid-2.36.1-alt2 sisyphus+264757.100.1.1 1610726582 installed
+<13>May 11 05:49:16 rpmi: libmount-2.36.1-alt2 sisyphus+264757.100.1.1 1610726582 installed
+<13>May 11 05:49:16 rpmi: libudev1-1:247.3-alt2 sisyphus+266129.100.1.3 1613012524 installed
+<13>May 11 05:49:16 rpmi: libcap-ng-0.8.2-alt1 sisyphus+265234.26100.49.1 1613758255 installed
+<13>May 11 05:49:16 rpmi: rootfiles-alt-alt12 1529400230 installed
+<13>May 11 05:49:16 rpmi: libcap-utils-1:2.27.0.2.ac1e-alt3 sisyphus+256221.100.2.1 1597365815 installed
+<13>May 11 05:49:16 rpmi: control-0.8.0-alt1 1526917521 installed
+<13>May 11 05:49:16 rpmi: passwdqc-control-2.0.2-alt1 sisyphus+268942.200.2.1 1617562610 installed
+<13>May 11 05:49:16 rpmi: libpasswdqc-2.0.2-alt1 sisyphus+268942.200.2.1 1617562610 installed
+<13>May 11 05:49:16 rpmi: pam-config-control-1.9.0-alt4 sisyphus+254612.300.3.1 1594194586 installed
+<13>May 11 05:49:16 rpmi: pam0_mktemp-1.1.1-alt4 sisyphus+255842.300.6.1 1596555829 installed
+<13>May 11 05:49:17 rpmi: pam0_passwdqc-2.0.2-alt1 sisyphus+268942.200.2.1 1617562610 installed
+<13>May 11 05:49:17 rpmi: pam-1.5.1-alt1 sisyphus+260508.100.1.1 1606328316 installed
+<13>May 11 05:49:17 rpmi: pam0_tcb-1.2-alt1 sisyphus+267619.100.1.1 1615405863 installed
+<13>May 11 05:49:17 rpmi: pam-config-1.9.0-alt4 sisyphus+254612.300.3.1 1594194586 installed
+<13>May 11 05:49:17 rpmi: libpam0-1.5.1-alt1 sisyphus+260508.100.1.1 1606328316 installed
+<13>May 11 05:49:17 rpmi: pam0_userpass-1.0.2-alt6 1359009157 installed
+<13>May 11 05:49:17 rpmi: tcb-utils-1.2-alt1 sisyphus+267619.100.1.1 1615405863 installed
+<13>May 11 05:49:18 rpmi: shadow-utils-1:4.5-alt8 sisyphus+255818.100.3.1 1596552950 installed
+<13>May 11 05:49:18 rpmi: etcskel-2.0.16-alt1 1528424738 installed
+<13>May 11 05:49:18 rpmi: util-linux-control-2.36.1-alt2 sisyphus+264757.100.1.1 1610726582 installed
+<13>May 11 05:49:18 rpmi: util-linux-2.36.1-alt2 sisyphus+264757.100.1.1 1610726582 installed
+<13>May 11 05:49:18 rpmi: libshell-0.4.9-alt1 sisyphus+267973.100.1.1 1616023572 installed
+<13>May 11 05:49:18 rpmi: service-0.5.32-alt1 sisyphus+265313.100.3.1 1612018475 installed
+<13>May 11 05:49:18 rpmi: kernel-headers-common-1.2.7-alt1 sisyphus.217241.100 1543842774 installed
+<13>May 11 05:49:19 rpmi: glibc-devel-6:2.32-alt2 sisyphus+263623.100.1.1 1608292020 installed
+<13>May 11 05:49:20 rpmi: gcc10-10.2.1-alt3 sisyphus+267829.100.1.1 1615807924 installed
+<13>May 11 05:49:20 rpmi: gcc-10-alt1 sisyphus+263054.200.3.1 1607517515 installed
+<13>May 11 05:49:20 rpmi: altlinux-release-sisyphus-20201124-alt1 sisyphus+262500.100.1.1 1606300692 installed
+<13>May 11 05:49:20 rpmi: basesystem-1:sisyphus-alt23 sisyphus+268583.100.1.1 1617015648 installed
+<13>May 11 05:49:20 rpmi: rpm-build-4.0.4-alt164 sisyphus+264154.1000.8.1 1610756534 installed
+<13>May 11 05:49:20 rpmi: sisyphus_check-0.8.63-alt1 sisyphus+267939.300.4.1 1615995826 installed
+<13>May 11 05:49:21 rpmi: time-1:1.7-alt4 1449722760 installed
 hsh-initroot: Installed build package list.
 Preparing packages...
 altlinux-release-sisyphus-20201124-alt1.noarch
@@ -1018,17 +1022,17 @@ common-licenses-1.12-alt1.noarch
 libaudit1-3.0.1-alt1.x86_64
 libtcb-1.2-alt1.x86_64
 shadow-convert-1:4.5-alt8.x86_64
-sed-1:4.7-alt1.x86_64
-findutils-4.6.0.0.204.b23a2-alt1.x86_64
+sed-1:4.8.0.7.b352-alt1.x86_64
+findutils-4.8.0.0.5.caa0-alt1.x86_64
 libcap-utils-1:2.27.0.2.ac1e-alt3.x86_64
 control-0.8.0-alt1.noarch
-passwdqc-control-2.0.1-alt1.noarch
-libpasswdqc-2.0.1-alt1.x86_64
+passwdqc-control-2.0.2-alt1.noarch
+libpasswdqc-2.0.2-alt1.x86_64
 libcrypt-4.4.17-alt1.x86_64
 pam-1.5.1-alt1.x86_64
 pam0_mktemp-1.1.1-alt4.x86_64
-pam0_passwdqc-2.0.1-alt1.x86_64
-diffutils-3.7-alt1.x86_64
+pam0_passwdqc-2.0.2-alt1.x86_64
+diffutils-3.7.0.38.cc14-alt1.x86_64
 pam-config-control-1.9.0-alt4.noarch
 pam-config-1.9.0-alt4.noarch
 libpam0-1.5.1-alt1.x86_64
@@ -1039,13 +1043,13 @@ pam0_userpass-1.0.2-alt6.x86_64
 shadow-utils-1:4.5-alt8.x86_64
 etcskel-2.0.16-alt1.noarch
 gawk-5.1.0.0.213.d04f-alt1.x86_64
-gzip-1.10-alt1.x86_64
+gzip-1.10.0.31.34db-alt1.x86_64
 perl-parent-0.238-alt1.noarch
 perl-base-1:5.30.3-alt1.x86_64
 rootfiles-alt-alt12.noarch
-tar-1.32-alt1.x86_64
+tar-1.34.0.13.66b59fcc-alt1.x86_64
 libcap-ng-0.8.2-alt1.x86_64
-libgpm-1.20.1-alt18.1.x86_64
+libgpm-1.20.1-alt18.2.x86_64
 libncursesw-6.2.20210123-alt1.x86_64
 libudev1-1:247.3-alt2.x86_64
 util-linux-control-2.36.1-alt2.noarch
@@ -1057,12 +1061,12 @@ setarch-2.36.1-alt2.x86_64
 util-linux-2.36.1-alt2.x86_64
 vim-minimal-4:8.2.0011-alt2.x86_64
 vitmp-1.0-alt4.qa1.x86_64
-xz-5.2.5-alt1.x86_64
+xz-5.2.5-alt2.x86_64
 zstd-1.4.5-alt2.x86_64
 basesystem-1:sisyphus-alt23.noarch
 autoconf-common-0.3.2-alt1.noarch
-m4-1.4.18-alt2.x86_64
-gnu-config-1.0.971.ff53-alt1.noarch
+m4-1.4.18.0.15.4e5c-alt1.x86_64
+gnu-config-2021.03.10-alt1.noarch
 autoconf_2.60-2:2.69-alt8.noarch
 autoconf-2:2.69-alt5.noarch
 automake-common-0.4.2-alt1.noarch
@@ -1072,8 +1076,8 @@ automake-1:1.16-alt1.noarch
 libstdc++6-10.2.1-alt3.x86_64
 libctf-nobfd0-1:2.35.1-alt3.x86_64
 binutils-1:2.35.1-alt3.x86_64
-bison-runtime-3.0.5-alt1.noarch
-bison-3.0.5-alt1.x86_64
+bison-runtime-3.7.6-alt1.noarch
+bison-3.7.6-alt1.x86_64
 bzip2-1:1.0.8-alt1.x86_64
 chkconfig-1.3.59-alt4.x86_64
 cpio-2.12-alt2.x86_64
@@ -1099,9 +1103,9 @@ psmisc-23.3-alt2.x86_64
 libshell-0.4.9-alt1.noarch
 service-0.5.32-alt1.x86_64
 kernel-headers-common-1.2.7-alt1.x86_64
-glib2-locales-2.68.0-alt1.noarch
+glib2-locales-2.68.1-alt1.noarch
 libffi7-1:3.3-alt1.x86_64
-glib2-2.68.0-alt1.x86_64
+glib2-2.68.1-alt1.x86_64
 pkg-config-0.29.2-alt3.x86_64
 libcrypt-devel-4.4.17-alt1.x86_64
 glibc-nss-6:2.32-alt2.x86_64
@@ -1137,10 +1141,10 @@ librpm-4.0.4-alt164.x86_64
 librpmbuild-4.0.4-alt164.x86_64
 librpmbuild7-4.13.0.1-alt24.x86_64
 libtool-common-0.2.3-alt1.x86_64
-libtool_2.4-2.4.6-alt2.x86_64
+libtool_2.4-2.4.6-alt3.x86_64
 libtool-3:2.4.2-alt7.noarch
 make-2:4.3.0-alt1.x86_64
-patch-2.7.6.0.24.76e7-alt1.x86_64
+patch-2.7.6.0.27.7623-alt1.x86_64
 perl-CPAN-Meta-Requirements-2.140-alt1.noarch
 libncurses-6.2.20210123-alt1.x86_64
 procps-3.3.17-alt2.x86_64
@@ -1154,18 +1158,18 @@ which-2.20-alt2.qa1.x86_64
 rpm-build-4.0.4-alt164.x86_64
 Running /usr/lib/rpm/posttrans-filetriggers
 hsh-initroot: RPM database updated.
-<86>Apr 13 06:49:29 groupadd[1897]: group added to /etc/group: name=caller, GID=500
-<86>Apr 13 06:49:29 groupadd[1897]: group added to /etc/gshadow: name=caller
-<86>Apr 13 06:49:29 groupadd[1897]: new group: name=caller, GID=500
-<86>Apr 13 06:49:29 useradd[1901]: new user: name=caller, UID=500, GID=500, home=/, shell=/bin/bash
-<86>Apr 13 06:49:29 groupadd[1906]: group added to /etc/group: name=rooter, GID=501
-<86>Apr 13 06:49:29 groupadd[1906]: group added to /etc/gshadow: name=rooter
-<86>Apr 13 06:49:29 groupadd[1906]: new group: name=rooter, GID=501
-<86>Apr 13 06:49:29 useradd[1910]: new user: name=rooter, UID=501, GID=501, home=/root, shell=/bin/bash
-<86>Apr 13 06:49:29 groupadd[1915]: group added to /etc/group: name=builder, GID=502
-<86>Apr 13 06:49:29 groupadd[1915]: group added to /etc/gshadow: name=builder
-<86>Apr 13 06:49:29 groupadd[1915]: new group: name=builder, GID=502
-<86>Apr 13 06:49:29 useradd[1919]: new user: name=builder, UID=502, GID=502, home=/usr/src, shell=/bin/bash
+<86>May 11 05:49:28 groupadd[1901]: group added to /etc/group: name=caller, GID=500
+<86>May 11 05:49:28 groupadd[1901]: group added to /etc/gshadow: name=caller
+<86>May 11 05:49:28 groupadd[1901]: new group: name=caller, GID=500
+<86>May 11 05:49:28 useradd[1905]: new user: name=caller, UID=500, GID=500, home=/, shell=/bin/bash
+<86>May 11 05:49:28 groupadd[1910]: group added to /etc/group: name=rooter, GID=501
+<86>May 11 05:49:28 groupadd[1910]: group added to /etc/gshadow: name=rooter
+<86>May 11 05:49:28 groupadd[1910]: new group: name=rooter, GID=501
+<86>May 11 05:49:28 useradd[1914]: new user: name=rooter, UID=501, GID=501, home=/root, shell=/bin/bash
+<86>May 11 05:49:28 groupadd[1919]: group added to /etc/group: name=builder, GID=502
+<86>May 11 05:49:28 groupadd[1919]: group added to /etc/gshadow: name=builder
+<86>May 11 05:49:28 groupadd[1919]: new group: name=builder, GID=502
+<86>May 11 05:49:28 useradd[1923]: new user: name=builder, UID=502, GID=502, home=/usr/src, shell=/bin/bash
 mode of '/usr/src' changed from 0755 (rwxr-xr-x) to 1777 (rwxrwxrwt)
 hsh-initroot: First time initialization complete.
 hsh-initroot: RPM database archivation complete.
@@ -1189,8 +1193,8 @@ hsh-initroot: Prepared mount points.
 mkdir: created directory '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/cache/contents/parts'
 hsh-initroot: Initialized contents state.
 hsh-initroot: Created empty contents part for /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/repo/x86_64/RPMS.hasher/.
-hsh-initroot: Created contents part for ftp.altlinux.org_pub_distributions_archive_sisyphus_date_2021_04_04_noarch_base_pkglist.classic.
-hsh-initroot: Created contents part for ftp.altlinux.org_pub_distributions_archive_sisyphus_date_2021_04_04_x86%5f64_base_pkglist.classic.
+hsh-initroot: Created contents part for ftp.altlinux.org_pub_distributions_archive_sisyphus_date_2021_04_27_noarch_base_pkglist.classic.
+hsh-initroot: Created contents part for ftp.altlinux.org_pub_distributions_archive_sisyphus_date_2021_04_27_x86%5f64_base_pkglist.classic.
 hsh-initroot: Added contents index entries for /bin.
 hsh-initroot: Added contents index entries for /sbin.
 hsh-initroot: Added contents index entries for /usr/bin.
@@ -1210,12 +1214,6 @@ hsh-initroot: Created contents index.
 '/etc/skel/.local/share' -> '/usr/src/.local/share'
 '/etc/skel/.lpoptions' -> '/usr/src/.lpoptions'
 '/etc/skel/.mutt' -> '/usr/src/.mutt'
-'/etc/skel/.mutt/color.default' -> '/usr/src/.mutt/color.default'
-'/etc/skel/.mutt/color.default/index' -> '/usr/src/.mutt/color.default/index'
-'/etc/skel/.mutt/color.default/header' -> '/usr/src/.mutt/color.default/header'
-'/etc/skel/.mutt/color.default/color' -> '/usr/src/.mutt/color.default/color'
-'/etc/skel/.mutt/color.default/body' -> '/usr/src/.mutt/color.default/body'
-'/etc/skel/.mutt/folder' -> '/usr/src/.mutt/folder'
 '/etc/skel/.mutt/set' -> '/usr/src/.mutt/set'
 '/etc/skel/.mutt/muttrc' -> '/usr/src/.mutt/muttrc'
 '/etc/skel/.mutt/lists' -> '/usr/src/.mutt/lists'
@@ -1226,6 +1224,12 @@ hsh-initroot: Created contents index.
 '/etc/skel/.mutt/charset' -> '/usr/src/.mutt/charset'
 '/etc/skel/.mutt/bind' -> '/usr/src/.mutt/bind'
 '/etc/skel/.mutt/alias' -> '/usr/src/.mutt/alias'
+'/etc/skel/.mutt/color.default' -> '/usr/src/.mutt/color.default'
+'/etc/skel/.mutt/color.default/index' -> '/usr/src/.mutt/color.default/index'
+'/etc/skel/.mutt/color.default/header' -> '/usr/src/.mutt/color.default/header'
+'/etc/skel/.mutt/color.default/color' -> '/usr/src/.mutt/color.default/color'
+'/etc/skel/.mutt/color.default/body' -> '/usr/src/.mutt/color.default/body'
+'/etc/skel/.mutt/folder' -> '/usr/src/.mutt/folder'
 '/etc/skel/.rpmmacros' -> '/usr/src/.rpmmacros'
 '/etc/skel/.ssh' -> '/usr/src/.ssh'
 '/etc/skel/.ssh/config' -> '/usr/src/.ssh/config'
@@ -1242,16 +1246,20 @@ mkdir: created directory '/usr/src/RPM/RPMS'
 mkdir: created directory '/usr/src/RPM/RPMS/noarch'
 hsh-initroot: Created RPM build directory tree.
 hsh-rebuild: changed working directory to `/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher'
-'/tmp/gear.DUUDSOz0/work/pkg.tar' -> 'chroot/.in/pkg.tar'
+'/tmp/gear.HFWJT0iU/work/pkg.tar' -> 'chroot/.in/pkg.tar'
 mkdir: created directory '/usr/src/in'
 mkdir: created directory '/usr/src/in/spec'
 mkdir: created directory '/usr/src/in/source'
 shim.spec
 ./
+./shim-15.4-upstream-don-t-call-queryvariableinfo-on-efi-1.10.patch
+./shim-15.4-upstream-fix-mokutil--disable-validation-does-not-work.patch
+./shim-15.4-upstream-fix-build-with-old-binutils-on-aarch64.patch
 ./shim-15.4.tar
 ./shim-15.4-gnu-efi.tar
 ./altlinux-ca.cer
 ./shim-15.4-upstream-fix-a-broken-file-header-on-ia32.patch
+./shim-15.4-upstream-mok-config-table-as-bootservicesdata.patch
 ./shim.spec
 renamed '/usr/src/in/source/shim.spec' -> '/usr/src/in/spec/shim.spec'
 hsh-rebuild: pkg.tar: installed source file.
@@ -1274,18 +1282,18 @@ Get:2 http://ftp.altlinux.org noarch/classic rpm-macros-alternatives 0.5.1-alt1:
 Get:3 http://ftp.altlinux.org noarch/classic alternatives 0.5.1-alt1:sisyphus+226946.100.1.1@1554830426 [23.6kB]
 Get:4 http://ftp.altlinux.org x86_64/classic libefivar 37-alt5:sisyphus+267076.100.1.1@1614416680 [82.8kB]
 Get:5 http://ftp.altlinux.org x86_64/classic libnspr 1:4.30-alt1:sisyphus+268304.100.1.1@1616591548 [125kB]
-Get:6 http://ftp.altlinux.org x86_64/classic libsqlite3 3.35.3-alt1:sisyphus+268601.100.1.1@1617030257 [580kB]
+Get:6 http://ftp.altlinux.org x86_64/classic libsqlite3 3.35.5-alt1:sisyphus+270436.100.1.1@1619019785 [580kB]
 Get:7 http://ftp.altlinux.org x86_64/classic libnss 3.63.0-alt1:sisyphus+268304.200.1.1@1616591771 [1238kB]
 Get:8 http://ftp.altlinux.org x86_64/classic pesign 113-alt3:sisyphus+264877.100.2.1@1617190586 [92.2kB]
 Get:9 http://ftp.altlinux.org x86_64/classic rpm-macros-uefi 0.5-alt1@1387289833 [2793B]
-Fetched 2213kB in 0s (7537kB/s)
+Fetched 2213kB in 0s (3275kB/s)
 Executing RPM (hsh-rpmi-print-files -U -v -h -r /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox --oldpackage)...
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/acl_2.3.1-alt1%3asisyphus+268564.200.1.1@1616974452_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/rpm-macros-alternatives_0.5.1-alt1%3asisyphus+226946.100.1.1@1554830426_noarch.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/alternatives_0.5.1-alt1%3asisyphus+226946.100.1.1@1554830426_noarch.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libefivar_37-alt5%3asisyphus+267076.100.1.1@1614416680_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libnspr_1%3a4.30-alt1%3asisyphus+268304.100.1.1@1616591548_x86%5f64.rpm
-/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libsqlite3_3.35.3-alt1%3asisyphus+268601.100.1.1@1617030257_x86%5f64.rpm
+/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libsqlite3_3.35.5-alt1%3asisyphus+270436.100.1.1@1619019785_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libnss_3.63.0-alt1%3asisyphus+268304.200.1.1@1616591771_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/pesign_113-alt3%3asisyphus+264877.100.2.1@1617190586_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/rpm-macros-uefi_0.5-alt1@1387289833_x86%5f64.rpm
@@ -1296,7 +1304,7 @@ hsh-install: Calculated package file list.
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/alternatives_0.5.1-alt1%3asisyphus+226946.100.1.1@1554830426_noarch.rpm' -> 'chroot/.in/alternatives_0.5.1-alt1%3asisyphus+226946.100.1.1@1554830426_noarch.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libefivar_37-alt5%3asisyphus+267076.100.1.1@1614416680_x86%5f64.rpm' -> 'chroot/.in/libefivar_37-alt5%3asisyphus+267076.100.1.1@1614416680_x86%5f64.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libnspr_1%3a4.30-alt1%3asisyphus+268304.100.1.1@1616591548_x86%5f64.rpm' -> 'chroot/.in/libnspr_1%3a4.30-alt1%3asisyphus+268304.100.1.1@1616591548_x86%5f64.rpm'
-'/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libsqlite3_3.35.3-alt1%3asisyphus+268601.100.1.1@1617030257_x86%5f64.rpm' -> 'chroot/.in/libsqlite3_3.35.3-alt1%3asisyphus+268601.100.1.1@1617030257_x86%5f64.rpm'
+'/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libsqlite3_3.35.5-alt1%3asisyphus+270436.100.1.1@1619019785_x86%5f64.rpm' -> 'chroot/.in/libsqlite3_3.35.5-alt1%3asisyphus+270436.100.1.1@1619019785_x86%5f64.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libnss_3.63.0-alt1%3asisyphus+268304.200.1.1@1616591771_x86%5f64.rpm' -> 'chroot/.in/libnss_3.63.0-alt1%3asisyphus+268304.200.1.1@1616591771_x86%5f64.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/pesign_113-alt3%3asisyphus+264877.100.2.1@1617190586_x86%5f64.rpm' -> 'chroot/.in/pesign_113-alt3%3asisyphus+264877.100.2.1@1617190586_x86%5f64.rpm'
 '/tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/rpm-macros-uefi_0.5-alt1@1387289833_x86%5f64.rpm' -> 'chroot/.in/rpm-macros-uefi_0.5-alt1@1387289833_x86%5f64.rpm'
@@ -1304,19 +1312,19 @@ hsh-install: fetched file dependencies from packages being installed.
 hsh-install: calculated mount points: 
 hsh-install: fetched installed file dependencies.
 hsh-install: calculated mount points: 
-<13>Apr 13 06:49:41 rpmi: libnspr-1:4.30-alt1 sisyphus+268304.100.1.1 1616591548 installed
-<13>Apr 13 06:49:41 rpmi: libsqlite3-3.35.3-alt1 sisyphus+268601.100.1.1 1617030257 installed
-<13>Apr 13 06:49:41 rpmi: libefivar-37-alt5 sisyphus+267076.100.1.1 1614416680 installed
-<13>Apr 13 06:49:41 rpmi: rpm-macros-alternatives-0.5.1-alt1 sisyphus+226946.100.1.1 1554830426 installed
-<13>Apr 13 06:49:41 rpmi: alternatives-0.5.1-alt1 sisyphus+226946.100.1.1 1554830426 installed
-<13>Apr 13 06:49:41 rpmi: libnss-3.63.0-alt1 sisyphus+268304.200.1.1 1616591771 installed
-<13>Apr 13 06:49:41 rpmi: acl-2.3.1-alt1 sisyphus+268564.200.1.1 1616974452 installed
-<86>Apr 13 06:49:41 groupadd[2566]: group added to /etc/group: name=pesign, GID=499
-<86>Apr 13 06:49:41 groupadd[2566]: group added to /etc/gshadow: name=pesign
-<86>Apr 13 06:49:41 groupadd[2566]: new group: name=pesign, GID=499
-<86>Apr 13 06:49:41 useradd[2571]: new user: name=pesign, UID=499, GID=499, home=/var/empty, shell=/dev/null
-<13>Apr 13 06:49:41 rpmi: pesign-113-alt3 sisyphus+264877.100.2.1 1617190586 installed
-<13>Apr 13 06:49:41 rpmi: rpm-macros-uefi-0.5-alt1 1387289833 installed
+<13>May 11 05:49:40 rpmi: libnspr-1:4.30-alt1 sisyphus+268304.100.1.1 1616591548 installed
+<13>May 11 05:49:40 rpmi: libsqlite3-3.35.5-alt1 sisyphus+270436.100.1.1 1619019785 installed
+<13>May 11 05:49:40 rpmi: libefivar-37-alt5 sisyphus+267076.100.1.1 1614416680 installed
+<13>May 11 05:49:40 rpmi: rpm-macros-alternatives-0.5.1-alt1 sisyphus+226946.100.1.1 1554830426 installed
+<13>May 11 05:49:40 rpmi: alternatives-0.5.1-alt1 sisyphus+226946.100.1.1 1554830426 installed
+<13>May 11 05:49:40 rpmi: libnss-3.63.0-alt1 sisyphus+268304.200.1.1 1616591771 installed
+<13>May 11 05:49:40 rpmi: acl-2.3.1-alt1 sisyphus+268564.200.1.1 1616974452 installed
+<86>May 11 05:49:40 groupadd[2570]: group added to /etc/group: name=pesign, GID=499
+<86>May 11 05:49:40 groupadd[2570]: group added to /etc/gshadow: name=pesign
+<86>May 11 05:49:40 groupadd[2570]: new group: name=pesign, GID=499
+<86>May 11 05:49:40 useradd[2575]: new user: name=pesign, UID=499, GID=499, home=/var/empty, shell=/dev/null
+<13>May 11 05:49:41 rpmi: pesign-113-alt3 sisyphus+264877.100.2.1 1617190586 installed
+<13>May 11 05:49:41 rpmi: rpm-macros-uefi-0.5-alt1 1387289833 installed
 hsh-install: Packages installation complete.
 Preparing packages...
 acl-2.3.1-alt1.x86_64
@@ -1324,7 +1332,7 @@ rpm-macros-alternatives-0.5.1-alt1.noarch
 alternatives-0.5.1-alt1.noarch
 libefivar-37-alt5.x86_64
 libnspr-1:4.30-alt1.x86_64
-libsqlite3-3.35.3-alt1.x86_64
+libsqlite3-3.35.5-alt1.x86_64
 libnss-3.63.0-alt1.x86_64
 pesign-113-alt3.x86_64
 rpm-macros-uefi-0.5-alt1.x86_64
@@ -1347,7 +1355,7 @@ After unpacking 711kB of additional disk space will be used.
 Get:1 http://ftp.altlinux.org x86_64/classic dos2unix 7.3.5-alt1@1499695585 [196kB]
 Get:2 http://ftp.altlinux.org x86_64/classic libelf-devel 0.183-alt1:sisyphus+265868.100.1.1@1612568591 [24.0kB]
 Get:3 http://ftp.altlinux.org x86_64/classic xxd 4:8.2.0011-alt2:sisyphus+265234.21600.49.1@1613755220 [92.5kB]
-Fetched 312kB in 0s (3667kB/s)
+Fetched 312kB in 0s (3326kB/s)
 Executing RPM (hsh-rpmi-print-files -U -v -h -r /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox --oldpackage)...
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/dos2unix_7.3.5-alt1@1499695585_x86%5f64.rpm
 /tmp/.private/builder/hsh-sandbox/sisyphus-x86_64/hasher/aptbox/var/cache/apt/archives/libelf-devel_0.183-alt1%3asisyphus+265868.100.1.1@1612568591_x86%5f64.rpm
@@ -1361,9 +1369,9 @@ hsh-install: fetched file dependencies from packages being installed.
 hsh-install: calculated mount points: 
 hsh-install: fetched installed file dependencies.
 hsh-install: calculated mount points: 
-<13>Apr 13 06:49:45 rpmi: xxd-4:8.2.0011-alt2 sisyphus+265234.21600.49.1 1613755220 installed
-<13>Apr 13 06:49:45 rpmi: libelf-devel-0.183-alt1 sisyphus+265868.100.1.1 1612568591 installed
-<13>Apr 13 06:49:45 rpmi: dos2unix-7.3.5-alt1 1499695585 installed
+<13>May 11 05:49:45 rpmi: xxd-4:8.2.0011-alt2 sisyphus+265234.21600.49.1 1613755220 installed
+<13>May 11 05:49:45 rpmi: libelf-devel-0.183-alt1 sisyphus+265868.100.1.1 1612568591 installed
+<13>May 11 05:49:45 rpmi: dos2unix-7.3.5-alt1 1499695585 installed
 hsh-install: Packages installation complete.
 Preparing packages...
 dos2unix-7.3.5-alt1.x86_64
@@ -1374,7 +1382,7 @@ hsh-install: RPM database updated.
 mkdir: created directory '/usr/src/in/srpm'
 Building target platforms: x86_64
 Building for target x86_64
-Wrote: /usr/src/in/srpm/shim-15.4-alt1.src.rpm (w1.gzdio)
+Wrote: /usr/src/in/srpm/shim-15.4-alt2.src.rpm (w1.gzdio)
 hsh-rebuild: pkg.tar: created src.rpm file.
 hsh-rebuild: pkg.tar: sisyphus_check passed.
 hsh-rebuild: pkg.tar: fetched build dependencies.
@@ -1397,13 +1405,13 @@ hsh-rebuild: calculated mount points:
 hsh-rebuild: Created rebuild script.
 + export -n target
 ++ cat -- /usr/src/in/SOURCE_DATE_EPOCH
-+ SOURCE_DATE_EPOCH=1617353532
++ SOURCE_DATE_EPOCH=1619510683
 + export SOURCE_DATE_EPOCH
-+ exec time rpmbuild --rebuild --target=x86_64 shim-15.4-alt1.src.rpm
-Installing shim-15.4-alt1.src.rpm
++ exec time rpmbuild --rebuild --target=x86_64 shim-15.4-alt2.src.rpm
+Installing shim-15.4-alt2.src.rpm
 Building target platforms: x86_64
 Building for target x86_64
-Executing(%prep): /bin/sh -e /usr/src/tmp/rpm-tmp.12450
+Executing(%prep): /bin/sh -e /usr/src/tmp/rpm-tmp.84270
 + umask 022
 + /bin/mkdir -p /usr/src/RPM/BUILD
 + cd /usr/src/RPM/BUILD
@@ -1421,9 +1429,29 @@ Source #2 (shim-15.4-gnu-efi.tar):
 Patch #1 (shim-15.4-upstream-fix-a-broken-file-header-on-ia32.patch):
 + /usr/bin/patch -p1
 patching file elf_ia32_efi.lds
-+ echo 'shim.altlinux,1,ALT Linux,shim,15.4-alt1,http://git.altlinux.org/gears/s/shim.git'
++ echo 'Patch #2 (shim-15.4-upstream-fix-mokutil--disable-validation-does-not-work.patch):'
+Patch #2 (shim-15.4-upstream-fix-mokutil--disable-validation-does-not-work.patch):
++ /usr/bin/patch -p1
+patching file mok.c
++ echo 'Patch #3 (shim-15.4-upstream-mok-config-table-as-bootservicesdata.patch):'
+Patch #3 (shim-15.4-upstream-mok-config-table-as-bootservicesdata.patch):
++ /usr/bin/patch -p1
+patching file mok.c
++ echo 'Patch #4 (shim-15.4-upstream-don-t-call-queryvariableinfo-on-efi-1.10.patch):'
+Patch #4 (shim-15.4-upstream-don-t-call-queryvariableinfo-on-efi-1.10.patch):
++ /usr/bin/patch -p1
+patching file mok.c
++ echo 'Patch #5 (shim-15.4-upstream-fix-build-with-old-binutils-on-aarch64.patch):'
+Patch #5 (shim-15.4-upstream-fix-build-with-old-binutils-on-aarch64.patch):
++ /usr/bin/patch -p1
+patching file elf_aarch64_efi.lds
+patching file elf_arm_efi.lds
+patching file elf_ia32_efi.lds
+patching file elf_ia64_efi.lds
+patching file elf_x86_64_efi.lds
++ echo 'shim.altlinux,1,ALT Linux,shim,15.4-alt2,http://git.altlinux.org/gears/s/shim.git'
 + exit 0
-Executing(%build): /bin/sh -e /usr/src/tmp/rpm-tmp.12450
+Executing(%build): /bin/sh -e /usr/src/tmp/rpm-tmp.62504
 + umask 022
 + /bin/mkdir -p /usr/src/RPM/BUILD
 + cd /usr/src/RPM/BUILD
@@ -2013,7 +2041,7 @@ objcopy -D -j .text -j .sdata -j .data -j .data.ident \
 dd conv=notrunc bs=1 count=4 seek=136 if=/dev/zero of=shimia32.efi
 4+0 records in
 4+0 records out
-4 bytes copied, 5.9364e-05 s, 67.4 kB/s
+4 bytes copied, 6.6104e-05 s, 60.5 kB/s
 objcopy -D -j .text -j .sdata -j .data \
 	-j .dynamic -j .rodata -j .rel* \
 	-j .rela* -j .reloc -j .eh_frame -j .sbat \
@@ -2053,7 +2081,7 @@ objcopy -D -j .text -j .sdata -j .data -j .data.ident \
 dd conv=notrunc bs=1 count=4 seek=136 if=/dev/zero of=mmia32.efi
 4+0 records in
 4+0 records out
-4 bytes copied, 7.5468e-05 s, 53.0 kB/s
+4 bytes copied, 6.9811e-05 s, 57.3 kB/s
 objcopy -D -j .text -j .sdata -j .data -j .data.ident \
 	-j .dynamic -j .rodata -j .rel* \
 	-j .rela* -j .reloc -j .eh_frame \
@@ -2063,7 +2091,7 @@ objcopy -D -j .text -j .sdata -j .data -j .data.ident \
 dd conv=notrunc bs=1 count=4 seek=136 if=/dev/zero of=fbia32.efi
 4+0 records in
 4+0 records out
-4 bytes copied, 9.749e-05 s, 41.0 kB/s
+4 bytes copied, 0.000102059 s, 39.2 kB/s
 + popd
 ~/RPM/BUILD/shim-15.4
 + pushd build-x64
@@ -2649,7 +2677,7 @@ objcopy -D -j .text -j .sdata -j .data -j .data.ident \
 dd conv=notrunc bs=1 count=4 seek=136 if=/dev/zero of=shimx64.efi
 4+0 records in
 4+0 records out
-4 bytes copied, 8.4542e-05 s, 47.3 kB/s
+4 bytes copied, 8.7499e-05 s, 45.7 kB/s
 objcopy -D -j .text -j .sdata -j .data \
 	-j .dynamic -j .rodata -j .rel* \
 	-j .rela* -j .reloc -j .eh_frame -j .sbat \
@@ -2686,7 +2714,7 @@ objcopy -D -j .text -j .sdata -j .data -j .data.ident \
 dd conv=notrunc bs=1 count=4 seek=136 if=/dev/zero of=mmx64.efi
 4+0 records in
 4+0 records out
-4 bytes copied, 8.4605e-05 s, 47.3 kB/s
+4 bytes copied, 5.6643e-05 s, 70.6 kB/s
 objcopy -D -j .text -j .sdata -j .data -j .data.ident \
 	-j .dynamic -j .rodata -j .rel* \
 	-j .rela* -j .reloc -j .eh_frame \
@@ -2696,11 +2724,11 @@ objcopy -D -j .text -j .sdata -j .data -j .data.ident \
 dd conv=notrunc bs=1 count=4 seek=136 if=/dev/zero of=fbx64.efi
 4+0 records in
 4+0 records out
-4 bytes copied, 0.00010289 s, 38.9 kB/s
+4 bytes copied, 9.0576e-05 s, 44.2 kB/s
 + popd
 ~/RPM/BUILD/shim-15.4
 + exit 0
-Executing(%install): /bin/sh -e /usr/src/tmp/rpm-tmp.87015
+Executing(%install): /bin/sh -e /usr/src/tmp/rpm-tmp.8409
 + umask 022
 + /bin/mkdir -p /usr/src/RPM/BUILD
 + cd /usr/src/RPM/BUILD
@@ -2750,7 +2778,7 @@ Checking contents of files in /usr/src/tmp/shim-buildroot/ (default)
 Compressing files in /usr/src/tmp/shim-buildroot (auto)
 Verifying ELF objects in /usr/src/tmp/shim-buildroot (arch=normal,fhs=normal,lfs=relaxed,lint=relaxed,rpath=normal,stack=normal,textrel=normal,unresolved=normal)
 Hardlinking identical .pyc and .pyo files
-Executing(%check): /bin/sh -e /usr/src/tmp/rpm-tmp.42318
+Executing(%check): /bin/sh -e /usr/src/tmp/rpm-tmp.85926
 + umask 022
 + /bin/mkdir -p /usr/src/RPM/BUILD
 + cd /usr/src/RPM/BUILD
@@ -2764,7 +2792,7 @@ make[1]: Entering directory '/usr/src/RPM/BUILD/shim-15.4'
 dd if=/dev/urandom bs=512 count=17 of=random.bin
 17+0 records in
 17+0 records out
-8704 bytes (8.7 kB, 8.5 KiB) copied, 0.000153536 s, 56.7 MB/s
+8704 bytes (8.7 kB, 8.5 KiB) copied, 0.000152079 s, 57.2 MB/s
 xxd -i random.bin test-random.h
 gcc -O2 -ggdb -std=gnu11 -isystem /usr/src/RPM/BUILD/shim-15.4/include/system -I/usr/src/RPM/BUILD/shim-15.4/gnu-efi/inc -I/usr/src/RPM/BUILD/shim-15.4/gnu-efi/inc/ia32 -I/usr/src/RPM/BUILD/shim-15.4/gnu-efi/inc/protocol -Iinclude -iquote . -fshort-wchar -flto -fno-builtin -Wall -Wextra -Wsign-compare -Wno-deprecated-declarations -Wno-pointer-sign -Wno-unused -Werror -Werror=nonnull -Werror=nonnull-compare  -DEFI_FUNCTION_WRAPPER -DGNU_EFI_USE_MS_ABI -DPAGE_SIZE=4096 -DSHIM_UNIT_TEST "-DDEFAULT_DEBUG_PRINT_STATE=0" -o test-csv test.c test-csv.c csv.c 
 ./test-csv
@@ -2785,10 +2813,10 @@ test_csv_2: passed
 running test_simple_sbat_csv
 test_simple_sbat_csv: passed
 running test_csv_simple_fuzz
-parsed 104 entries
+parsed 97 entries
 test_csv_simple_fuzz: passed
 running test_csv_simple_fuzz
-parsed 2 entries
+parsed 1 entries
 test_csv_simple_fuzz: passed
 gcc -O2 -ggdb -std=gnu11 -isystem /usr/src/RPM/BUILD/shim-15.4/include/system -I/usr/src/RPM/BUILD/shim-15.4/gnu-efi/inc -I/usr/src/RPM/BUILD/shim-15.4/gnu-efi/inc/ia32 -I/usr/src/RPM/BUILD/shim-15.4/gnu-efi/inc/protocol -Iinclude -iquote . -fshort-wchar -flto -fno-builtin -Wall -Wextra -Wsign-compare -Wno-deprecated-declarations -Wno-pointer-sign -Wno-unused -Werror -Werror=nonnull -Werror=nonnull-compare  -DEFI_FUNCTION_WRAPPER -DGNU_EFI_USE_MS_ABI -DPAGE_SIZE=4096 -DSHIM_UNIT_TEST "-DDEFAULT_DEBUG_PRINT_STATE=0" -o test-sbat test.c test-sbat.c sbat.c csv.c
 ./test-sbat
@@ -2898,7 +2926,7 @@ removed 'random.bin'
 dd if=/dev/urandom bs=512 count=17 of=random.bin
 17+0 records in
 17+0 records out
-8704 bytes (8.7 kB, 8.5 KiB) copied, 0.000157486 s, 55.3 MB/s
+8704 bytes (8.7 kB, 8.5 KiB) copied, 0.000161646 s, 53.8 MB/s
 xxd -i random.bin test-random.h
 gcc -O2 -ggdb -std=gnu11 -isystem /usr/src/RPM/BUILD/shim-15.4/include/system -I/usr/src/RPM/BUILD/shim-15.4/gnu-efi/inc -I/usr/src/RPM/BUILD/shim-15.4/gnu-efi/inc/x86_64 -I/usr/src/RPM/BUILD/shim-15.4/gnu-efi/inc/protocol -Iinclude -iquote . -fshort-wchar -flto -fno-builtin -Wall -Wextra -Wsign-compare -Wno-deprecated-declarations -Wno-pointer-sign -Wno-unused -Werror -Werror=nonnull -Werror=nonnull-compare  -DEFI_FUNCTION_WRAPPER -DGNU_EFI_USE_MS_ABI -DPAGE_SIZE=4096 -DSHIM_UNIT_TEST "-DDEFAULT_DEBUG_PRINT_STATE=0" -o test-csv test.c test-csv.c csv.c 
 ./test-csv
@@ -2919,10 +2947,10 @@ test_csv_2: passed
 running test_simple_sbat_csv
 test_simple_sbat_csv: passed
 running test_csv_simple_fuzz
-parsed 128 entries
+parsed 107 entries
 test_csv_simple_fuzz: passed
 running test_csv_simple_fuzz
-parsed 2 entries
+parsed 3 entries
 test_csv_simple_fuzz: passed
 gcc -O2 -ggdb -std=gnu11 -isystem /usr/src/RPM/BUILD/shim-15.4/include/system -I/usr/src/RPM/BUILD/shim-15.4/gnu-efi/inc -I/usr/src/RPM/BUILD/shim-15.4/gnu-efi/inc/x86_64 -I/usr/src/RPM/BUILD/shim-15.4/gnu-efi/inc/protocol -Iinclude -iquote . -fshort-wchar -flto -fno-builtin -Wall -Wextra -Wsign-compare -Wno-deprecated-declarations -Wno-pointer-sign -Wno-unused -Werror -Werror=nonnull -Werror=nonnull-compare  -DEFI_FUNCTION_WRAPPER -DGNU_EFI_USE_MS_ABI -DPAGE_SIZE=4096 -DSHIM_UNIT_TEST "-DDEFAULT_DEBUG_PRINT_STATE=0" -o test-sbat test.c test-sbat.c sbat.c csv.c
 ./test-sbat
@@ -3022,8 +3050,8 @@ test_strntoken_with_ascii_nul: passed
 make[1]: Leaving directory '/usr/src/RPM/BUILD/shim-15.4'
 make: Leaving directory '/usr/src/RPM/BUILD/shim-15.4'
 + exit 0
-Processing files: shim-unsigned-15.4-alt1
-Executing(%doc): /bin/sh -e /usr/src/tmp/rpm-tmp.33074
+Processing files: shim-unsigned-15.4-alt2
+Executing(%doc): /bin/sh -e /usr/src/tmp/rpm-tmp.40490
 + umask 022
 + /bin/mkdir -p /usr/src/RPM/BUILD
 + cd /usr/src/RPM/BUILD
@@ -3037,20 +3065,20 @@ Executing(%doc): /bin/sh -e /usr/src/tmp/rpm-tmp.33074
 + chmod -R a+rX /usr/src/tmp/shim-buildroot/usr/share/doc/shim-unsigned-15.4
 + exit 0
 Finding Provides (using /usr/lib/rpm/find-provides)
-Executing: /bin/sh -e /usr/src/tmp/rpm-tmp.pfi7d8
+Executing: /bin/sh -e /usr/src/tmp/rpm-tmp.jsWFro
 find-provides: running scripts (alternatives,debuginfo,lib,pam,perl,pkgconfig,python,shell)
 Finding Requires (using /usr/lib/rpm/find-requires)
-Executing: /bin/sh -e /usr/src/tmp/rpm-tmp.Og9KR9
+Executing: /bin/sh -e /usr/src/tmp/rpm-tmp.jSuHhq
 find-requires: running scripts (cpp,debuginfo,files,lib,pam,perl,pkgconfig,pkgconfiglib,python,rpmlib,shebang,shell,static,symlinks,systemd-services)
 Finding debuginfo files (using /usr/lib/rpm/find-debuginfo-files)
-Executing: /bin/sh -e /usr/src/tmp/rpm-tmp.12dco8
-Wrote: /usr/src/RPM/SRPMS/shim-15.4-alt1.src.rpm (w2.lzdio)
-Wrote: /usr/src/RPM/RPMS/x86_64/shim-unsigned-15.4-alt1.x86_64.rpm (w2.lzdio)
-107.49user 23.73system 0:51.88elapsed 252%CPU (0avgtext+0avgdata 54716maxresident)k
-0inputs+327200outputs (14major+5769210minor)pagefaults 0swaps
-renamed '/usr/src/RPM/SRPMS/shim-15.4-alt1.src.rpm' -> '/.out/shim-15.4-alt1.src.rpm'
-renamed '/usr/src/RPM/RPMS/x86_64/shim-unsigned-15.4-alt1.x86_64.rpm' -> '/.out/shim-unsigned-15.4-alt1.x86_64.rpm'
+Executing: /bin/sh -e /usr/src/tmp/rpm-tmp.gPNQds
+Wrote: /usr/src/RPM/SRPMS/shim-15.4-alt2.src.rpm (w2.lzdio)
+Wrote: /usr/src/RPM/RPMS/x86_64/shim-unsigned-15.4-alt2.x86_64.rpm (w2.lzdio)
+109.51user 25.40system 0:53.17elapsed 253%CPU (0avgtext+0avgdata 54812maxresident)k
+0inputs+327512outputs (14major+5769966minor)pagefaults 0swaps
+renamed '/usr/src/RPM/SRPMS/shim-15.4-alt2.src.rpm' -> '/.out/shim-15.4-alt2.src.rpm'
+renamed '/usr/src/RPM/RPMS/x86_64/shim-unsigned-15.4-alt2.x86_64.rpm' -> '/.out/shim-unsigned-15.4-alt2.x86_64.rpm'
 hsh-rebuild: rebuild of `pkg.tar' complete.
 hsh-rebuild: pkg.tar: sisyphus_check passed.
-renamed 'chroot/.out/shim-15.4-alt1.src.rpm' -> 'repo/SRPMS.hasher/shim-15.4-alt1.src.rpm'
-renamed 'chroot/.out/shim-unsigned-15.4-alt1.x86_64.rpm' -> 'repo/x86_64/RPMS.hasher/shim-unsigned-15.4-alt1.x86_64.rpm'
+renamed 'chroot/.out/shim-15.4-alt2.src.rpm' -> 'repo/SRPMS.hasher/shim-15.4-alt2.src.rpm'
+renamed 'chroot/.out/shim-unsigned-15.4-alt2.x86_64.rpm' -> 'repo/x86_64/RPMS.hasher/shim-unsigned-15.4-alt2.x86_64.rpm'
